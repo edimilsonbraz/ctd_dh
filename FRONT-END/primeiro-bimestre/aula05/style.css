@@ -1,0 +1,35 @@
+.main-title {
+  color: #fff;
+  background: #222;
+  text-align: center;
+}
+
+.main-subtitle {
+  color: #fff;
+  background: cornflowerblue;
+}
+
+.post {
+  width: 350px;
+  padding: 22px;
+  background: rgb(211, 211, 211);
+  border-radius: 8px;
+}
+button {
+  background: rgb(250, 193, 153);
+  border-radius: 4px;
+  padding: 4px;
+}
+
+a {
+  background: #F75C50;
+  color: #fff;
+  padding: 8px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+footer {
+  margin-bottom: f;
+  background: #222;
+}
