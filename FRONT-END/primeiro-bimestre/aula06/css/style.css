@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #131313;
+}
+.main-title {
+  color: #fff;
+}
+
+.media-picture {
+  width: 100%;
+  height: 540px;
+  background-image: url('https://wallpaperaccess.com/full/1794118.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  
+}
+
+.review-score {
+  background: #e6bd09;
+  color: #fff;
+  padding: 12px;
+}
+
+.main-subtitle {
+  color: steelblue;
+  margin-top: 48px;
+}
+
+p {
+  color: #bdbdbd;
+  max-width: 620px;
+}
+
+a {
+  color: yellow;
+  text-decoration: none;
+}
