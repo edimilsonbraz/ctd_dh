@@ -57,6 +57,7 @@ let str = ""
 console.log("")
 
 let msg = "haha!"
-let eBonito = "false"
+let eBonito = "falsee"
+console.log(eBonito)
 !((str || msg) && eBonito)
 console.log(!((str || msg) && eBonito))
