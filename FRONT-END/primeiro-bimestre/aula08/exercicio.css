@@ -3,19 +3,44 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  height: 1200px;
+  border: solid 2px red
+}
 
 .square {
   background-color: salmon;
   width: 200px;
   height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #222;
 }
 
 .first-square {
   background-color: slateblue;
+  position: absolute;
 }
 .second-square {
   background-color: chartreuse;
+  position: absolute;
+  right: 0;
 }
 .third-square {
   background-color: crimson;
+  position:fixed;
+  top: 50%;
+  left: 50%;
+}
+
+.text {
+  width: 120px;
+  height: 120px;
+  border: 2px solid #222;
+  text-align: center;
+  padding: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
