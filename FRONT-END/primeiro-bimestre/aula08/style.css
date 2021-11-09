@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header nav {
+  width: 100%;
+  background-color: #666;
+  height: 32px;
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header ul {
+  display: flex;
+  justify-content: center;
+  
+}
+header ul li {
+  list-style: none;
+}
+header ul a {
+  text-decoration: none;
+  color: #fff;
+  margin-right: 12px;
+}
+
+main {
+  height: 1100px;
+}
+
+.square {
+  background-color: salmon;
+  width: 200px;
+  height: 200px;
+}
+
+.first-square {
+  background-color: slateblue;
+}
+.second-square {
+  background-color: chartreuse;
+}
+.third-square {
+  background-color: crimson;
+}
