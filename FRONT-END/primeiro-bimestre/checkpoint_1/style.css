@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css?family=Material+Icons%7CMaterial+Icons+Outlined%7CMaterial+Icons+Two+Tone%7CMaterial+Icons+Round%7CMaterial+Icons+Sharp%27');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Titillium Web', sans-serif;
+  background: url(./images/brasilia-wallpapers.jpg) no-repeat top;
+  background-size: cover;
+  color: #fff;
+}
+
+header {
+  padding: 20px;
+  background-color: #5568ac9f;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+header ul {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  list-style: none;  
+}
+
+header ul li a {
+  color: #fff;
+  font-size: 18px;
+  margin-left: 18px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+header ul li a:hover {
+  color: #F9D202;
+}
+
+h1 {
+  color: #fff;
+  font-size: 32px;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 150px auto;
+  /* border: 1px solid #fff; */
+}
+
+section {
+  margin-top: 90px;
+}
+section h1 {
+  margin-bottom: 32px;
+}
+
+/* SECTION SOBRE */
+section#sobre p {
+  font-family: 'Poppins', sans-serif;
+  color: rgb(219, 219, 219);
+  font-size: 18px;
+  width: 880px;
+  background-color: #5568ac9f;
+  padding: 18px;
+}
+strong {
+  color: #F9D202;
+}
+
+
+
+/* SECTION VIDEO */
+section#video h1 {
+  margin-bottom: 25px;
+}
+
+
+/* SECTION CURIOSIDADE */
+section ul {
+  width: 780px;
+  background-color: #5568ac9f;
+  padding: 18px;
+  
+}
+
+section ul li {
+  font-family: 'Poppins', sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  list-style: none;
+  line-height: 2;
+  color: #F9D202;
+
+  display: flex;
+  align-items: center;
+}
+
+span.material-icons-outlined {
+  margin-right: 12px;
+  color: #fff;
+}
+
+/* FOOTER */
+footer {
+  margin: 32px;
+}
+.social {
+  text-align: center;
+}
+
+.social a img {
+  width: 50px;
+  height: 50px;
+  margin-right: 18px;
+  cursor: pointer;
+
+}
