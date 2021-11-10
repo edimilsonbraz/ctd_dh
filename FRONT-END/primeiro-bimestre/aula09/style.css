@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+header {
+  background-color: #E00000;
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header ul {
+  display: flex;
+}
+header ul li {
+  list-style: none;
+  margin-left: 18px;
+}
+header ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.banner {
+  width: 100%;
+  height: 550px;
+  background: url("./images/banner_1.gif") no-repeat ;
+  background-size: cover;
+}
+
+section.promocao{
+  max-width: 940px;
+  margin: 42px auto;
+}
+section.promocao h2 {
+  color: #E00000;
+}
+section.promocao p {
+  margin-top: 18px;
+}
+section.promocao .card {
+  border: 1px solid red;
+  width: 200px;
+  height: 350px;
+  margin-top: 32px;
+  text-align: center;
+}
+section.promocao .card img {
+  width: 150px;
+  height: 250px;
+}
