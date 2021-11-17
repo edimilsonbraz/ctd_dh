@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 52px;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+  font-size: 42px;
+}
+fieldset {
+  margin-bottom: 18px;
+  border: none;
+}
+legend {
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 12px;
+  background-color: #666;
+  width: 100%;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+input {
+  padding: 8px;
+}
+input[type=text] {
+  margin: 6px;
+  width: 50%;
+}
+input[type=radio] {
+  margin-left: 12px;
+}
+input[type=checkbox] {
+  margin-left: 12px;
+
+}
+
+label.dados {
+  margin-left: 12px;
+}
+
+.container {
+  max-width: 940px;
+  margin: 32px auto;
+  border: 1px solid #eee;
+}
+
+.adicionais input[type=checkbox] {
+  margin-bottom: 12px;
+}
+
+.cobertura1 input {
+  margin-bottom: 12px;
+}

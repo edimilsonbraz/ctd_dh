@@ -4,102 +4,171 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="pedido.css">
   <title>Pedido - Açai</title>
 </head>
 <body>
-  <form action="">
-    <h1>Pedido Açai</h1>
-    <fieldset>
-      <legend>Dados Pedido</legend>
+  <main>
+    <div class="container">
+      <form action="">
+        <header>
+          <h1>Pedido Açai</h1>
+          <img src="./acai" alt="">
+        </header>
+        
+        <fieldset>
+          <legend>Dados Pedido</legend>
 
-      <div>
-        <label for="">Nome Completo</label>
-        <input type="text" name="username" id="username" placeholder="Digite seu nome">
-      </div>
+          <div>
+            <label for="" class="dados">Nome Completo</label>
+            <input type="text" name="username" id="username" placeholder="Digite seu nome">
+          </div>
 
-      <div>
-        <label for="">Mesa Nº</label>
-        <input type="text" name="" id="">
-      </div>
-    </fieldset>
+          <div>
+            <label for="" class="dados">Mesa Nº</label>
+            <input type="text" name="" id="">
+          </div>
+        </fieldset>
 
-    <fieldset>
-      <legend>Tamanho</legend>
-      <input type="radio" name="size" id="300ml" checked>
-      <label for="">300ML</label>
+        <fieldset>
+          <legend>Tamanho</legend>
+          <input type="radio" name="size" id="300ml" checked>
+          <label for="">300ML</label>
 
-      <input type="radio" name="size" id="500ml">
-      <label for="">500ML</label>
+          <input type="radio" name="size" id="500ml">
+          <label for="">500ML</label>
 
-      <input type="radio" name="size" id="700ml">
-      <label for="">700ML</label>
+          <input type="radio" name="size" id="700ml">
+          <label for="">700ML</label>
 
-      <input type="radio" name="size" id="1000ml">
-      <label for="">1.000ML</label>
-    </fieldset>
+          <input type="radio" name="size" id="1000ml">
+          <label for="">1.000ML</label>
+        </fieldset>
 
-    <fieldset>
-      <legend>Tipo</legend>
-        <input type="radio" name="tipo" id="tradicional" checked>
-        <label for="">Tradicional</label>
+        <fieldset>
+          <legend>Tipo</legend>
+            <input type="radio" name="tipo" id="tradicional" checked>
+            <label for="">Tradicional</label>
 
-        <input type="radio" name="tipo" id="zero">
-        <label for="">Zero-Lactose</label>
-    </fieldset>
+            <input type="radio" name="tipo" id="zero">
+            <label for="">Zero-Lactose</label>
+        </fieldset>
 
-    <fieldset>
-      <legend>Creme - 1 Opção</legend>
+        <fieldset>
+          <legend>Creme - 1 Opção</legend>
 
-      <input type="checkbox" name="creme" id="cupuacu">
-      <label for="">Cupuaçu</label>
+          <input type="checkbox" name="creme" id="cupuacu">
+          <label for="">Cupuaçu</label>
 
-      <input type="checkbox" name="creme" id="maracuja">
-      <label for="">Maracujá</label>
+          <input type="checkbox" name="creme" id="maracuja">
+          <label for="">Maracujá</label>
 
-      <input type="checkbox" name="creme" id="leiteninho">
-      <label for="">Leite Ninho</label>
+          <input type="checkbox" name="creme" id="leiteninho">
+          <label for="">Leite Ninho</label>
 
-      <input type="checkbox" name="creme" id="nutela">
-      <label for="">Nutela</label>
+          <input type="checkbox" name="creme" id="nutela">
+          <label for="">Nutela</label>
 
-      <input type="checkbox" name="creme" id="morango">
-      <label for="">Morango</label>
-    </fieldset>
+          <input type="checkbox" name="creme" id="morango">
+          <label for="">Morango</label>
+        </fieldset>
 
-    <fieldset>
-      <legend>Frutas - 2 Opção</legend>
+        <fieldset>
+          <legend>Frutas - 2 Opção</legend>
 
-      <input type="checkbox" name="frutas" id="kiwi">
-      <label for="">Kiwi</label>
+          <input type="checkbox" name="frutas" id="kiwi">
+          <label for="">Kiwi</label>
 
-      <input type="checkbox" name="frutas" id="morango">
-      <label for="">Morango</label>
+          <input type="checkbox" name="frutas" id="morango">
+          <label for="">Morango</label>
 
-      <input type="checkbox" name="frutas" id="banana">
-      <label for="">Banana</label>
+          <input type="checkbox" name="frutas" id="banana">
+          <label for="">Banana</label>
 
-      <input type="checkbox" name="frutas" id="manga">
-      <label for="">Manga</label>      
-    </fieldset>
+          <input type="checkbox" name="frutas" id="manga">
+          <label for="">Manga</label>      
+        </fieldset>
 
-    <fieldset>
-      <legend>Complementos - 3 Opção</legend>
+        <fieldset>
+          <legend>Adicionais - 3 Opção</legend>
 
-      <input type="checkbox" name="complementos" id="amendoim">
-      <label for="">Amendoim</label>
+          <div class="adicionais">
+            <input type="checkbox" name="adicionais" id="amendoim">
+            <label for="">Amendoim</label>
 
-      <input type="checkbox" name="complementos" id="aveia">
-      <label for="">Aveia</label>
+            <input type="checkbox" name="adicionais" id="aveia">
+            <label for="">Aveia</label>
 
-      <input type="checkbox" name="complementos" id="castanha">
-      <label for="">Castanha</label>
+            <input type="checkbox" name="adicionais" id="castanha">
+            <label for="">Castanha</label>
 
-      <input type="checkbox" name="complementos" id="confetechocolate">
-      <label for="">Confete de Chocolate</label>
+            <input type="checkbox" name="adicionais" id="confetechocolate">
+            <label for="">Confete de Chocolate</label>
 
-    </fieldset>
+            <input type="checkbox" name="adicionais" id="flocosarroz">
+            <label for="">Flocos de Arroz</label>
 
+            <input type="checkbox" name="adicionais" id="gotaschocolate">
+            <label for="">Gotas de Chocolate</label>
+          </div>
 
-  </form>
+          <div>
+            <input type="checkbox" name="adicionais" id="granolas">
+            <label for="">Granolas</label>
+
+            <input type="checkbox" name="adicionais" id="leiteempo">
+            <label for="">Leite em Pó</label>
+
+            <input type="checkbox" name="adicionais" id="ovomaltine">
+            <label for="">Ovomaltine</label>
+
+            <input type="checkbox" name="adicionais" id="pacoca">
+            <label for="">Paçoca</label>
+
+            <input type="checkbox" name="adicionais" id="sucrilhos">
+            <label for="">Sucrilhos</label>
+
+            <input type="checkbox" name="adicionais" id="chocoball">
+            <label for="">Chocoball</label>
+          </div>
+
+        </fieldset>
+
+        <fieldset>
+          <legend>Coberturas</legend>
+          <div class="cobertura">
+
+            <div class="cobertura1">
+              <input type="radio" name="cobertura" id="leitecondensado">
+              <label for="">Leite Condensado</label>
+
+              <input type="radio" name="cobertura" id="caramelo">
+              <label for="">Caramelo</label>
+
+              <input type="radio" name="cobertura" id="leitecondensado">
+              <label for="">Leite Condensado</label>
+
+              <input type="radio" name="cobertura" id="chocolate">
+              <label for="">Chocolate</label>
+            </div>
+
+            <div class="cobertura2">
+              <input type="radio" name="cobertura" id="leitecondensado">
+              <label for="">Leite Condensado</label>
+
+              <input type="radio" name="cobertura" id="morango">
+              <label for="">Morango</label>
+
+              <input type="radio" name="cobertura" id="mel">
+              <label for="">Mel</label>
+
+              <input type="radio" name="cobertura" id="menta">
+              <label for="">Menta</label>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </main>
 </body>
 </html>
