@@ -64,3 +64,39 @@ label.dados {
 .cobertura1 input {
   margin-bottom: 12px;
 }
+
+button {
+  padding: 8px;
+  width: 20%; 
+}
+button[type=submit] {
+  color: #fff;
+  background-color: #46295A;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+button[type=submit]:hover {
+  filter: brightness(.9);
+  font-weight: bold;
+}
+
+button[type=reset] {
+  color: #fff;
+
+  background-color: #666;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+button[type=reset]:hover {
+  filter: brightness(.9);
+  font-weight: bold;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 12px;
+}
