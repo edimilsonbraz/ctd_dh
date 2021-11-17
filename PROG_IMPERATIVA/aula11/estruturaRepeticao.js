@@ -23,31 +23,27 @@ console.log("TABUADA")
 //3.Criando a tabuada
 
 //Crie uma tabuada utilizando o for. Dica: Para essa tarefa você irá precisar utilizar /////dois loops (for).
-
-
-
-
-console.log("======================")
-console.log("ESTRUTURA WHILE")
-// ESTRUTURA DE REPETIÇÃO WHILE 
-let cont = 0;
-while(cont <= 5) {
-  console.log(cont)
-  cont++;
+function tabuada(number) {
+  for(let i=1; i<= 10; i++) {
+    let calc = i * number
+    console.log(number, "x", i, "=", calc)
+  }
 }
-console.log(cont)
+tabuada(3)
 
 
+
+// ESTRUTURA DE REPETIÇÃO WHILE 
 console.log("======================")
-console.log("CONTADOR 1 A 10")
-// ESTRUTURA DE REPETIÇÃO
+console.log("CONTADOR DE 2 em 2")
+//ESTRUTURA DE REPETIÇÃO
 for(let i = 0; i <= 10; i= i+2) {
   console.log("Contador == ", i)
 }
 
 console.log("======================")
 console.log("ARRAY")
-// ESTRUTURA DE REPETI
+//ESTRUTURA DE REPETI
 let nomes = ["Marcos", "Fulano", "Ciclano", "Edimilson"];
 for(let i =0; i < nomes.length; i++) {
   console.log(nomes[i])
