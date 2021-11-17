@@ -92,9 +92,12 @@ console.log(filmesESeries[4])
 Dica: revise o que faz o método de strings .toUpperCase().
 */
 function convertMaiuscula(arr) {
-  return arr.map((item) => {
-    item.toUpperCase()
-  })
+  arr[0] = arr[0].toUpperCase();
+  arr[1] = arr[1].toUpperCase();
+  arr[2] = arr[2].toUpperCase();
+  arr[3] = arr[3].toUpperCase();
+  arr[4] = arr[4].toUpperCase();
+  return arr
 }
 console.log(convertMaiuscula(filmesESeries))
 
@@ -106,8 +109,12 @@ Em seguida, crie uma função que receba dois arrays como parâmetros, para pode
 //usar push
 let filmesAnimados = ["Toy Story", "Procurando Nemo", "Kung-fu Panda", "Wally", "Fortnite"]
 function twoArrays(arr1, arr2) {
-  return arr1.push(arr2)
-  // return arr1.splice(0, 0, arr2)
+  arr1.push(arr2.shift().toUpperCase());
+  arr1.push(arr2.shift().toUpperCase());
+  arr1.push(arr2.shift().toUpperCase());
+  arr1.push(arr2.shift().toUpperCase());
+  arr1.push(arr2.shift().toUpperCase());
+  return arr1
 }
 twoArrays(filmesESeries, filmesAnimados)
 console.log(filmesESeries)
@@ -117,8 +124,8 @@ console.log(filmesESeries)
 4. Durante o processo, percebemos que o último elemento na série de filmes animados é, na verdade, um game. Agora devemos editar nosso código e modificá-lo para que possamos remover o último elemento antes de migrar o conteúdo para o array que contém todos os filmes.
 PS: por precaução, salve o elemento que você vai deletar em uma variável.
 */
-let deletados = filmesAnimados.pop()
-console.log(deletados)
+let deletados = filmesESeries.pop()
+console.log(filmesESeries)
 console.log(filmesAnimados)
 
 /*
@@ -127,10 +134,6 @@ console.log(filmesAnimados)
 	const asiaScores = [8, 10, 6, 9, 10, 6, 6, 8, 4];
 	const euroScores = [8, 10, 6, 8, 10, 6, 7, 9, 5]; 
 //Crie uma função que compare as notas e nos diga se elas são iguais ou diferentes.
-
-/*
-Para verificar se tudo está bem até agora, recomendamos testar cada uma das funções, a fim de verificar seu correto funcionamento.
-*/
 function comparaNotas(arr1, arr2) {
   return arr1.includes(arr2)
 }
