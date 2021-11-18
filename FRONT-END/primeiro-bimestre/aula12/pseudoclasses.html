@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="pseudoclasses.css">
+  <title>Formulario</title>
+</head>
+<body>
+  <main>
+    <div class="container">
+      <form action="">
+        <h1>Formulário Treinamento</h1>
+
+        <p class="main-paragrafo">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Et suscipit distinctio alias minima provident possimus adipisci deleniti harum delectus ipsum, labore temporibus ducimus quae recusandae obcaecati 
+        </p>
+        <label for="username">Nome do usuário</label>
+        <input type="text" class="custon-input" name="username" id="username" placeholder="Digite seu nome"> <br>
+
+        <label for="username">Email</label>
+        <input type="text" name="userEmail" id="userEmail" placeholder="Digite seu email"><br>
+      
+        <label for="username">Senha</label>
+        <input type="password" name="userPassword" id="userPassword" ><br>  
+
+        <div>
+          <input type="checkbox" name="teste" id="">
+          <label for="">Opão 1</label>
+
+          <input type="checkbox" name="teste" id="">
+          <label for="">Opção 2</label>
+
+          <input type="checkbox" name="teste" id="">
+          <label for="">Opção 3</label>
+        </div>
+
+        <label for="userPlan">Plano</label>
+        <select name="userPlan" id="userPlan"><br>
+          <option value="#">Escolha uma Opção</option>
+          <option value="1">Básico</option>
+          <option value="2">Médio</option>
+          <option value="3">Prémio</option>
+        </select>
+
+        <div>
+          <label for="">Endereço</label>
+          <input class="end" type="text" disabled="disabled">
+          <label for="">Cidade</label>
+          <input type="text">
+        </div>
+        <div class="custon-buttons">
+          <button type="reset">Limpar</button>
+          <button type="submit">Enviar</button>
+        </div>
+      </form>
+    </div>
+  </main>
+</body>
+</html>
+
