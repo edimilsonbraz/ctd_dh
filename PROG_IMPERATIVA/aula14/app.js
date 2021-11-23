@@ -8,5 +8,6 @@ let data = moment().format('MMM do YY')
 
 console.log(dados)
 console.log(data)
-console.log(herois)
+console.log(herois[1].name)
+console.log(herois[1].cumprimentar())
 

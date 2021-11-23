@@ -9,7 +9,7 @@ const superHeroes = [
     name: "Iron man",
     poder: "Disparar raios",
     cumprimentar: function() {
-      return "Olá, sou" + this.name;
+      return "Olá, sou " + this.name;
     }
   }
 ]
