@@ -1,0 +1,74 @@
+body {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+  background-color: #111;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+main {
+  padding:  24px;
+}
+p {
+  color: white;
+  font-size: 22px;
+  margin-top: 24px;
+}
+.main-button {
+  color: white;
+  background-color: #5ac4e4;
+  border: 0;
+  padding: 24px;
+  font-size: 24px;
+  border-radius: 12px;
+  transition: 0.5s ease-in-out ;
+  /* transition-duration: .5s; */
+  /* transition-property: background-color, padding; */
+  /* transition-timing-function: ease-in-out; */
+  /* transform-origin: right bottom; */
+  /* transform-origin: top left; */
+  
+}
+
+/* transform-origin */
+
+.main-button:hover {
+  color: black;
+  background-color: #bee9f6;
+  /* transform: scale(1.5) skew(12deg); */
+  /* transform: translate(0px, -8px); */
+  transform: rotate(120deg);
+
+}
+
+@keyframes float {
+  0% {
+    opacity: 0;
+    transform: translate(0, -50px)
+  }
+  50% {
+    opacity: 1;
+    transform: translate(0, 50px)
+    
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0, -50px)
+  }
+}
+
+.ghost {
+  font-size: 200px;
+  text-align: center;
+  display: block;
+  margin-bottom: 32px;
+  animation-name: float;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}

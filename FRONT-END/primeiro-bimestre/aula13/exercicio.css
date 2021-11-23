@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.c-component {
+  background-color: cornflowerblue;
+
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  animation-name: ball;
+  animation-duration: 4s;
+}
+
+@keyframes ball {
+  0% {
+    opacity: 0;
+    transform: translate(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(500px);
+  }
+
+}
