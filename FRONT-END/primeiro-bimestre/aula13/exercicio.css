@@ -31,3 +31,61 @@ body {
   }
 
 }
+
+
+.c-componen2 {
+  margin-top: 200px;
+  margin-left: 100px;
+  background-color: cornflowerblue;
+  width: 150px;
+  height: 150px;
+  border: 1px solid #888;
+
+  animation-name: color;
+  animation-duration: 4s;
+  transition: background 0.2s;
+}
+
+
+@keyframes color {
+  0% {
+    background-color: cornflowerblue;
+  }
+  50% {
+    background-color: rgb(140, 155, 184);
+  }
+  75% {
+    background-color: rgb(100, 237, 207);
+  }
+  100% {
+    background-color: rgb(17, 131, 106);
+  }
+
+}
+
+
+/* ====================== */
+.icone-transform img {
+  transition: transform 500ms;
+}
+.icone-transform img:hover {
+  transform: scale(1.5);
+}
+
+/* ====================== */
+.icone-transform2 img {
+  margin-top: 150px;
+  transition: transform 500ms;
+}
+.icone-transform2 img:hover {
+  transform: rotate(120deg);
+}
+
+/* ====================== */
+.icone-transform3 img {
+  margin-top: 250px;
+  transition: transform 500ms;
+}
+.icone-transform3 img:hover {
+  transform: skew(50deg);
+}

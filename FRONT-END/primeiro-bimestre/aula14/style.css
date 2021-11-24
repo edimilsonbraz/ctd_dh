@@ -38,11 +38,12 @@ h1 {
   border: 1px solid white;
   padding: 12px 24px;
   border-radius: 24px;
-  transition: color 0.2s ease-in-out;
+  transition: all 500ms ease-in-out;
 }
 .main-header button:hover {
   color: gold;
   border: 1px solid gold;
+  transform: scale(1.2);
 }
 .main-menu {
   display: flex;
@@ -68,6 +69,7 @@ main h1 {
 .video {
   background-color: black;
   width: 400px;
+  padding-bottom: 12px;
 }
 .video img {
   width: 100%;
