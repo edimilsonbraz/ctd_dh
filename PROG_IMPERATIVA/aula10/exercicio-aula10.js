@@ -134,8 +134,13 @@ console.log(filmesAnimados)
 	const asiaScores = [8, 10, 6, 9, 10, 6, 6, 8, 4];
 	const euroScores = [8, 10, 6, 8, 10, 6, 7, 9, 5]; 
 //Crie uma função que compare as notas e nos diga se elas são iguais ou diferentes.
-function comparaNotas(arr1, arr2) {
-  return arr1.includes(arr2)
+function comparaNotas(asia, europa) {
+  let coparacoesAsiaEuropa = [];
+
+  for(let i  =0; i < asia.length; i++){
+    coparacoesAsiaEuropa[i] = asia[i] === europa[i];
+  }
+    return coparacoesAsiaEuropa 
 }
 
 console.log(comparaNotas(asiaScores, euroScores))

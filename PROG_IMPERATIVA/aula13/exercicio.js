@@ -59,29 +59,50 @@ console.log(listaClientes)
 //5 - Objeto literal chamado banco + propriedade clientes: clientes[]
 let banco = {
   clientes: listaClientes,
+//6 - Método consultarCliente que retornar os dados do cliente solicitado
   consultarCliente: function(titular) {
-      let isFind = false;
-      let qtd = banco.clientes.length
-      
-      for(i = 0; i < qtd; i++)  { 
-        if(titular == this.clientes[i].titular) {
-          console.log(this.clientes[i].titular)
-          isFind = true;
-        }else{
-          isFind = false;
+    let qtd = banco.clientes.length
+    
+    for(i = 0; i < qtd; i++)  { 
+      if(this.clientes[i].titular == titular) {
+        let dadosCliente = this.clientes[i]
+
+        return dadosCliente;
+      }
+    }
+  },
+//7 - Método depósito que add valor no saldo
+  deposito: function(titular, valor) {
+    let qtd = banco.clientes.length
+    
+    for(i = 0; i < qtd; i++)  { 
+      if(this.clientes[i].titular == titular) {
+        let novoSaldo = this.clientes[i].saldo + valor
+
+        return "Depósito realizado, seu novo saldo é: " + novoSaldo
+      }
+    }
+  },
+//8 - Método Saque que retira valor do saldo
+  saque: function(titular, valor) {
+    let qtd = banco.clientes.length
+
+    for(i = 0; i < qtd; i++)  {
+      if(this.clientes[i].titular == titular) {
+        let novoSaldo = this.clientes[i].saldo - valor
+        if(novoSaldo > 0) {
+          return "Extração feita com sucesso, seu novo saldo é: " + novoSaldo
+        }else {
+         return "Fundos insuficientes " + novoSaldo
         }
       }
-      return isFind;
-    },
-  deposito: function(titular, valor) {
-    if(consultarCliente(titular) ) {
-      this.clientes[i].saldo + valor
-      console.log(this.clientes[i])
     }
-
   }
 }
-console.log(banco.clientes)
 
-console.log(banco.consultarCliente("Abigael Natte"))
-banco.deposito("Abigael Natte", 500)
+
+console.log(banco.consultarCliente('Alonso Wannan'))
+console.log(banco.deposito('JThomasin Latour', 1000))
+console.log(banco.saque('JThomasin Latour', 3000))
+// console.log(typeof banco.clientes[8].saldo)
+
