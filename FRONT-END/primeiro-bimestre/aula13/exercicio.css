@@ -43,7 +43,7 @@ body {
 
   animation-name: color;
   animation-duration: 4s;
-  transition: background 0.2s;
+  transition: background 0.2s ease-in-out;
 }
 
 
@@ -66,7 +66,7 @@ body {
 
 /* ====================== */
 .icone-transform img {
-  transition: transform 500ms;
+  transition: transform 500ms ease-in-out;
 }
 .icone-transform img:hover {
   transform: scale(1.5);
@@ -75,7 +75,7 @@ body {
 /* ====================== */
 .icone-transform2 img {
   margin-top: 150px;
-  transition: transform 500ms;
+  transition: transform 500ms ease-in-out;
 }
 .icone-transform2 img:hover {
   transform: rotate(120deg);
@@ -84,7 +84,7 @@ body {
 /* ====================== */
 .icone-transform3 img {
   margin-top: 250px;
-  transition: transform 500ms;
+  transition: transform 500ms ease-in-out; 
 }
 .icone-transform3 img:hover {
   transform: skew(50deg);
