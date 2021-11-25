@@ -68,6 +68,8 @@ let banco = {
         let dadosCliente = this.clientes[i]
 
         return dadosCliente;
+      }else{
+        return "Cliente não Encontrado"
       }
     }
   },
@@ -101,8 +103,8 @@ let banco = {
 }
 
 
-console.log(banco.consultarCliente('Alonso Wannan'))
-console.log(banco.deposito('JThomasin Latour', 1000))
+console.log(banco.consultarCliente('Abigael Natte'))
+console.log(banco.deposito('Ansel Ardley', 1000))
 console.log(banco.saque('JThomasin Latour', 3000))
 // console.log(typeof banco.clientes[8].saldo)
 
