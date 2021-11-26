@@ -5,127 +5,111 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pagina Cadastro</title>
+  
+  <!-- CSS -->
   <link rel="stylesheet" href="cadastro.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+ <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Titillium+Web:wght@400;600;700&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
   <div class="fundo">
     <section class="container">
       <header>
-        <h1> Free CodeCamp Formulário</h1>
-        <p>Obrigado por nos ajudar a melhorar a plataforma</p>
+        <h1> Formulário de Cadastro</h1>
+        <p>Preencha todos os dados</p>
       </header>
       <main>
         <div class="content">
           <form action="">
-
             <div class="form-group">
-              <label for="">Name</label>
-              <input type="text" placeholder="Enter your name" class="input-control">
+              <label for="">Nome</label>
+              <input type="text" placeholder="Digite seu nome" class="input-control">
 
               <label for="">Email</label>
-              <input type="email" name="" id="" placeholder="Enter your Email" class="input-control">
+              <input type="email" name="" id="" placeholder="Digite seu Email" class="input-control">
 
               <div class="input-age">
-                <label for="">Age</label> &nbsp;
-                <span>(optional)</span> 
+                <label for="">Data de Nascimento</label> 
               </div>
-              <input type="number" name="" id="" min="10" max="99" placeholder="Age" class="input-control">
-            </div>
-            
-            
-            <div class="form-group">
-              <p>Which option best describes your current rote ?</p>  
-              <select name="" id="" class="input-control" class="input-control">
-                <option selected disabled value="">Select current role</option>
-                <option value="">Student</option>
-                <option value="">Full Time Job</option>
-                <option value="">Full Time Learner</option>
-                <option value="">Prefer not to say</option>
-                <option value="">Other</option>
-              </select>
-            </div>
-           
-            <div class="form-group">
-              <p>Would you rememmend freeCodeCamp to a friend?</p>
-              <label class="label-radio">
-                <input type="radio" name="user-rememmend" id="" class="input-radio" value="definitely"
-                checked="checked">
-                Definitely
-              </label>
-              <label class="label-radio">
-                <input type="radio" name="user-rememmend" id="" class="input-radio" value="mayube">
-                Mayube
-              </label>
-              <label class="label-radio">
-                <input type="radio" name="user-rememmend" id="" class="input-radio" value="not-sure">
-                Not sure
-              </label>
+              <input type="date" name="" id="" min="10" max="99" placeholder="Age" class="input-control">
             </div>
 
             <div class="form-group">
-              <p> What is your favorite feature of freeeCodeCamp? </p>
-              <select name="" id="" class="input-control">
-                <option selected disabled value="">Select current role</option>
-                <option value="">Challengs</option>
-                <option value="">Projects</option>
-                <option value="">Community</option>
-                <option value="">Open Source</option>
-              </select>
+              <p>Maior de idade ?</p>
+              <label class="label-radio">
+                <input type="radio" name="user-rememmend" id="" class="input-radio" value="sim"
+                checked="checked">
+                Sim
+              </label>
+              <label class="label-radio">
+                <input type="radio" name="user-rememmend" id="" class="input-radio" value="nao">
+                Não
+              </label>
             </div>
             
+            
+            <div class="form-group ponto-turistico">
+              <p>Ponto turístico favorito em Brasilia ?</p>  
+              <select name="" id="" class="input-control" class="input-control">
+                <option selected disabled value="">Selecione uma opção</option>
+                <option value="">Pontão do Lago Sul</option>
+                <option value="">Memorial JK</option>
+                <option value="">Ponte JK</option>
+                <option value="">Congresso Nacional</option>
+                <option value="">Torre de TV e mirante de Brasília</option>
+              </select>
+            </div>
+
             <div class="form-group ckecked">
               <div class="like-check">
-                <p>What would you like to see impreved?</p>
-                <span>(Check all that apply)</span>
+                <p>Quais seus interesses em Brasília</p> &nbsp;               
+                <span>(opcional)</span> 
               </div>
               <label for="">
                 <input type="checkbox" name="" id="" class="input-checkbox">
-                Front-end Projects
+                Turístico
               </label>
 
               <label for="">
                 <input type="checkbox" name="" id="" class="input-checkbox">
-                Back-end Projects
+                Resindencial
               </label>
 
               <label for="">
                 <input type="checkbox" name="" id="" class="input-checkbox">
-                Data Visualization
+                Estudantil
               </label>
 
               <label for="">
                <input type="checkbox" name="" id="" class="input-checkbox">
-                Challenges
+                Curiosidades
               </label>
 
               <label for="">
                 <input type="checkbox" name="" id="" class="input-checkbox">
-                Open Source Community
+                A trabalho
               </label>
 
               <label for="">
                 <input type="checkbox" name="" id="" class="input-checkbox">
-                Gitter help rooms
-              </label>
-
-              <label for="">
-                <input type="checkbox" name="" id="" class="input-checkbox">
-                Vídeos
-              </label>
-
-              <label for="">
-                <input type="checkbox" name="" id="" class="input-checkbox">
-                City Meetups
+                Outros motivos
               </label>
             </div>
 
             <div class="form-group">
-              <p>Any comments or seggestions?</p>
-              <textarea name="" id="" cols="30" rows="" placeholder="Enter your comment here..."></textarea>
+              <p>Conte-nos o que acho da Cidade ?</p>
+              <textarea name="" id="" cols="30" rows="" placeholder="Digite aqui sua mensagem ..."></textarea>
 
-              <button type="submit">Submit</button>
+            </div>
+            <div class="custon-buttons">
+              <button type="reset">Limpar</button>
+              <button type="submit">Enviar</button>
             </div>
             
           </form>
