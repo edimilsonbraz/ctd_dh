@@ -14,7 +14,9 @@ body {
   background-attachment: fixed;
   color: #fff;
 }
-
+a {
+  text-decoration: none;
+}
 header {
   padding: 20px;
   background-color: #5568ac9f;
