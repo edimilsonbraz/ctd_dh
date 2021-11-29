@@ -9,12 +9,14 @@
 body {
   font-family: 'Poppins', sans-serif;
   font-family: 'Titillium Web', sans-serif;
-  background: url(./images/brasilia-wallpapers.jpg) no-repeat top;
+  background: url("../images/brasilia-wallpapers.jpg") no-repeat top;
   background-size: cover;
   background-attachment: fixed;
   color: #fff;
 }
-
+a {
+  text-decoration: none;
+}
 header {
   padding: 20px;
   background-color: #5568ac9f;
@@ -137,4 +139,9 @@ footer {
   margin-right: 18px;
   cursor: pointer;
 
+  transition: transform 300ms;
+}
+
+.social a img:hover {
+  transform: translateX(10px) rotate(10deg) translateY(5px);
 }
