@@ -49,7 +49,7 @@ aside {
 aside section {
   display: flex;
 }
-section.aside-videos {
+section.aside__content {
   background-color: #000;
 }
 aside img {
@@ -57,21 +57,21 @@ aside img {
   height: 200px;
   object-fit: cover;
 }
-aside .infos {
+aside .aside__text {
   color: #fff;
   padding: 12px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-aside .infor-1 h1{
+aside .aside__text__item h1{
   margin-bottom: 8px;
 }
 aside p {
   color: dimgray;
   font-size: 14px;
 }
-aside .infor-2 p:nth-child(1) {
+aside .aside__text__item p:nth-child(1) {
   margin-bottom: 8px;
 }
 
