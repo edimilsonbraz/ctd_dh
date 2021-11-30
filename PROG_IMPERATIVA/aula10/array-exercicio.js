@@ -19,3 +19,4 @@ console.log(perifericos, "\n")
 console.log("O método Unshift adiciona elementos ao inicio do array")
 console.log(perifericos.unshift("Gabinete", "Teclado"))
 console.log(perifericos, "\n")
+
