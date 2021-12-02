@@ -29,10 +29,12 @@ main {
   padding: 18px;
   height: 100%;
 }
-main img {
+.main__content img {
   width: 100%;
+  max-width: 780px;
   height: 400px;
   object-fit: cover;
+  margin: 0 auto;
 }
 .main__content h1 {
   color: #157bad;
@@ -90,4 +92,39 @@ footer {
   display: flex;
   align-items: center;
   justify-content:center;
+}
+
+@media (max-width: 768px) {
+  body {
+    grid-template-columns: 100%;
+    grid-template-areas: 
+    'main-header'
+    'main '
+    'aside'
+    'footer'
+    ;
+  }
+  section .aside__content {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 482px) {
+  .aside__text__item h1 {
+    font-size: 16px;
+  }
+  .aside__text__item p {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 461px) {
+  .aside__text h1, p{
+    display: none;
+    
+  }
+  section.aside__content {
+    background-color: #fff;
+    margin: 0 auto;
+  }
 }
