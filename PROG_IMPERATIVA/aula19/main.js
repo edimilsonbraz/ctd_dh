@@ -1,56 +1,5 @@
 let pessoas = [];
 
-// const arquivos = [
-//   {
-//       "sexo": "F",
-//       "nome": "Abigael Natte"
-//   },
-//   {
-      
-//       "sexo": "M",
-//       "nome": "Ramon Connell"
-//   },
-//   {
-      
-//       "sexo": "M",
-//       "nome": "Jarret Lafuente"
-//   },
-//   {
-      
-//       "sexo": "F",
-//       "nome": "Ansel Ardley"
-//   },
-//   {
-      
-//       "sexo": "F",
-//       "nome": "Jacki Shurmer"
-//   },
-//   {
-      
-//       "sexo": "M",
-//       "nome": "Jobi Mawtus"
-//   },
-//   {
-      
-//       "sexo": "M",
-//       "nome": "Thomasin Latour"
-//   },
-//   {
-      
-//       "sexo": "S",
-//       "nome": "Lonnie Verheijden"
-//   },
-//   {
-      
-//       "sexo": "M",
-//       "nome": "Alonso Wannan"
-//   },
-//   {
-      
-//       "sexo": "F",
-//       "nome": "Bendite Huggett"
-//   }
-// ]
 
 //1 - função construtora
 function CriaPessoa(nome, altura, sexo) {
@@ -84,8 +33,8 @@ pessoas.sort((a,b) => {
     return 0;
 })
 
-console.log("Pessoa com Menor algura " + pessoas[0].nome)
-console.log("Pessoa com Maior algura " + pessoas[pessoas.length - 1].nome)
+console.log("Pessoa com Menor altura " + pessoas[0].nome)
+console.log("Pessoa com Maior altura " + pessoas[pessoas.length - 1].nome)
 
 /*=======================================*/
 //a média de altura das mulheres;
@@ -108,12 +57,12 @@ console.log(mediaAlturaMulheres(pessoas));
 
 /*=======================================*/
 //o número de homens.
-function qtdHomens(array, sexo) {
+function qtdHomens(array) {
   let filterHomens = array.filter((item) => {
-    return item.sexo == sexo
+    return item.sexo == "M"
   })
 
   return filterHomens.length;
 }
 
-console.log("Quantidade de homens: " + qtdHomens(pessoas, "M"))
+console.log("Quantidade de homens: " + qtdHomens(pessoas))
