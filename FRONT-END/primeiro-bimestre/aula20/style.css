@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.main-content {
+  background-color: aqua;
+  padding: 12px;
+}
+
+.main-content img {
+  width: 100%;
+}
+
+.main-content ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 12px;
+}
+
+.main-content li {
+  list-style: none;
+}
+
+.main-content a {
+  text-decoration: none;
+}
+
+.main-content:hover {
+  color: red;
+}
+/*# sourceMappingURL=style.css.map */

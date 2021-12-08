@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-content {
+  background-color: aqua;
+  padding: 12px;
+
+  img {
+    width: 100%;
+  }
+  ul {
+    display: flex;
+    gap: 12px;
+  }
+    li {
+      list-style: none;
+    }
+      a {
+        text-decoration: none;
+      }
+        &:hover {
+          color: red;
+        }
+}
