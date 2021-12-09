@@ -86,3 +86,15 @@ footer .feature-icon img {
   height: 5rem;
   border-radius: 50%;
 }
+
+.feature a.icon-social {
+  text-decoration: none;  
+  margin-right: .5rem;
+
+}
+footer .icon-social img {
+  transition: transform 300ms ease-in-out;
+}
+footer .icon-social img:hover {
+  transform: scaleX(1.2)
+}
