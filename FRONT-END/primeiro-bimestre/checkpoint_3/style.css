@@ -35,6 +35,10 @@
   width: 408px;
   /* height: 512px; */
   border-radius: 10px;
+  transition: transform 300ms ease-in-out;
+}
+.card-filme:hover {
+  transform: scale(1.1)
 }
 .card-filme img {
   border-radius: 10px 10px 0 0;
