@@ -80,6 +80,7 @@ img#animation-out{
 /* FOOTER */
 footer {
   font-family: 'Roboto', sans-serif;
+  background-color: #171717;
 }
 .py-5 {
   padding-right: 0!important;
