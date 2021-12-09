@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
 /*======= BANNER =========*/
 .header-nav {
   width: 100%;
@@ -35,3 +37,29 @@
 }
 
 /*======== MAIN CONTENT ======== */
+.card-filme {
+  width: 408px;
+  /* height: 512px; */
+  border-radius: 10px;
+}
+.card-filme img {
+  border-radius: 10px 10px 0 0;
+}
+.row > * {
+  padding-left: 0;
+  padding-right: 0;
+}
+.card-body {
+  font-family: 'Roboto', sans-serif;
+}
+.card-body p {
+  font-size: 13px;
+  font-weight: 300;
+}
+
+/* FOOTER */
+.py-5 {
+  padding-right: 0!important;
+  padding-left: 0!important;
+  padding-bottom: 0!important;
+}
