@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* ====== HEADER NAV ======= */
+header li a.nav-link:hover {
+  color: #E50914 !important;
+}
+header button.btn-outline-danger:hover {
+  background-color: #E50914 !important;
+}
+
 /*======= BANNER =========*/
 .header-nav {
   width: 100%;
@@ -31,14 +43,24 @@
 }
 
 /*======== MAIN CONTENT ======== */
+h1#sobre {
+  animation-name: fadeIn;
+  animation-duration: 2s;
+}
+img#animation-out{
+  animation-name: fadeOut;
+  animation-duration: 2s;
+}
+
+/*========= CARDS ============= */
 .card-filme {
   width: 408px;
-  /* height: 512px; */
+  box-shadow: 5px 5px 18px -9px #000000;
   border-radius: 10px;
-  transition: transform 300ms ease-in-out;
+  transition: transform 200ms ease-in-out;
 }
 .card-filme:hover {
-  transform: scale(1.1)
+  transform: scale(1.04)
 }
 .card-filme img {
   border-radius: 10px 10px 0 0;
@@ -101,4 +123,28 @@ footer .icon-social img {
 }
 footer .icon-social img:hover {
   transform: scaleX(1.2)
+}
+
+
+/* =========== ANIMAÇÃO ============ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-200px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0px);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 0;
+    transform: translate(300px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0px);
+  }
 }

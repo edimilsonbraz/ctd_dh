@@ -20,37 +20,61 @@
         </a>
 
         <ul class=" nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="#" class="nav-link px-2 text-white">Home</a></li>
-            <li><a href="#" class="nav-link px-2 text-white">Sobre</a></li>
-            <li><a href="#" class="nav-link px-2 text-white">Filmes</a></li>
-            <li><a href="#" class="nav-link px-2 text-white">Planos</a></li>
+          <li><a href="index.html" class="nav-link px-2 text-white">Home</a></li>
+            <li><a href="#sobre" class="nav-link px-2 text-white">Sobre</a></li>
+            <li><a href="#filmes" class="nav-link px-2 text-white">Filmes</a></li>
+            <li><a href="#team" class="nav-link px-2 text-white">Team</a></li>
         </ul>
 
         <div class="col-md-3 text-end">
-          <button type="button" class="btn btn-sm btn-outline-danger me-2 text-white">Login</button>
+          <button type="button" class="btn btn-outline-danger me-2 text-white">Login</button>
         </div>
       </header>
     </div>
 
     <!-- BANNER -->
-  <section class="banner">
-    <div class="banner-content">
-      <div class="banner-text">
-        <h1>DH FLIX</h1>
-        <h2>Filmes, séries e muito mais. Sem limites.</h2>
-        <p>Assista onde quiser. Cancele quando quiser.</p>
-        <div class="banner-buttons">
-          <button type="button" class="btn btn-outline-success btn-lg mx-auto mt-4">Explorar</button>
+    <section class="banner">
+      <div class="banner-content">
+        <div class="banner-text">
+          <h1>DH FLIX</h1>
+          <h2>Filmes, séries e muito mais. Sem limites.</h2>
+          <p>Assista onde quiser. Cancele quando quiser.</p>
+          <div class="banner-buttons">
+            <button type="button" class="btn btn-outline-success btn-lg mx-auto mt-4">Explorar</button>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
   </section>
 
   <main>
+    <!-- SOBRE -->
+    <section class="sobre">
+      <div class="row align-items-md-stretch">
+        <div class="col-md-6">
+          <div class="h-100 p-5 text-white bg-black ">
+            <h1 id="sobre">Sobre nós</h1>
+            <p>A DHFLIX é um serviço de transmissão online que oferece uma ampla variedade de séries, filmes e documentários premiados em milhares de aparelhos conectados à internet.            
+            </p>
+            Você pode assistir a quantos filmes e séries quiser, quando e onde quiser, sem comerciais – tudo por um preço mensal bem acessível. Aqui você sempre encontra novidades. A cada semana, adicionamos novas séries e filmes.          
+            <p>
+
+            </p>
+            <button class="btn btn-outline-light" type="button">Saiba mais</button>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="h-100 p-5 bg-black text-center ">
+            <h2 >Diversão para toda a família!</h2>
+            <img id="animation-out" src="./images/image_sobre.png" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+
     <div class="content my-5">
       <div class="content-title text-center">
-        <h1>Filmes mais assistidos</h1>
+        <h1 id="filmes" >Filmes mais assistidos</h1>
       </div>
     </div>
     <section class="cards">
@@ -121,7 +145,7 @@
     <div class="container px-4 py-5" id="featured-3">
       <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
 
-        <div class="feature col text-white pb-4">
+        <div id="team" class="feature col text-white pb-4">
           <div class="feature-icon mb-2">
             <img src="./images/foto_edi.png" alt=""> 
           </div>
