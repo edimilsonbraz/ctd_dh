@@ -5,8 +5,14 @@ html {
 }
 
 /* ====== HEADER NAV ======= */
+header a img {
+  width: 250px;
+}
+header li a.nav-link {
+  font-size: 1.25rem;
+}
 header li a.nav-link:hover {
-  color: #E50914 !important;
+  color: #E50914 !important;  
 }
 header button.btn-outline-danger:hover {
   background-color: #E50914 !important;
