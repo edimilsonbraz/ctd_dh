@@ -17,6 +17,12 @@ header li a.nav-link:hover {
 header button.btn-outline-danger:hover {
   background-color: #E50914 !important;
 }
+header .btn-login {
+  transition: transform 200ms ease-in-out;
+}
+header .btn-login:hover {
+  transform: scale(1.1);
+}
 
 /*======= BANNER =========*/
 .header-nav {
@@ -117,6 +123,7 @@ footer {
 footer .feature-icon img {
   width: 5rem;
   height: 5rem;
+  object-fit: cover;
   border-radius: 50%;
 }
 
