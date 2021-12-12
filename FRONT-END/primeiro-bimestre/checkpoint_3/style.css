@@ -38,20 +38,19 @@ header .btn-login:hover {
   background-position: center;
   background-attachment: fixed;
 }
-.banner .banner-text {
+/* .banner .banner-text {
    width: 940px;
   color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   margin: 250px auto; 
-
-}
+} */
 .banner .banner-text h1 {
   color: #E50914;
   font-size: 4rem;
+  /* justify-content: center; */
 }
 
 /*======== MAIN CONTENT ======== */
@@ -93,6 +92,7 @@ img#animation-out{
 footer {
   font-family: 'Roboto', sans-serif;
   background-color: #171717;
+  
 }
 .py-5 {
   padding-right: 0!important;
@@ -162,3 +162,25 @@ footer .icon-social img:hover {
     transform: translate(0px);
   }
 }
+
+/*====== RESPONSIVIDADE =======*/
+@media (min-width: 768px) {
+  .banner .banner-text {
+    width: 940px;
+   color: #fff;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+ 
+   margin: 250px auto; 
+ 
+ }
+ 
+}
+
+@media (max-width: 768px) {
+  footer{
+      align-content: center;
+    }
+  }

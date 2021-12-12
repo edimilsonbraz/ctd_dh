@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ====== HEADER NAV ======= */
+header {
+  background: white;
+}
+
+header li a.nav-link {
+  color: black !important;
+}
+
+header button.btn-outline-danger {
+  background-color: black !important;
+}
+
+header li a.nav-link:hover {
+  color: #e50914 !important;
+}
+header button.btn-outline-danger:hover {
+  background-color: #e50914 !important;
+}
+
+/*======= BANNER =========*/
+.header-nav {
+  width: 100%;
+}
+
+.bannerimg {
+  background-image: url(../images/x-man.jpg);
+  height: 649px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* ====== MAIN ======= */
+
+.blockquote {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: rgb(20, 17, 17);
+}
+
+.estrelas {
+  display: flex;
+}
+
+.jumbotron {
+  display: flex;
+  gap: 10px;
+}
+
+.display-4 {
+  width: 73px;
+  height: 28px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+}
+
+.lead1 {
+  width: 222px;
+  height: 21px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: rgba(0, 133, 255, 0.75);
+}
+
+.display-5 {
+  width: 108px;
+  height: 28px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.lead2 {
+  width: 344px;
+  height: 21px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: rgba(0, 133, 255, 0.75);
+}
+.video {
+  width: 1196px;
+  height: 659px;
+  padding-top: 15px;
+}
+
+/* FOOTER */
+footer {
+  font-family: 'Roboto', sans-serif;
+  background-color: #171717;
+}
+.py-5 {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  padding-bottom: 0 !important;
+}
+.footer-text {
+  display: flex;
+  gap: 0.5rem;
+}
+.footer-text p {
+  color: rgba(255, 255, 255, 0.384);
+  text-align: center;
+  font-size: 18px;
+}
+.feature p {
+  color: rgba(255, 255, 255, 0.384);
+}
+.footer-text svg {
+  fill: #e50914;
+  width: 32px;
+  height: 32px;
+  transition: transform 300ms ease-in-out;
+}
+.footer-text svg:hover {
+  transform: scale(1.2);
+}
+footer .feature-icon img {
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.feature a.icon-social {
+  text-decoration: none;
+  margin-right: 0.5rem;
+}
+footer .icon-social img {
+  transition: transform 300ms ease-in-out;
+}
+footer .icon-social img:hover {
+  transform: scaleX(1.2);
+}
