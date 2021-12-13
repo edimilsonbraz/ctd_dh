@@ -11,16 +11,17 @@ header a img {
 header li a.nav-link {
   font-size: 1.25rem;
 }
-header li a.nav-link:hover {
+.header-nav li a.nav-link:hover {
   color: #E50914 !important;  
 }
+
 header button.btn-outline-danger:hover {
   background-color: #E50914 !important;
 }
-header .btn-login {
+.header-nav .btn-login {
   transition: transform 200ms ease-in-out;
 }
-header .btn-login:hover {
+.header-nav .btn-login:hover {
   transform: scale(1.1);
 }
 
@@ -45,7 +46,9 @@ header .btn-login:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   margin: 250px auto; 
+
 } */
 .banner .banner-text h1 {
   color: #E50914;
@@ -80,6 +83,11 @@ img#animation-out{
   padding-left: 0;
   padding-right: 0;
 }
+
+.row {
+  margin-right: 0;
+}
+
 .card-body {
   font-family: 'Roboto', sans-serif;
 }
@@ -163,10 +171,9 @@ footer .icon-social img:hover {
   }
 }
 
-/*====== RESPONSIVIDADE =======*/
 @media (min-width: 768px) {
   .banner .banner-text {
-    width: 940px;
+   width: 940px;
    color: #fff;
    display: flex;
    flex-direction: column;
@@ -179,8 +186,45 @@ footer .icon-social img:hover {
  
 }
 
-@media (max-width: 768px) {
-  footer{
-      align-content: center;
+@media (max-width: 320px) {
+  
+    div.banner-text h1{
+    font-size: 0.8rem;
+    }
+    div.banner-text h2{
+      font-size: 1rem;
+    }
+    div.banner-text p{
+      font-size: 0.8rem;
     }
   }
+
+  @media (max-width: 375px) {
+  
+    div.banner-text h1{
+    font-size: 0.8rem;
+    }
+    div.banner-text h2{
+      font-size: 1rem;
+    }
+    div.banner-text p{
+      font-size: 0.8rem;
+    }
+    footer .feature p {
+      padding: 18px;
+      margin: 0 12px;
+      
+    }
+    footer .footer-text p {
+      padding: 18px;
+      margin: 0 12px;
+      font-size:small;
+      
+    }
+
+    footer .footer-text svg {
+      margin-top: 15px;
+    }
+  }
+
+

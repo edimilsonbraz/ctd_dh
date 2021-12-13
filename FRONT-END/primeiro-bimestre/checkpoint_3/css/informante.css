@@ -29,16 +29,20 @@ header button.btn-outline-danger:hover {
   width: 100%;
 }
 
-.bannerimg {
+/* .bannerimg {
   background-image: url(../images/informante.jpg);
   height: 649px;
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-}
+} */
 
 /* ====== MAIN ======= */
-
+.img-fluid{
+  width: 100%;
+  background-repeat:no-repeat;
+  background-size: cover;
+}
 .blockquote {
   font-family: Roboto;
   font-style: normal;
@@ -54,7 +58,8 @@ header button.btn-outline-danger:hover {
 
 .jumbotron {
   display: flex;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 5px;
 }
 
 .display-4 {
@@ -100,11 +105,11 @@ header button.btn-outline-danger:hover {
   color: rgba(0, 133, 255, 0.75);
 }
 
-.video {
+/* .video {
   width: 1196px;
   height: 659px;
   padding-top: 15px;
-}
+} */
 
 /* FOOTER */
 footer {

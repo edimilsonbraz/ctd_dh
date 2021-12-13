@@ -29,16 +29,20 @@ header button.btn-outline-danger:hover {
   width: 100%;
 }
 
-.bannerimg {
+/* .bannerimg {
   background-image: url(../images/x-man.jpg);
   height: 649px;
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-}
+} */
 
 /* ====== MAIN ======= */
-
+.img-fluid {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .blockquote {
   font-family: Roboto;
   font-style: normal;
@@ -54,6 +58,7 @@ header button.btn-outline-danger:hover {
 
 .jumbotron {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
@@ -99,11 +104,11 @@ header button.btn-outline-danger:hover {
   line-height: 21px;
   color: rgba(0, 133, 255, 0.75);
 }
-.video {
+/* .video {
   width: 1196px;
   height: 659px;
   padding-top: 15px;
-}
+} */
 
 /* FOOTER */
 footer {

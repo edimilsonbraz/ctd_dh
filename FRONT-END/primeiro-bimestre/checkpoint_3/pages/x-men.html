@@ -70,7 +70,9 @@
     </section>
 
     <main>
-      <div class="bannerimg"></div>
+      <div class="bannerimg">  <!-- mechemos aqui -->
+        <img src="../images/x-man.jpg" class="img-fluid" alt="Imagem responsiva">
+      </div>
 
       <section class="container">
         <h1 class="h1fig mt-4 mb-2">X-Men: Dias de um Futuro Esquecido</h1>
@@ -105,61 +107,56 @@
           </div>
         </div>
         <h1 class="trailer"></h1>
-        <div class="divVideo col-md-3">
-          <iframe
-            class="video"
-            src="https://www.youtube.com/embed/FTiG5_MCHzw"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
+        <div class="divVideo">
+          <div class="ratio ratio-16x9 video">  <!-- mechemos aqui -->
+            <iframe src="https://www.youtube.com/embed/FTiG5_MCHzw" title="YouTube video" allowfullscreen></iframe>
+          </div>          
         </div>
       </section>
     </main>
 
     <footer class="mt-5">
-      <div class="container d-flex align-itens justify-content-center px-4 py-5" id="featured-3">
+      <div class="container px-4 py-5" id="featured-3">
         <div class="row text-center g-4 py-5 row-cols-1 row-cols-lg-3">
   
-          <div id="team" class="feature col text-white pb-4 justify-content-center col-12">
-            <div class="feature-icon mb-2 col-12">
+          <div id="team" class="feature text-white pb-4 justify-content-center">
+            <div class="feature-icon mb-2">
               <img src="../images/foto_edi.png" alt=""> 
             </div>
             <h2>Edimilson Sousa</h2>
             <p>Responsável pelo desenvolvimento da Home.</p>
-            <a href="https://www.linkedin.com/" class="icon-social" target="_blank">
+            <a href="https://www.linkedin.com/in/edimilsonbraz/" class="icon-social" target="_blank">
               <img src="../images/linkedin.png" class="icon-social" alt="">
             </a>
-            <a href="https://github.com/" class="icon-social" target="_blank">
+            <a href="https://github.com/edimilsonbraz" class="icon-social" target="_blank">
               <img src="../images/github.png" class="icon-social" alt="">
             </a>
           </div>
   
-          <div class="feature col-12 text-white pb-4 justify-content-center">
+          <div class="feature text-white pb-4 justify-content-center">
             <div class="feature-icon mb-2">
-              <img src="../images/foto_edi.png" alt=""> 
+              <img src="../images/foto_johnny.jpeg" alt=""> 
             </div>
-            <h2>Johnny</h2>
+            <h2>Johnny Pecego</h2>
             <p>Responsável pelo modal Login e Responsividade.</p>
-            <a href="https://www.linkedin.com/" class="icon-social" target="_blank">
+            <a href="https://www.linkedin.com/in/johnny-william-louren%C3%A7o-pecego-53697421/" class="icon-social" target="_blank">
               <img src="../images/linkedin.png" class="icon-social" alt="">
             </a>
-            <a href="https://github.com/" class="icon-social" target="_blank" >
+            <a href="https://github.com/johnnyrps" class="icon-social" target="_blank">
               <img src="../images/github.png" class="icon-social" alt="">
             </a>
           </div>
   
-          <div class="feature col-12 text-white pb-4 justify-content-center">
+          <div class="feature text-white pb-4 justify-content-center">
             <div class="feature-icon mb-2">
               <img src="../images/foto_marco.png" alt=""> 
             </div>
             <h2>Marcos Fonseca</h2>
             <p>Responsável pelas páginas de descrição dos filmes.</p>
-            <a href="https://www.linkedin.com/" class="icon-social" target="_blank" >
+            <a href="https://www.linkedin.com/in/marcos-de-jesus-0a1600134" class="icon-social" target="_blank">
               <img src="../images/linkedin.png" class="icon-social" alt="">
             </a>
-            <a href="https://github.com/" class="icon-social" target="_blank" >
+            <a href="https://github.com/MlfdeJesus" class="icon-social" target="_blank">
               <img src="../images/github.png" class="icon-social" alt="">
             </a>
           </div>
@@ -167,7 +164,7 @@
           <div>
             <p></p>
           </div>
-          <div class="footer-text col-12 py-5 justify-content-center">          
+          <div class="footer-text py-5 feature text-white pb-4 justify-content-center">          
             <p>Checkpoint 3 desenvolvido em 2021</p>
             <svg>
               <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
@@ -176,6 +173,35 @@
         </div>
       </div>
     </footer>
+
+    <!-- MODAL -->
+    <div class="modal fade  py-5" tabindex="-1" role="dialog" id="modalSignin" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centred" role="document">
+        <div class="modal-content rounded-5 shadow">
+          <div class="modal-header p-5 pb-4 border-bottom-0">
+            <!-- <h5 class="modal-title">Modal title</h5> -->
+            <img class="logo" src="images/logo-header.png">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <div class="modal-body p-5 pt-0">
+            <form class="">
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control rounded-4" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Email</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control rounded-4" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Senha</label>
+              </div>
+              <button class="btn btn-danger w-100 btn-lg rounded-4 btn-primary" type="submit">Entrar</button>
+              <small class="text-muted">Clique no botão acima para entrar</small>    
+                      
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>  
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
