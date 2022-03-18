@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Allura&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <title>Pizzaria Artesanal</title>
+  </head>
+  <body>
+    <nav>
+      <img src="_img/logo-pizzaria-grande.png" alt="" />
+      <div class=""></div>
+      <ul id="menu-desktop">
+        <li><a href="">Pizzas</a></li>
+        <li><a href="">Meus Pedidos</a></li>
+        <li><a href="">Contato</a></li>
+        <li><a href="">Login</a></li>
+      </ul>
+      <ul id="menu-mobile">
+        <li><a href="">Pizzas</a></li>
+        <li><a href="">Meus Pedidos</a></li>
+        <li><a href="">Contato</a></li>
+        <li><a href="">Login</a></li>
+      </ul>
+
+      <!--- codigo SVG do botao do menu --->
+      <div id="menu-btn">
+        <svg width="30" height="30">
+          <path d="M0,5 30,5" stroke="#fff" stroke-width="4" />
+          <path d="M0,15 30,15" stroke="#fff" stroke-width="4" />
+          <path d="M0,25 30,25" stroke="#fff" stroke-width="4" />
+        </svg>
+      </div>
+    </nav>
+    <header>
+      <div class="overlay">
+        <h1>
+          Melhor Pizza<br />
+          da Cidade
+        </h1>
+      </div>
+    </header>
+
+    <main>
+      <div class="main-title">
+        <h1>Pizzas Artesanais</h1>
+        <a class="button" href="" onclick="changeModal()">Monte sua pizza + </a>
+      </div>
+
+      <!-- MODAL -->
+      <div class="modal-wrapper">
+        <div class="modal-content">
+          <form action="" id="form1">
+            <h2>Monte sua própria Pizza</h2>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              placeholder="nome da pizza"
+            />
+
+            <input
+              type="text"
+              id="ingredient"
+              name="ingredient"
+              placeholder="ingrediente"
+            />
+
+            <input
+              type="text"
+              id="url"
+              name="url"
+              placeholder="url da imagem"
+            />
+
+            <input
+              type="text"
+              id="valor"
+              name="valor"
+              value="R$ 49,90"
+              required
+            />
+            
+
+            <div class="actions">
+              <a class="button gray" href="" onclick="changeModal()">
+                Cancelar
+              </a>
+              <button id="send" class="button green" onclick="createCard()">
+                Inserir
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <section id="cards" class="cards"></section>
+      <!-- 
+      <div class="card">
+        <img src="_img/pizza1.jpg" alt="">
+        <h3>Margaritta</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique consequuntur labore ipsa, excepturi minus quo enim ducimus nobis temporibus!</p>
+        <a href="http://">Comprar R$ 49,90</a>
+      </div> 
+    -->
+    </main>
+
+    <footer>
+      <p>© CTD | Grupo 03</p>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+:root {
+  --color-title: #111;
+  --color-text: #333;
+  --bg-body: #f0f0f0;
+  --bg-mobile: #333;
+  --color-light: #fff;
+  --color-primary: #EAB946;
+  --color-security: #B00D16;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+ul {
+  list-style: none;
+}
+button {
+  border: none;
+}
+
+#menu-mobile, #menu-btn {
+  display: none;
+}
+
+/*===== NAVEGAÇÃO ======*/
+nav {
+  width: 100%;
+  padding: 25px;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.356);
+  text-align: right;
+}
+nav ul {
+  display: flex;
+  gap: 40px;
+  margin-right: 20px;
+  text-align: right;
+}
+nav img {
+  position: absolute;
+  top:10px;
+  /* width: 120px; */
+}
+nav ul a {
+  font-size: 1.2rem;
+  transition: all 0.4s;
+}
+nav ul a:hover {
+  color: var(--color-primary);
+}
+header {
+  width: 100%;
+  height: 800px;
+  background: url('_img/foto-capa-pizza.jpg') no-repeat top center;
+  background-size: cover;
+  
+}
+header .overlay {
+  width: 100%;
+  height: 100%;
+  background-color:  rgba(0, 0, 0, 0.596);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+header h1 {
+  color: var(--color-primary);
+  font-size: 8rem;
+  font-weight: normal;
+  font-family: 'Allura', cursive;
+}
+
+main {
+  width: 100%;
+  background-color: var(--bg-body);
+  /* padding-bottom: 60px; */
+}
+main .cards {
+  width: 90%;
+  max-width: 1440px;
+  min-width: 320px;
+  padding: calc(90px - 40px) 0;  
+
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  
+}
+main .main-title {
+  padding: 20px;
+}
+main .button {
+  display: block;
+  width: 220px;
+  height: 60px;
+  padding: 18px;
+  font-size: 1.2rem;
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  border-radius: 4px;
+  margin-top: 20px;
+  transition: all 0.4s;
+}
+main .button:hover {
+  filter: brightness(1.1);
+  transform: scale(1.1)
+}
+
+
+/* MODAL */
+.modal-wrapper {
+  visibility: hidden;
+  opacity: 0;
+  display: none;
+}
+.modal-wrapper.active {
+  height: 100vh;
+  width: 100vw;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  background: rgba(0, 0, 0, 0.8);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  visibility: visible;
+  opacity: 1;
+}
+.modal-content {
+  width: 600px;
+  background: var(--color-light);
+  
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 0.313rem;
+  margin: 0 auto;
+}
+.modal-content h2 {
+  color: var(--color-security);
+  margin-bottom: 2rem;
+}
+.modal-content input {
+  font-size: 1.2rem;
+  padding: 12px;
+  width: 100%;
+  height: 42px;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  outline-color: var(--color-security);
+}
+.modal-content input::placeholder {
+  color: rgb(155, 155, 155);
+}
+.modal-content .actions {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+}
+
+/* BUTTONS */
+
+.button.green {
+  width: 100%;
+  background: #36B336;
+}
+
+.button.gray {
+  width: 100%;
+  background: #c7c7c7;
+}
+
+
+
+/* ===== CARDS ===== */
+.cards .card {
+  width: 30%;
+  height: 100%;
+  text-align: center;
+  border-radius: 8px;
+  border: 2px solid rgb(211, 211, 211);
+  background-color: var(--color-light);
+  box-shadow: 5px 5px 20px rgb(184, 184, 184);
+  margin-top: 40px;  
+  transition: all 0.4s;
+}
+.cards .card:hover {
+  transform: scale(1.1);
+}
+.card h3 {
+  padding: 20px;
+}
+.card p {
+  padding: 20px;
+}
+.card img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+.card a {
+  display: block;
+  padding: 16px;
+  font-weight: bold;
+  background-color: var(--color-primary);
+  border-radius: 0 0 6px 6px;
+  transition: all 0.4s;
+}
+.card a:hover {
+  filter: brightness(1.1);
+}
+
+footer {
+  width: 100%;
+  height: 60px;
+  background-color: var(--color-text);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px;
+}
+footer p {
+  color: var(--color-primary);
+
+}
+
+
+/* RESPONSIVIDADE */
+@media (min-width: 320px) and (max-width: 700px) {
+  nav #menu-desktop {
+    display: none;
+  }
+  nav #menu-btn {
+    display: block;
+    cursor: pointer;
+  }
+  nav img {
+    width: 100px;
+  }
+  header {
+    height: 320px;
+  }
+  
+}
+
+@media (max-width: 850px) {
+  header {
+    height: 500px;
+  }
+  header .overlay h1 {
+    font-size: 5rem;
+  }
+  main .cards {
+    display: block;
+    width: 100%;
+  }
+  main .cards .card {
+    width: 80%;
+    margin: 40px auto;
+  }
+  main {
+    padding-bottom: 0px;
+  }
+  main .cards .card:hover {
+    transform: none;
+  }
+}
