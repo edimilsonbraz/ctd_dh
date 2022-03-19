@@ -70,7 +70,7 @@ nav ul#menu-mobile li a:hover {
 header {
   width: 100%;
   height: 800px;
-  background: url('_img/foto-capa-pizza.jpg') no-repeat top center;
+  background: url('./_img/foto-capa-pizza.jpg') no-repeat top center;
   background-size: cover;
   
 }
