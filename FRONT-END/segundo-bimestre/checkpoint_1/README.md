@@ -5,7 +5,7 @@
       </a>
   </P>
 
-  <h2>TOGGLE THEME</h2> 
+  <h2>PIZZARIA ARTESANAL</h2> 
   <p align="center">Esta aplicaçao foi desenvolvida como avaliação do curso do Certified Tech Developer  da Matéria Front-End II da Digital House Brasil</p>
   
 </h1>
