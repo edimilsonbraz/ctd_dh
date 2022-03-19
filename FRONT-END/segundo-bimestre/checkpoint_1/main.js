@@ -66,3 +66,10 @@ function createCard() {
 
 
 
+// menu mobile
+const btnMobile = document.getElementById('menu-btn');
+const menuMobile = document.getElementById('menu-mobile');
+
+btnMobile.addEventListener('click', ()  => {
+  menuMobile.classList.toggle('active')
+})
