@@ -39,6 +39,12 @@ nav {
   background-color: rgba(0, 0, 0, 0.356);
   text-align: right;
 }
+nav h1 {
+  color: var(--color-primary);
+  font-size: 2rem;
+  font-family: 'Allura', cursive;
+  letter-spacing: 6px;
+}
 nav ul {
   display: flex;
   gap: 40px;
@@ -147,12 +153,18 @@ main .button:hover {
   background: var(--color-light);
   
   padding: 2.5rem;
-  text-align: center;
+  
   border-radius: 0.313rem;
   margin: 0 auto;
 }
+.modal-content label {
+  font-size: 1.2rem;
+  color: var(--color-text);
+  text-align: left;
+}
 .modal-content h2 {
   color: var(--color-security);
+  text-align: center;
   margin-bottom: 2rem;
 }
 .modal-content input {
@@ -243,16 +255,13 @@ footer p {
 
 
 /* RESPONSIVIDADE */
-@media (min-width: 320px) and (max-width: 700px) {
+@media (min-width: 320px) and (max-width: 762px) {
   nav #menu-desktop {
     display: none;
   }
   nav #menu-btn {
     display: block;
     cursor: pointer;
-  }
-  nav img {
-    width: 100px;
   }
   header {
     height: 320px;

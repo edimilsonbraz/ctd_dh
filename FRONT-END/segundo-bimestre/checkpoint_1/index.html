@@ -25,7 +25,7 @@
   </head>
   <body>
     <nav>
-      <img src="_img/logo-pizzaria-grande.png" alt="" />
+      <h1>Pizzaria CTD</h1>
       <div class=""></div>
       <ul id="menu-desktop">
         <li><a href="">Pizzas</a></li>
@@ -69,27 +69,29 @@
         <div class="modal-content">
           <form action="" id="form1">
             <h2>Monte sua própria Pizza</h2>
+
+            <label for="">Sabor da Pizza</label>
             <input
               type="text"
               id="title"
               name="title"
-              placeholder="nome da pizza"
+              placeholder="Ex: Calabresa"
             />
-
+            <label for="">Adicionais</label>
             <input
               type="text"
               id="ingredient"
               name="ingredient"
-              placeholder="ingrediente"
+              placeholder="Ex: Baicon, tomate"
             />
-
+            <label for="">url da imagem</label>
             <input
               type="text"
               id="url"
               name="url"
-              placeholder="url da imagem"
+              placeholder="Ex: unsplash.com/pizza-napolitana"
             />
-
+            <label for="">Valor fixo</label>
             <input
               type="text"
               id="valor"
@@ -111,19 +113,13 @@
         </div>
       </div>
 
-      <section id="cards" class="cards"></section>
-      <!-- 
-      <div class="card">
-        <img src="_img/pizza1.jpg" alt="">
-        <h3>Margaritta</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt similique consequuntur labore ipsa, excepturi minus quo enim ducimus nobis temporibus!</p>
-        <a href="http://">Comprar R$ 49,90</a>
-      </div> 
-    -->
+      <section id="cards" class="cards">
+      
+      </section>
     </main>
 
     <footer>
-      <p>© CTD | Grupo 03</p>
+      <p>© CTD | Grupo 03 | Digital House</p>
     </footer>
 
     <script src="main.js"></script>
