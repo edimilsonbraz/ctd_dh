@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Validando Formulários</title>
-</head>
-<body>
-  <h1>Formulário</h1>
-  <form action="">
-    <label for="">Nome</label>
-    <input type="text" id="text">
-  </form>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Validando Formulários</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Formulário</h1>
+      <form action="">
+        <label for="">First Name</label>
+        <input type="text" id="name" />
+        <label for="">Last Name</label>
+        <input type="text" id="lastname" />
+        <button type="submit">Enviar</button>
+      </form>
+      <div class="content"></div>
+    </div>
 
-  <script src="./main.js"></script>
-</body>
+    <script src="./main.js"></script>
+  </body>
 </html>
