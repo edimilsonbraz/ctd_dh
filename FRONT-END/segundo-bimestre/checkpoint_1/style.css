@@ -64,7 +64,7 @@ nav ul a:hover {
   color: var(--color-primary);
 }
 nav ul#menu-mobile li a:hover {
-  color: var(--color-primary);
+  color: var(--color-text);
 
 }
 header {
@@ -301,10 +301,10 @@ footer p {
   }
   nav ul#menu-mobile li a {
     display: block;
-    color: var(--color-text);
+    color: var(--color-light);
     text-align: center;
     text-transform: uppercase;
-    background-color: #fff;
+    background-color: var(--color-primary);
     padding: 20px 0;
     border-bottom: 1px solid rgb(160, 160, 160);
   }

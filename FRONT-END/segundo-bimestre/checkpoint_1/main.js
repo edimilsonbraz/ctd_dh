@@ -15,9 +15,9 @@ function clearInput() {
 }
 
 //Function que Cria todo o Card das pizzas
-function createCard() {
+function createCard(event) {
   // Pegando valores do input com value
-  event.preventDefault()
+  
   const titleValue = document.getElementById('title').value;
   const ingredientValue = document.getElementById('ingredient').value;
   const urlValue = document.getElementById('url').value;
@@ -60,6 +60,7 @@ function createCard() {
     changeModal()
 
   }else{
+    event.preventDefault()
     alert('Todos os campos devem ser preenchidos')
   }
 }
