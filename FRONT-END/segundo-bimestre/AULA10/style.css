@@ -3,9 +3,10 @@ body {
   height: 100%;
   background-color: whitesmoke;
 }
-p {
+li {
   color: #111; 
   font-size: 1.5rem;
+  list-style: none;
 }
 .container {
   width: 540px;
@@ -17,7 +18,7 @@ p {
   background-color: #fff;
   padding:20px;
 }
-.content {
+.lista {
   width: 540px;
   background-color: #fff;
 }
