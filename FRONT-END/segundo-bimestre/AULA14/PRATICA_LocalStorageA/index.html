@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário JS</title>
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
+  <body>
+    <main>
+      <h1 id="title">Iniciar Sessão</h1>
+      <form>
+        <div class="input-container">
+          <label for="email">Email</label>
+          <input
+            name="email"
+            type="email"
+            id="email-input"
+            placeholder="Insira seu email"
+          />
+          <small id="emailVerificacao"></small>
+        </div>
+        <div class="input-container">
+          <label for="password">Senha</label>
+          <input
+            name="password"
+            type="password"
+            id="password-input"
+            placeholder="Insira sua senha"
+          />
+        </div>
+        <div id="status-container">
+          <div id="loader" class="hidden">Iniciando sessão...</div>
+          <div id="error-container" class="hidden">
+            Não foi possível validar seu acesso... 
+          </div>
+        </div>
+        <button class="login-btn" type="button">Inciar sessão</button>
+      </form>
+
+      <div id="bem-vindo" class="hidden">
+        <h1 id="title-sessao">Bem-vindo ao site usuário</h1>
+        <button class="login-btn" type="button">Encerrar sessão</button>
+      </div>
+    </main>
+    <script src="./scripts/index.js"></script>
+  </body>
+</html>
