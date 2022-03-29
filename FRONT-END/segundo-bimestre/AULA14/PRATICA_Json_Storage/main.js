@@ -11,34 +11,90 @@ OK - Cada vez que um novo comentário é adicionado, renderize-o em uma tag "p"
 - Salve constantemente as informações no localStorage, caso a página seja recarregada os comentários devem ser mantidos.
 */
 
-const form = document.getElementById('myForm')
-const fraseInput = document.getElementById('frase')
 const content = document.getElementById('content')
+const inputElement = document.getElementById('frase')
+const buttonElement = document.getElementById('btn-submit')
 
+let tarefas = JSON.parse(localStorage.getItem('list_tarefas')) || [];
 
-let frases = [];
+//Function Limpa os Campos dos inputs
+function mostraTarefas() {
+  content.innerHTML = '';
 
-function removeText() {
-  let selectP = document.querySelector('p')
-  if(selectP != null) {
-    selectP.innerHTML = '';
+  for(let item of tarefas) {
+    //Criando o elemento p com seu texto
+    let itemElement = document.createElement('p')
+    let itemText = document.createTextNode(item)
+    itemElement.appendChild(itemText)
+    content.appendChild(itemElement)
+
+    //Pegando posiçao dos elementos do array  
+    const index = tarefas.indexOf(item)
+    console.log(index)
   }
 }
+// mostraTarefas()
 
-form.addEventListener('submit', (event) => {
+function addTarefa(event) {
   event.preventDefault()
-  //inserindo dentro do array
-  frases.push(fraseInput.value)
-  
-  //criando a tag p
-  let fraseHtml = document.createElement('p')
-  //Passa sempre o ultimo elemento do array
-  fraseHtml.innerText = `${frases[frases.length - 1]} `
-  //jogando ele no html
-  content.appendChild(fraseHtml)
-  
-  console.log(frases)
-})
 
-content.addEventListener('click', removeText)
-// console.log(newArray)
+  //pegando valor do input digitado
+  const tarefa = inputElement.value
+
+  //add no array tarefas
+  tarefas.push(tarefa)
+  //limpando o input
+  inputElement.value = '';
+  mostraTarefas()
+  salvarNoLocalStorage()
+}
+
+function salvarNoLocalStorage() {
+  localStorage.setItem('list_tarefas', JSON.stringify(tarefas))
+}
+
+buttonElement.addEventListener('click', addTarefa)
+
+// function removeText() {
+//   let selectP = document.querySelectorAll('p')
+//   selectP.item.innerHTML = '';
+  
+//   //Pegando o index do array em localStorage
+//   // const index = arrayFrases.indexOf(frase)
+//   // if(index != -1) {
+//   //   arrayFrases.splice(index, 1)
+//   // }else {
+//   //   console.log("Posição não existe")
+//   // }
+// }
+
+
+// form.addEventListener('submit', (event) => {
+//   event.preventDefault()
+
+//   //inserindo dentro do array
+//   const frase = inputElement.value
+//   arrayFrases.push(frase)
+
+//   //criando a tag p
+//   let fraseHtml = document.createElement('p')
+//   //Passa sempre o ultimo elemento do array
+//   fraseHtml.innerText = `${arrayFrases[arrayFrases.length - 1]} `
+//   //jogando ele no html
+//   content.appendChild(fraseHtml)
+
+//   //Salvando em localStorage
+//   localStorage.setItem('text', JSON.stringify(arrayFrases))
+
+  
+
+//   //Limpa o input
+//   clearInput()
+  
+// })
+
+// content.addEventListener('click', removeText)
+
+
+
+
