@@ -1,0 +1,37 @@
+# Versão é obrigatório
+version: '3'
+# Lista de serviços a resem criados
+services:
+  # nome do primeiro 
+  servidorweb:
+    # nome da imagem que vai ser criada a partir do Dockerfile
+    image: webservernginx #posso mudar 
+    # nome do meu container
+    container_name: webserver # posso mudar 
+    # comando build que faz a criação
+    build:
+      context: .
+    # comando que faz o redirecionamento de portas, portaseupc:portaDoContainer
+    ports:
+      - "8081:80" # posso mudar a porta do pc
+    # coloca meu container na rede 
+    networks:
+      #nome da rede
+      - webservereth # posso mudar      
+
+# Cria a rede  
+networks:
+  webservereth: #posso mudar   
+   driver: bridge  
+
+   #comando para criar o container
+    #docker-compose up -d
+
+   #comando para excluir o container
+    #docker-compose down
+
+   #comando para startar o container
+    # docker-compose start
+
+   #comando para parar o container
+    # docker-compose stop
