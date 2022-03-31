@@ -77,11 +77,10 @@ let consultandoBaseDeDados = new Promise((resolve, reject) => {
 // Aqui realizamos uma consulta da promessa, aguardando sua resposta assíncrona
 consultandoBaseDeDados
     .then((resposta) => {
-        console.log(resposta)
-
-    }).then(
-       
-    ).catch((err) => {
+        // console.log(resposta)
+        renderizarDadosUsuario(resposta)
+    })
+    .catch((err) => {
         console.log(err);
     });
 
@@ -107,5 +106,3 @@ function renderizarDadosUsuario(dados) {
     </div>
     `
 }
-
-renderizarDadosUsuario(baseDeDados)

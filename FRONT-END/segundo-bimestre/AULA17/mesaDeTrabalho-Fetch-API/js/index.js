@@ -1,22 +1,38 @@
 // Aqui realizamos a consulta da promisse, esperando sua resposta assíncrona
-fetch('https://randomuser.me/api/')
+async function getImagesApi() {
+    await fetch('https://randomuser.me/api/')
     .then(response => {
         return response.json()
     })
     .then(data => {
         //manipulamos a resposta
-        console.log(data)
-    });
-
+        renderizarDadosUsuario(data)
+    })
+    .catch(error => {
+        console.log(error)
+    })
+}
+    
 function renderizarDadosUsuario(dados) {
     /* -------------------------------- Tarefa 1 -------------------------------- */
-    // Aqui devem desenvolver uma função que seja exibida na tela:
-    // a foto, o nome completo do usuário e o e-mail.
-    // Isto deve ser baseado nas informações que obtemos da API e inseridas no HTML.
+    let urlImage = dados.results[0].picture.large
+    let userName = `${dados.results[0].name.first} ${dados.results[0].name.last}`
+    let userEmail = dados.results[0].email
+
+    const card = document.querySelector('.card');
+
+    card.innerHTML = `
+    <img src="${urlImage}">
+    <div>
+        <h2>${userName}</h2>
+        <p>${userEmail}</p>
+    </div>
+    `
 }
 
-
 /* --------------------------- Tarefa 2 (extra) --------------------------- */
-// Aqui você pode ir para o ponto extra de usar o botão que está comentado no HTML.
-// Você pode descomentar o código no index.html e usar esse botão para executar uma nova solicitação API, sem recarregar a página.
-// Cabe aos desenvolvedores decidirem qual bloco de código deve ser contido dentro de uma função para que ele possa ser executado toda vez que um clique de botão for realizado.
+
+const btnRandom = document.getElementById('random')
+btnRandom.addEventListener('click', () => {
+    getImagesApi()
+})
