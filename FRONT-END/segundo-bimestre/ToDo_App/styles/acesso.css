@@ -96,3 +96,16 @@ button:disabled {
   align-items: center;
   justify-content: center;
 }
+.erros {
+  margin-top: 12px;
+}
+.erros {  
+  width: 100%;
+  padding: 8px;
+  background-color: rgba(255, 143, 143, 0.466);
+}
+.erros #error-list li{
+  color: rgb(102, 57, 57);
+  padding: 4px;
+  list-style: none;
+}
