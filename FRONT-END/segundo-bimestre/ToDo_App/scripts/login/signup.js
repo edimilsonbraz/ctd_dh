@@ -63,38 +63,40 @@ form.addEventListener('submit', (event) => {
 
     errorList.hidden = '';
   }
+
+
+
+  // Consumindo a API
+  let dadosUsuario = {
+    firstName: campoNomeNormalizado,
+    lastName: campoSobrenomeNormalizado,
+    email: campoEmailNormalizado,
+    password: campoSenhaNormalizado
+  }
+  
+  console.log(dadosUsuario)
+
+  let dadosUsuarioJson =  JSON.stringify(dadosUsuario)
+
+  // Acesso a API Create users
+  const url = "https://ctd-todo-api.herokuapp.com/v1/users"
+
+  fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: dadosUsuarioJson
+  })
+  .then(response => {
+    return response.json()
+  })
+  .then(response => {
+    console.log(response)
+  })
+  .catch((error) => {
+    console.log(error)
+  })
 })
 
 
-// Consumindo a API
-let dadosUsuario = {
-  firstName: '',
-  lastName: '',
-  email: '',
-  password: ''
-}
-dadosUsuario.firstName = campoNomeNormalizado
-dadosUsuario.lastName = campoSobrenomeNormalizado
-console.log(dadosUsuario)
-
-// let dadosUsuarioJson =  JSON.stringify(dadosUsuario)
-
-// Acesso a API Create users
-const url = "https://ctd-todo-api.herokuapp.com/v1/users"
-
-// fetch(url, {
-//   method: 'POST',
-//   headers: {
-//     'Content-Type': 'application/json'
-//   },
-//   body: dadosUsuarioJson
-// })
-// .then(response => {
-//   return response.json()
-// })
-// .then(response => {
-//   console.log(response)
-// })
-// .catch((error) => {
-//   console.log(error)
-// })
