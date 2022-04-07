@@ -15,12 +15,13 @@ let senhaEValido = false;
 //Definindo objeto
 const usuarioObjeto = {
 	email: "",
-	senha: "",
+	password: "",
 }
 
-botaoAcessar.addEventListener('click', function(evento){
+botaoAcessar.addEventListener('click', function(event){
 
 	if (validacaoTelaDeLogin()) {
+		event.preventDefault();
 		//Normalizando as informações
 		campoEmailLoginNormalizado = retiraEspacosDeUmValor(campoEmailLogin.value);
 		campoSenhaLoginNormalizado = retiraEspacosDeUmValor(campoSenhaLogin.value);
@@ -28,12 +29,34 @@ botaoAcessar.addEventListener('click', function(evento){
 
 		//Populando o objeto com as informações normalizadas
 		usuarioObjeto.email = campoEmailLoginNormalizado;
-		usuarioObjeto.senha = campoSenhaLoginNormalizado;
+		usuarioObjeto.password = campoSenhaLoginNormalizado;
 
-		console.log(usuarioObjeto);
+		let usuarioObjetoJson =  JSON.stringify(usuarioObjeto)
+
+		// Consumindo a API
+		const url = "https://ctd-todo-api.herokuapp.com/v1/users/login"
+
+		fetch(url, {
+			method: 'POST',
+    	headers: {
+      	'Content-Type': 'application/json'
+    	},
+			body: usuarioObjetoJson
+		})
+		.then(response => {
+			return response.json()
+		})
+		.then(response => {
+			console.log(response.status.code)
+			loginSucesso(response)
+		})
+		.catch((error) => {
+			loginErro(error)
+		})
+		
 	}else {
+		event.preventDefault(); 
 		alert("Ambos os campos devem ser informados")
-		evento.preventDefault(); 
 	}
 
 });
@@ -93,4 +116,21 @@ function validacaoTelaDeLogin () {
 		botaoAcessar.innerText = "Bloqueado";
 		return false;
 	}
+}
+
+
+//function caso tenha sucesso no login
+function loginSucesso(jsonRecebido) {
+	console.log(jsonRecebido)
+
+	//Salvando na SessionStorage
+	sessionStorage.setItem('jwt', JSON.stringify(jsonRecebido))
+
+	alert("Usuário logado com sucesso!")
+}
+
+//function caso tenha erro no login
+function loginErro(statusRecebido) {
+	console.log("Erro ao logar")
+  console.log(statusRecebido)
 }

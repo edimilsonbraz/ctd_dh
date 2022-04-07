@@ -20,8 +20,7 @@ let campoEmailNormalizado;
 let campoSenhaNormalizado;
 
 form.addEventListener('submit', (event) => {
-  event.preventDefault()
-
+  event.preventDefault();
   errorListUl.innerHTML = '';
 
   if(inputNome.value === ''){
@@ -32,7 +31,7 @@ form.addEventListener('submit', (event) => {
   }
 
   if(inputSobrenome.value === ''){
-    errorListUl.innerHTML += '<li>Campo <b>apelido</b> não preenchido</li>';
+    errorListUl.innerHTML += '<li>Campo <b>sobrenome</b> não preenchido</li>';
   }
   else{
     campoSobrenomeNormalizado = retiraEspacosDeUmValor(inputSobrenome.value)
@@ -92,11 +91,24 @@ form.addEventListener('submit', (event) => {
     return response.json()
   })
   .then(response => {
-    console.log(response)
+    cadastroSucesso(response)
   })
   .catch((error) => {
-    console.log(error)
+    cadastroErro(error.status)
   })
 })
 
 
+//Criar uma function caso tenha sucesso no cadastro
+function cadastroSucesso(jsonRecebido) {
+	console.log("Json recebido ao cadastrar usuário")
+  console.log(jsonRecebido)
+  alert('Usuário cadastrado com sucesso')
+
+  location.href = "index.html"
+}
+//Criar uma function caso tenha erro no cadastro
+function cadastroErro(statusRecebido) {
+  console.log("Erro ao cadastrar")
+  console.log(statusRecebido)
+}
