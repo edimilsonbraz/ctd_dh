@@ -2,6 +2,7 @@
 let campoEmailLogin = document.getElementById('inputEmail');
 let campoSenhaLogin = document.getElementById('inputPassword');
 let botaoAcessar = document.getElementById('botaoAcessar');
+let mensageErroApi = document.getElementById('message-erro-api')
 
 let campoEmailLoginNormalizado;
 let campoSenhaLoginNormalizado;
@@ -44,14 +45,26 @@ botaoAcessar.addEventListener('click', function(event){
 			body: usuarioObjetoJson
 		})
 		.then(response => {
-			return response.json()
+			if(response.status == 201) {
+				return response.json()
+
+			}
+			//Se status diferente diferente, cai no catch
+			throw response;
 		})
 		.then(response => {
-			console.log(response.status.code)
 			loginSucesso(response)
 		})
 		.catch((error) => {
-			loginErro(error)
+			if(error.status == 404) {
+				mensageErroApi.innerText = "Usuário não existe"
+				mensageErroApi.style.color = "#EE1729EC"
+				setTimeout(() => {
+					mensageErroApi.innerText = ""
+				},4000)
+			}else{
+				loginErro(error)
+			}
 		})
 		
 	}else {
@@ -119,6 +132,12 @@ function validacaoTelaDeLogin () {
 }
 
 
+//Funçao limpa dados do input
+function clearInput() {
+  document.getElementById('form-login').reset();
+}
+
+
 //function caso tenha sucesso no login
 function loginSucesso(jsonRecebido) {
 	console.log(jsonRecebido)
@@ -127,10 +146,19 @@ function loginSucesso(jsonRecebido) {
 	sessionStorage.setItem('jwt', JSON.stringify(jsonRecebido))
 
 	alert("Usuário logado com sucesso!")
+
+	clearInput()
+
 }
 
 //function caso tenha erro no login
 function loginErro(statusRecebido) {
-	console.log("Erro ao logar")
+	//Adiciona o erro na tela 
   console.log(statusRecebido)
+	
+	mensageErroApi.innerText = "Erro ao logar!, Digite email e ou senha corretamente!"
+	mensageErroApi.style.color = "#EE1729EC"
+
 }
+
+
