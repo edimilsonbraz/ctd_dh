@@ -59,11 +59,8 @@ form.addEventListener('submit', (event) => {
   //Pegando o index das li de erros
   if(errorListUl.querySelectorAll('li').length > 0) {
     event.preventDefault()
-
     errorList.hidden = '';
   }
-
-
 
   // Consumindo a API
   let dadosUsuario = {
@@ -73,7 +70,6 @@ form.addEventListener('submit', (event) => {
     password: campoSenhaNormalizado
   }
   
-  console.log(dadosUsuario)
 
   let dadosUsuarioJson =  JSON.stringify(dadosUsuario)
 
@@ -88,18 +84,29 @@ form.addEventListener('submit', (event) => {
     body: dadosUsuarioJson
   })
   .then(response => {
-    return response.json()
+    if(response.status == 201) {
+      return response.json()
+    }
+    //Se status diferente, cai no catch
+		throw response;
   })
   .then(response => {
     cadastroSucesso(response)
   })
   .catch((error) => {
-    cadastroErro(error.status)
+    if(error.status == 400) {
+      console.log(error)
+      errorList.hidden = '';
+      errorListUl.innerHTML += '<li>Erro: <b>Usuário</b> já cadastrado</li>';
+      errorListUl.innerHTML += '<li>Erro: Alguns <b>dados</b> incompletos</li>';
+    }else{
+      cadastroErro(error)
+    }
   })
 })
 
 
-//Criar uma function caso tenha sucesso no cadastro
+//Cria uma function caso tenha sucesso no cadastro
 function cadastroSucesso(jsonRecebido) {
 	console.log("Json recebido ao cadastrar usuário")
   console.log(jsonRecebido)
@@ -107,8 +114,8 @@ function cadastroSucesso(jsonRecebido) {
 
   location.href = "index.html"
 }
-//Criar uma function caso tenha erro no cadastro
+//Cria uma function caso tenha erro no cadastro
 function cadastroErro(statusRecebido) {
-  console.log("Erro ao cadastrar")
+  console.log("Erro ao tentar cadastrar usuário")
   console.log(statusRecebido)
 }
