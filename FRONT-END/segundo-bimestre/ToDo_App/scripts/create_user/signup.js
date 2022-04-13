@@ -11,6 +11,7 @@ const inputEmail = selectId('input-email')
 const inputSenha = selectId('input-senha')
 const inputRepetirSenha = selectId('input-repetir-senha')
 const btnSubmite = selectId('btn-criar-conta')
+const btnText = document.querySelector('.button--text')
 
 let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
@@ -21,8 +22,7 @@ let campoSenhaNormalizado;
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-  errorListUl.innerHTML = '';
-
+  
   if(inputNome.value === ''){
     errorListUl.innerHTML += '<li>Campo <b>nome</b> não preenchido</li>';
   }else{
@@ -60,6 +60,14 @@ form.addEventListener('submit', (event) => {
   if(errorListUl.querySelectorAll('li').length > 0) {
     event.preventDefault()
     errorList.hidden = '';
+  }
+  
+  if(inputNome.value && inputSobrenome.value && inputEmail.value && inputSenha.value && inputRepetirSenha != '' ) {
+    //spinner loading
+    btnSubmite.classList.add('button--loading')
+    btnSubmite.innerText = 'Criando usuário';
+    // btnText.style.display = "block";
+    errorListUl.innerHTML = '';
   }
 
   // Consumindo a API
@@ -110,9 +118,14 @@ form.addEventListener('submit', (event) => {
 function cadastroSucesso(jsonRecebido) {
 	console.log("Json recebido ao cadastrar usuário")
   console.log(jsonRecebido)
-  alert('Usuário cadastrado com sucesso')
+  // alert('Usuário cadastrado com sucesso')
+  setTimeout(function(){
+    btnSubmite.innerText += ` ✅`;
 
-  location.href = "index.html"
+  }, 2000)
+  setTimeout(function(){
+    location.href = "index.html"
+  }, 4000)
 }
 //Cria uma function caso tenha erro no cadastro
 function cadastroErro(statusRecebido) {
