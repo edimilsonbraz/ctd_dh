@@ -47,7 +47,7 @@ function getTaskUser() {
   })
   .then(result => {
     console.log(result)
-    renderTaskUser(result)
+    renderTaskPending(result)
     
   })
 }
@@ -78,7 +78,7 @@ function createTaskUser() {
 }
 
 //Função que renderiza as tasks
-function renderTaskUser(tasks) {
+function renderTaskPending(tasks) {
   tasks.forEach(task => {
     taskList.innerHTML += 
     `
