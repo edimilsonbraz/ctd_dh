@@ -103,6 +103,7 @@ button:disabled {
 .left img{
   width:60%;
 }
+
 .right{
   width: 50vw;
   height: 100vh;
@@ -111,7 +112,7 @@ button:disabled {
   align-items: center;
   justify-content: center;
 }
-.card-login {
+.card {
   width: 60%;
   background-color: #2f2841;
   padding: 30px 0px;
@@ -119,28 +120,31 @@ button:disabled {
   box-shadow: 0px 10px 40px #00000056;
   margin-bottom: 1rem;
 }
-.card-login form {
+.card form {
   width: 100%;
 }
-.card-login form input {
+.card form .title-signup {
+  font-size: 2.5rem; 
+ }
+.card form input {
   width: 97%;
 }
-.card-login form h1 {
+.card form h1 {
   color: var(--color-button);
   text-transform: uppercase;
   font-weight: 500;
   margin-bottom: 0;
 }
-.card-login form p {
+.card form p {
   margin-bottom: 2rem;
 }
 .erros {  
   width: 100%;
   padding: 8px;
-  background-color: rgba(255, 143, 143, 0.466);
+  /* background-color: rgba(255, 143, 143, 0.466); */
 }
 .erros #error-list li{
-  color: rgb(102, 57, 57);
+  color: rgb(191, 45, 45);
   padding: 4px;
   list-style: none;
 }

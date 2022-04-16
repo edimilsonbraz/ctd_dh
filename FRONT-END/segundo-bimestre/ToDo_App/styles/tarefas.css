@@ -1,17 +1,17 @@
 @import url('./common.css');
 header {
   display: flex;
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
-  box-shadow: 0px 3px 5px lightgrey;
-  padding: 0 3em;
+  background: #2D264A;
+  border-bottom: 1px solid lightgrey;
+  padding: 8px 3em;
   margin-bottom: 2em;
 }
 
 a {
   display: block;
   width: fit-content;
-  padding: .7em 1em;
-  border-bottom: .2em solid white;
+  padding: .5em 1em;
+  border-bottom: .2em solid var(--color-button);
   text-decoration: none;
   color: white
 }
