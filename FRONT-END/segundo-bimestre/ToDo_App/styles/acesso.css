@@ -35,8 +35,8 @@ input {
   border: none;
   border-radius: .2em;
   margin: .5em 0;
-  
 }
+
 small {
   display: flex;
 }
@@ -57,7 +57,7 @@ label {
 
 button {
   width: 100%;
-  padding: 14px 0px;
+  padding: 12px 0px;
   background-color: var(--color-button);
   color: #2b134b;
   margin-top: 2em;
