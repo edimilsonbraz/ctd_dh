@@ -1,0 +1,107 @@
+.card, .ingressar {
+	animation-duration: 3s;
+	animation-name: slidein;
+}
+
+@keyframes slidein {
+	from {
+		transform: scale(0.5);
+		opacity: 0%;
+	}
+
+	to {
+		transform: scale(1);
+		opacity: 100%;
+	}
+}
+
+input:focus {
+	border-color: #8E64C5;
+	background: #8e64c546;
+	transition: 2.1s;
+}
+
+#create-conta {
+	animation-name: slideinCreate;
+}
+
+@keyframes slideinCreate {
+	from {
+		margin-bottom: 0%;
+		opacity: 0%;
+	}
+
+	to {
+		margin-top: 20;
+		opacity: 100%;
+	}
+}
+
+.descricao{
+	color: #fff;
+}
+
+
+
+/* Oculta o formulário */
+.hidden {
+	display: none;
+}
+
+/*===============SPINNER====================*/
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 22px;
+  height: 22px;
+}
+.lds-ellipsis div {
+  position: absolute;
+	display: block;
+  top: 8px;
+  width: 10px;
+  height: 13px;
+  border-radius: 50%;
+  background: #fff;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.8s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.8s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.8s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.8s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}

@@ -1,16 +1,24 @@
 @import url('./common.css');
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 header {
   display: flex;
   background: #2D264A;
+  width: 100%;
   border-bottom: 1px solid lightgrey;
-  padding: 8px 3em;
-  margin-bottom: 2em;
+  padding: 0px 3em;
+  margin-bottom: 4em;
 }
 
 a {
   display: block;
   width: fit-content;
-  padding: .5em 1em;
+  padding: 1em 0.1em;
   border-bottom: .2em solid var(--color-button);
   text-decoration: none;
   color: white
@@ -25,6 +33,11 @@ a {
 
 .user-info p {
   text-transform: capitalize;
+  text-align: center;
+}
+
+.user-name {
+  text-align: right;
 }
 
 .user-info .user-image {
@@ -52,7 +65,7 @@ a {
   position: relative;
   display: flex;
   align-items: center;
-  background-color: #FCFDFF;
+  background-color: white;
   width: 80%;
   margin: 0 10%;
   padding: 1em;
@@ -64,7 +77,6 @@ a {
 .nova-tarefa input[type=text] {
   border: none;
   flex: 1;
-  background-color: #FCFDFF;
   border-bottom: 1px solid lightgrey;
   border-radius: 0;
   padding: .3em;
@@ -112,7 +124,6 @@ a {
 }
 
 /* Lista de tarefas ----------------------------------------------------------- */
-
 .tarefas-pendentes {
   display: flex;
   flex-direction: column;
@@ -120,7 +131,9 @@ a {
   list-style: none;
   margin: 2em 15%;
 }
-
+li.hidden {
+  display: none;
+}
 .tarefa {
   display: flex;
   align-items: center;
@@ -169,7 +182,7 @@ a {
   align-items: center;
   justify-content: space-between;
   flex: 1;
-  background-color: white;
+  background-color: white ;
   padding: 1em 2em;
   box-shadow: 2px 2px 5px lightgrey;
 }
@@ -177,9 +190,12 @@ a {
 .tarefa .nome {
   color: rgb(95, 95, 95);
 }
-
+.tarefa .nome.checked {
+  text-decoration: line-through;
+}
 .tarefa .timestamp {
   font-size: .9em;
+  text-align: right;
   color: rgb(134, 134, 134);
 }
 
@@ -190,10 +206,10 @@ a {
   width: 8em;
   text-align: center;
   padding: .5em 1em;
-  background-color: white;
+  background-color: var(--color-title);
   border-radius: .2em;
-  box-shadow: 3px 3px 5px lightgrey;
-  color: rgb(170, 170, 170);
+  box-shadow: 1px 1px 5px lightgrey;
+  color: #2b134b;
   font-weight: 400;
   font-size: 1.1em;
   margin-left: calc(15% - 4em);
@@ -225,22 +241,101 @@ a {
   text-decoration: line-through;
 }
 
-#skeleton .descricao{
-  background-color: #fff;
-}
-#skeleton p{
-  background-color: #fff;
-  color: #333;
-}
-#skeleton .not-done{
-  background-color: #85EA2D;
+
+/*=====MODAL-LOGOUT=====*/
+.logoutModal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  
+  backdrop-filter: blur(4px);
 }
 
-#skeleton{
-  animation: trasparencia 1s infinite;
+.logoutModal .box {
+  width: 400px;
+  height: 200px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px ;
+
+  border-radius: 5px;
+  
+  box-shadow: 2px 2px 20px rgb(141, 141, 141);
+  background-color: white;
+}
+.logoutModal .box .btnBox button {
+  box-shadow: 2px 2px 7px rgb(141, 141, 141);
+
+  background-color: rgb(218, 88, 88);
+  padding: 10px 20px;
+  margin: 10px;
+}
+.logoutModal .box .btnBox button:nth-child(2) {
+  background-color: var(--app-grey);
 }
 
-@keyframes trasparencia {
-  0%{ opacity: 0.5;}
-  100%{ opacity: 0.8;}
-}
+
+/* ===== SKELETON ======= */
+.skeleton-conteiner {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4em;
+ }
+  
+ .skeleton-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  padding: 1em 2em;
+  box-shadow: 2px 2px 5px lightgrey;
+  animation: loadingContainerAnimation 2s linear infinite;
+ }
+  
+ .skeleton-text {
+  animation: loadingTextAnimation 2s linear infinite;
+  width: 150px;
+  display: block;
+  padding: 0.7rem;
+ }
+  
+ @keyframes loadingContainerAnimation {
+  0% {
+    background: white;
+  }
+  50% {
+    background: rgb(182, 177, 177);
+  }
+  100% {
+    background: white;
+  }
+ }
+  
+ @keyframes loadingTextAnimation {
+  0% {
+    background: white;
+  }
+  50% {
+    background: rgb(128, 123, 123);
+  }
+  100% {
+    background: white;
+  }
+ }
+
+
+ @media (max-width: 320px) {
+   .nova-tarefa button {
+     margin-left: 0px;
+     margin-right: 0px;
+   }
+   .not-done{
+   }
+ }
