@@ -1,5 +1,5 @@
 public class Preguica extends Animal{
-    public Preguica(String nome, Integer idade) {
+    public Preguica(String nome, int idade) {
 
         super(nome, idade);
     }
@@ -13,6 +13,12 @@ public class Preguica extends Animal{
     @Override
     public String movimentacao() {
 
-        return "Escalou na arvore!";
+        return "Se movimenta lentamente!";
     }
+
+    public String subirEmArvore(){
+        return "Sobe em arvore para descançar!";
+    }
+
+
 }
