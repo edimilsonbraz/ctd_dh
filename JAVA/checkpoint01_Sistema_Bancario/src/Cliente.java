@@ -1,9 +1,11 @@
-public class Cliente {
-    private final String nome;
-    private final String endereco;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
-    public Cliente(String nome, String endereco) {
-        this.nome = nome;
-        this.endereco = endereco;
-    }
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+public class Cliente {
+    private String nome;
+    private String endereco;
 }

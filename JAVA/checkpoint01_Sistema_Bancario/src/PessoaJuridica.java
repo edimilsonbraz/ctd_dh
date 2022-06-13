@@ -1,3 +1,8 @@
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class PessoaJuridica extends Cliente {
     private String cnpj;
     private String inscricaoEstadual;
@@ -8,19 +13,11 @@ public class PessoaJuridica extends Cliente {
         this.inscricaoEstadual = inscricaoEstadual;
     }
 
-    public String getCnpj() {
-        return cnpj;
-    }
-
-    public void setCnpj(String cnpj) {
+    public PessoaJuridica(String cnpj, String inscricaoEstadual) {
         this.cnpj = cnpj;
-    }
-
-    public String getInscricaoEstadual() {
-        return inscricaoEstadual;
-    }
-
-    public void setInscricaoEstadual(String inscricaoEstadual) {
         this.inscricaoEstadual = inscricaoEstadual;
+    }
+
+    public PessoaJuridica() {
     }
 }

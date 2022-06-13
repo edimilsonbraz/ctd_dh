@@ -1,5 +1,14 @@
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
 public class ContaCorrente extends Conta {
-    private final double limite;
+    private double limite;
 
     public ContaCorrente(int numero, double saldo, Cliente cliente, double limite) {
         super(numero, saldo, cliente);
@@ -7,22 +16,51 @@ public class ContaCorrente extends Conta {
     }
 
     @Override
-    public double depositar(double valor) {
-        return 0;
+    public boolean depositar(double valor) {
+        setSaldo(getSaldo() + valor);
+        return true;
     }
 
     @Override
-    public double sacar(double valor) {
-        return 0;
+    public boolean sacar(double valor) {
+        if (valor <= getSaldo() + this.limite) {
+            setSaldo(getSaldo() - valor);
+            return true;
+        } else {
+            System.out.println("Saldo insuficiente");
+        }
+        return false;
     }
 
     @Override
-    public double transferir(Conta contaRemetente, Conta contaDestino) {
-        return 0;
+    public boolean transferir(Conta contaDestino, double valor) {
+        if (this.sacar(valor)) {
+            contaDestino.depositar(valor);
+            return true;
+        }
+        return false;
     }
 
     @Override
-    public double extrato() {
-        return 0;
+    public void extrato() {
+        System.out.println(
+                new StringBuilder()
+                        .append("********************************************************")
+                        .append("\n")
+                        .append("Cliente: ")
+                        .append(getCliente().getNome())
+                        .append("\n")
+                        .append("Conta Corrente: ")
+                        .append(getNumero())
+                        .append("\n")
+                        .append("Saldo: ")
+                        .append(getSaldo())
+                        .append("\n")
+                        .append("Limite: ")
+                        .append(this.limite)
+                        .append("\n")
+                        .append("********************************************************")
+
+        );
     }
 }
