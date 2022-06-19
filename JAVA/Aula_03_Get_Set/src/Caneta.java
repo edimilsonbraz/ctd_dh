@@ -1,8 +1,15 @@
 public class Caneta {
     public String modelo;
     private float ponta;
-
     private String cor;
+    private boolean tampada;
+
+    public Caneta(String modelo, float ponta, String cor, boolean tampada) {
+        this.modelo = modelo;
+        this.ponta = ponta;
+        this.cor = cor;
+        this.tampada = tampada;
+    }
 
     public String getModelo() {
         return modelo;
@@ -28,9 +35,11 @@ public class Caneta {
         this.cor = cor;
     }
 
-    public void status(){
-        System.out.println("Sobre a caneta: ");
-        System.out.println("Modelo: " + this.getModelo());
-        System.out.println("Ponta: " + this.getPonta());
+    public boolean isTampada() {
+        return tampada;
+    }
+
+    public void setTampada(boolean tampada) {
+        this.tampada = tampada;
     }
 }
