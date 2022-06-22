@@ -4,11 +4,15 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "jest --watchAll --collect-coverage"
+    "test": "jest --watchAll --collect-coverage"    
+  },
+  "jest":{
+    "testEnvironment": "jsdom"
   },
   "author": "Edimilson Braz",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^28.1.1"
+    "jest": "^28.1.1",
+    "jest-environment-jsdom": "^28.1.1"
   }
 }

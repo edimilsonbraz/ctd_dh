@@ -7,7 +7,7 @@ exports.createElement = (type, text, className) => {
   // Creates a new HTML element and returns it
   const newElement = document.createElement(type);
   newElement.classList.add(className);
-  newElement.textContent = text.split(' ',1);
+  newElement.textContent = text;
   return newElement;
 };
 
