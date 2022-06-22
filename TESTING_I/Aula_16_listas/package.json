@@ -1,0 +1,14 @@
+{
+  "name": "aula_16_listas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest --watchAll --collect-coverage"
+  },
+  "author": "Edimilson Braz",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^28.1.1"
+  }
+}
