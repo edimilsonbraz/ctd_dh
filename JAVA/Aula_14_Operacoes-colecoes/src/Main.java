@@ -103,6 +103,53 @@ public class Main {
         System.out.println(veiculos);
 
 
+//        public void mostrarConteiners(){
+//            Collections.sort(listaConteiner);
+//
+//            for(int i = 0; i < listaConteiner.size(); i++){
+//                if (!listaConteiner.get(i).isEmbarcado()){
+//                    System.out.println("Número: " + listaConteiner.get(i).getNumero() +
+//                            "\tDescrição: " + listaConteiner.get(i).getDescricao());
+//                }
+//            }
+//        }
+//*********************************************
+//        private ArrayList<Conteiner> listaConteiner = new ArrayList<>();
+//        public void addConteiner(Conteiner conteiner){
+//            listaConteiner.add(conteiner);
+//        }
+//        Vitor Carvalho21:56
+//        public void mostrarConteiners(){
+//            Collections.sort(listaConteiner);
+//
+//            for(int i = 0; i < listaConteiner.size(); i++){
+//                if (!listaConteiner.get(i).isEmbarcado()){
+//                    System.out.println("Número: " + listaConteiner.get(i).getNumero() +
+//                            "\tDescrição: " + listaConteiner.get(i).getDescricao());
+//                }
+//            }
+//        }
+
+//        public void excluirProduto(String nomeProduto){
+//
+//            for(int i = 0; i < listaProduto.size(); i++)
+//            {
+//                Produto p = listaProduto.get(i);
+//
+//                if(p.getNome().equals(nomeProduto))
+//                {
+//                    // Encontrou um produto com a variável nomeProduto do parâmetro.
+//
+//                    // Remove.
+//                    listaProduto.remove(p);
+//
+//                    // Sai do loop.
+//                    break;
+//                }
+//            }
+//            System.out.print("\nLista após remoção:\n")
+
+
 
 //        List arrayList = new ArrayList();
 //        arrayList.add("Juan");
