@@ -15,13 +15,11 @@ public class Cliente {
         saldoEmConta=0;
 
     }
-    public void comprar(double valor)
-    {
-        saldoEmConta+=valor;
+    public void comprar(double valor) {
+        saldoEmConta += valor;
     }
-    public void pagarDivida(double valor)
-    {
-        saldoEmConta-=valor;
+    public void pagarDivida(double valor) {
+        saldoEmConta -= valor;
     }
 
     @Override
