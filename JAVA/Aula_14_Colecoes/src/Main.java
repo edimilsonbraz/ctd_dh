@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        List nomes = new ArrayList();
+        List<String> nomes = new ArrayList<>();
 
         nomes.add("Juan");
         nomes.add("Mario");
