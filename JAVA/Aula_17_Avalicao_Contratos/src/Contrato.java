@@ -3,15 +3,15 @@ public abstract class Contrato {
     private String dataInicio;
     private boolean registroMT;
     Funcionario funcionario;
+    private Cargo cargo;
 
-    public Contrato(int duracaoContrato, String dataInicio, boolean registroMT, Funcionario funcionario) {
+    public Contrato(int duracaoContrato, String dataInicio, boolean registroMT, Funcionario funcionario, Cargo cargo) {
         this.duracaoContrato = duracaoContrato;
         this.dataInicio = dataInicio;
         this.registroMT = registroMT;
         this.funcionario = funcionario;
+        this.cargo = cargo;
     }
-
-    public abstract boolean apto() throws AptoException;
 
     public boolean getRegistroMT() {
         return registroMT;
@@ -32,8 +32,24 @@ public abstract class Contrato {
         this.dataInicio = dataInicio;
     }
 
+    public Cargo getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(Cargo cargo) {
+        this.cargo = cargo;
+    }
+
     public Funcionario getFuncionario() {
         return this.funcionario;
+    }
+
+    public void apto() throws AptoException {
+        if (this.registroMT == false) {
+            throw new AptoException();
+        } else {
+            System.out.println("Registrado no MT");
+        }
     }
 
 }

@@ -1,19 +1,17 @@
+import java.util.Objects;
+
 public class Mensal extends Contrato {
     private double salarioMensal;
     private int totalHora;
-    private String cargo;
 
-    public Mensal(int duracaoContrato, String dataInicio, boolean registroMT, Funcionario funcionario) {
-        super(duracaoContrato, dataInicio, registroMT, funcionario);
+    public Mensal(int duracaoContrato, String dataInicio, boolean registroMT, Funcionario funcionario, Cargo cargo) {
+        super(duracaoContrato, dataInicio, registroMT, funcionario, cargo);
     }
 
-    @Override
-    public boolean apto() {
-        return false;
-    }
-
-    private boolean isChefe() {
-        return this.cargo.equals("chefe");
+    public void ifChefe() {
+        if (Objects.equals(this.getCargo(), Cargo.CHEFE)) {
+            System.out.println("Chefe");
+        }
     }
 
 }

@@ -7,9 +7,10 @@ public class PorHora extends Contrato implements Comparable<Contrato> {
             String dataInicio,
             boolean registroMT,
             Funcionario funcionario,
+            Cargo cargo,
             double valorHora,
             int qtdHoraMensal) {
-        super(duracaoContrato, dataInicio, registroMT, funcionario);
+        super(duracaoContrato, dataInicio, registroMT, funcionario, cargo);
         this.valorHora = valorHora;
         this.qtdHoraMensal = qtdHoraMensal;
     }
@@ -29,15 +30,6 @@ public class PorHora extends Contrato implements Comparable<Contrato> {
     public void setValorHora(double valorHora) {
         this.valorHora = valorHora;
     }
-
-    @Override
-    public boolean apto() throws AptoException {
-        if(!this.getRegistroMT()) {
-            throw new AptoException();
-        }
-        return true ;
-    }
-
 
     @Override
     public String toString() {
