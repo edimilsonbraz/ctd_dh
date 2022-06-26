@@ -1,10 +1,11 @@
-import java.time.LocalDate;
-
 public class Main {
     public static void main(String[] args) {
-        Funcionario funcionario = new Funcionario("Edimilson", "Braz", 30, "123456");
-        PorHora porHora = new PorHora(12, 2022-2-1, true );
-        Mensal mensal = new Mensal(24, LocalDate.of(2022, 2, 1), true);
+        Funcionario funcEdimilson = new Funcionario("Edimilson", "Braz", 30, "123456");
+        PorHora contratoPorHora001 = new PorHora(12, "2022-02-01", false, funcEdimilson, 50, 44 );
+
+        System.out.println(contratoPorHora001);
+
+
 
     }
 }

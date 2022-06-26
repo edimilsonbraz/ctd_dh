@@ -10,4 +10,30 @@ public class Funcionario {
         this.idade = idade;
         this.rg = rg;
     }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getSobrenome() {
+        return sobrenome;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public String getRg() {
+        return rg;
+    }
+
+    @Override
+    public String toString() {
+        return "Funcionario{" + ("\n") +
+                "nome='" + nome + '\'' + ("\n") +
+                "sobrenome='" + sobrenome + '\'' + ("\n") +
+                "idade=" + idade + ("\n") +
+                "rg='" + rg + '\'' + ("\n") +
+                '}';
+    }
 }

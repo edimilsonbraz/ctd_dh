@@ -1,12 +1,10 @@
-import java.time.LocalDate;
-
 public class Mensal extends Contrato {
     private double salarioMensal;
     private int totalHora;
     private String cargo;
 
-    public Mensal(int duracaoContrato, LocalDate dataInicio, boolean registroMT) {
-        super(duracaoContrato, dataInicio, registroMT);
+    public Mensal(int duracaoContrato, String dataInicio, boolean registroMT, Funcionario funcionario) {
+        super(duracaoContrato, dataInicio, registroMT, funcionario);
     }
 
     @Override
