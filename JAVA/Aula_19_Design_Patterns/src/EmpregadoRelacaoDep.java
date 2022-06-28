@@ -10,6 +10,9 @@ public class EmpregadoRelacaoDep extends Empregado {
         super(nome, sobrenome, arquivo);
     }
 
+    public void setSalarioMensal(double salarioMensal) {
+        this.salarioMensal = salarioMensal;
+    }
 
 
     @Override

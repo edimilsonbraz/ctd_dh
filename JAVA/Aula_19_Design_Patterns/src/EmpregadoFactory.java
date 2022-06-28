@@ -2,6 +2,7 @@ public class EmpregadoFactory {
     private static EmpregadoFactory instance;
     private EmpregadoFactory(){}
 
+    //Pattern Factory
     public Empregado criarEmpregado(String nome, String tipo){
         if(tipo.equals("EMP-INT")){
             return new EmpregadoRelacaoDep(nome);
@@ -11,7 +12,7 @@ public class EmpregadoFactory {
         throw new RuntimeException("O tipo não existe");
     }
 
-    //Singleton
+    //Pattern Singleton
     public static EmpregadoFactory getInstance(){
         if(instance == null){
             instance = new EmpregadoFactory();
@@ -19,4 +20,6 @@ public class EmpregadoFactory {
 
         return instance;
     }
+
+
 }

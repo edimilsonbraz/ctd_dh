@@ -12,7 +12,7 @@ public class EmpregadoContratado extends Empregado {
 
     @Override
     public double calcularSalario(int dias) {
-        return (8 * dias) - (imposto * dias);
+        return ((8 * dias)*valorHora) - (imposto * dias);
     }
 
     public void setImposto(double imposto) {
