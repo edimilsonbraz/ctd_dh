@@ -9,21 +9,19 @@ public class Video implements AcoesVideo{
 
     public Video(String titulo) {
         this.titulo = titulo;
-        this.avaliacao = 1;
+        this.avaliacao = 0;
         this.views = 0;
-        this.reproduzindo = false;
+        this.reproduzindo = true;
     }
 
-    public static String escolhaVideo() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Digite um Titulo de video para assistir!");
-        String resTitulo = scanner.nextLine();
+    public static Video escolhaVideo(String titulo) {
 
-        Video video = new Video(resTitulo);
+        Video video = new Video(titulo);
         System.out.println(video);
 
-        return resTitulo;
+        return video;
     }
+
 
     public String getTitulo() {
         return titulo;

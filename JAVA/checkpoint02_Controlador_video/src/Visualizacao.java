@@ -14,9 +14,6 @@ public class Visualizacao {
         this.filme.setViews(this.filme.getViews() + 1);
     }
 
-
-
-
     //Sobrecarga
     public void avaliar(){
         this.filme.setAvaliacao(5);
@@ -25,8 +22,6 @@ public class Visualizacao {
     public void avaliar(int nota){
         this.filme.setAvaliacao(nota);
     }
-
-
 
     public Aluno getEspectador() {
         return espectador;

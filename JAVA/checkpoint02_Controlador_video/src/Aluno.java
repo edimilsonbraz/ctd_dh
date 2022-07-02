@@ -11,9 +11,9 @@ public class Aluno extends Pessoa {
         this.totalAssistido = 0;
     }
 
-    public static void createAluno(){
+    public static Aluno createAluno(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Digite um nome para criar Aluno!");
+        System.out.println("Digite um nome para criar um Aluno!");
         String resNome = scanner.nextLine();
 
         new Scanner(System.in);
@@ -30,8 +30,9 @@ public class Aluno extends Pessoa {
 
         Aluno aluno = new Aluno(resNome, resIdade, resSexo, resLogin);
         System.out.println(aluno);
-    }
 
+        return  aluno;
+    }
 
     public String getLogin() {
         return login;
