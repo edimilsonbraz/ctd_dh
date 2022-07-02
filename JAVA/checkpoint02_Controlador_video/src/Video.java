@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Scanner;
 
 public class Video implements AcoesVideo{
     private String titulo;
@@ -13,6 +12,17 @@ public class Video implements AcoesVideo{
         this.avaliacao = 1;
         this.views = 0;
         this.reproduzindo = false;
+    }
+
+    public static String escolhaVideo() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite um Titulo de video para assistir!");
+        String resTitulo = scanner.nextLine();
+
+        Video video = new Video(resTitulo);
+        System.out.println(video);
+
+        return resTitulo;
     }
 
     public String getTitulo() {

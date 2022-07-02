@@ -1,4 +1,5 @@
 import java.util.Objects;
+import java.util.Scanner;
 
 public class Aluno extends Pessoa {
     private String login;
@@ -10,13 +11,25 @@ public class Aluno extends Pessoa {
         this.totalAssistido = 0;
     }
 
-    public static void validaResposta(String responsta){
+    public static void createAluno(){
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Digite um nome para criar Aluno!");
-        if(!Objects.equals(responsta, "")) {
-            System.out.println("Voce criou um aluno com sucesso!" + responsta);
-        }else{
-            System.out.println("Resposta inválida!");
-        }
+        String resNome = scanner.nextLine();
+
+        new Scanner(System.in);
+        System.out.println("Digite sua idade");
+        int resIdade = scanner.nextInt();
+
+        new Scanner(System.in);
+        System.out.println("Digite seu sexo");
+        String resSexo = scanner.next();
+
+        new Scanner(System.in);
+        System.out.println("Digite um nickName para login");
+        String resLogin = scanner.next();
+
+        Aluno aluno = new Aluno(resNome, resIdade, resSexo, resLogin);
+        System.out.println(aluno);
     }
 
 

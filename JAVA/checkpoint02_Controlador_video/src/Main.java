@@ -2,10 +2,15 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("**** Bem-vindo ao Sistem DH Videos ****");
 
-        Aluno.validaResposta(ResAluno);
+        System.out.println("**** Bem-vindo ao Sistema DH Videos ****");
+
+        Aluno.createAluno();
+
+        System.out.println("========================================");
+
+        Video.escolhaVideo();
+
 
 //        System.out.println("Informe o Titulo do vídeo que desaja assistir!");
 //        String ResTitulo = scanner.nextLine();

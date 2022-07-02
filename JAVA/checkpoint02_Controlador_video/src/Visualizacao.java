@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Visualizacao {
     // Relacionamento entre as classes
     private Aluno espectador;
@@ -11,6 +13,9 @@ public class Visualizacao {
         //Acrescentando mais uma visualização
         this.filme.setViews(this.filme.getViews() + 1);
     }
+
+
+
 
     //Sobrecarga
     public void avaliar(){
