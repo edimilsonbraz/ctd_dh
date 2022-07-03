@@ -14,8 +14,10 @@ public class Video implements AcoesVideo{
         this.reproduzindo = true;
     }
 
-    public static Video escolhaVideo(String titulo) {
-
+    public static Video escolhaVideo(String titulo) throws TituloException {
+        if(titulo.equals("")){
+            throw new TituloException("Você precisa inserir um titulo");
+        }
         Video video = new Video(titulo);
         System.out.println(video);
 
