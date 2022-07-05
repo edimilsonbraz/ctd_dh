@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Aula_23_Pattern_Observer.iml" filepath="$PROJECT_DIR$/Aula_23_Pattern_Observer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exercicio_Leilao/Exercicio_Leilao.iml" filepath="$PROJECT_DIR$/Exercicio_Leilao/Exercicio_Leilao.iml" />
+    </modules>
+  </component>
+</project>
