@@ -1,4 +1,3 @@
-import java.util.Objects;
 import java.util.Scanner;
 
 public class Aluno extends Pessoa {
@@ -55,7 +54,7 @@ public class Aluno extends Pessoa {
     public String toString() {
         return "Aluno{" + super.toString() + ("\n") +
                 "login ='" + login + '\'' + ("\n") +
-                "totalAssistido=" + totalAssistido + ("\n") +
+                "totalAssistido =" + totalAssistido + ("\n") +
                 '}';
     }
 }

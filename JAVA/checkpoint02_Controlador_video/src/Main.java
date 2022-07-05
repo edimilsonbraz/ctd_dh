@@ -1,3 +1,5 @@
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -17,7 +19,7 @@ public class Main {
 
             //Chama o método escolha um video e cria o video com parametro passado/ guarda
             Video video = Video.escolhaVideo(titulo);
-            Visualizacao vis = new Visualizacao(aluno, video);
+            Visualizacao vis = new Visualizacao(Collections.singletonList(aluno), video);
             System.out.println(vis);
 
 

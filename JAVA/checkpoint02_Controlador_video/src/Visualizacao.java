@@ -1,15 +1,20 @@
+import java.util.List;
 import java.util.Scanner;
 
 public class Visualizacao {
     // Relacionamento entre as classes
-    private Aluno espectador;
+    private final List<Aluno> espectadores;
     private Video filme;
 
-    public Visualizacao(Aluno espectador, Video filme) {
-        this.espectador = espectador;
+    public Visualizacao(List<Aluno> espectadores, Video filme) {
+        this.espectadores = espectadores;
         this.filme = filme;
+
         //totalAssistido + 1 ;
-        this.espectador.setTotalAssistido(this.espectador.getTotalAssistido() + 1);
+        for(int i =0; i < espectadores.size(); i++) {
+            this.espectadores.get(i).setTotalAssistido(this.espectadores.get(i).getTotalAssistido() + 1);
+        }
+//
         //Acrescentando mais uma visualização
         this.filme.setViews(this.filme.getViews() + 1);
     }
@@ -23,12 +28,8 @@ public class Visualizacao {
         this.filme.setAvaliacao(nota);
     }
 
-    public Aluno getEspectador() {
-        return espectador;
-    }
-
-    public void setEspectador(Aluno espectador) {
-        this.espectador = espectador;
+    public List<Aluno> getEspectadores() {
+        return espectadores;
     }
 
     public Video getFilme() {
@@ -42,8 +43,8 @@ public class Visualizacao {
     @Override
     public String toString() {
         return "Visualizacao{" + ("\n") +
-                "espectador = " + espectador + ("\n") +
-                "filme = " + filme + ("\n") +
+                "espectador = " + espectadores + ("\n") +
+                "aula = " + filme + ("\n") +
                 '}';
     }
 }
