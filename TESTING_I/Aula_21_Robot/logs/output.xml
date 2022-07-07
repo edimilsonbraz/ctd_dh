@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.4 on linux)" generated="20220706 21:44:48.535" rpa="false" schemaversion="3">
+<suite id="s1" name="Edimilson" source="/home/edimilsonbraz/Documentos/www/PORTFOLIO/ctd_dh/TESTING_I/Aula_21_Robot/edimilson.robot">
+<test id="s1-t1" name="Processo de compra na loja Swag Labs" line="7">
+<kw name="Acessar o site" library="edimilson">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${SITE}</arg>
+<arg>${NAVEGADOR}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220706 21:44:49.077" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com'.</msg>
+<status status="PASS" starttime="20220706 21:44:49.077" endtime="20220706 21:44:50.445"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220706 21:44:50.445" endtime="20220706 21:44:50.548"/>
+</kw>
+<status status="PASS" starttime="20220706 21:44:49.077" endtime="20220706 21:44:50.549"/>
+</kw>
+<kw name="Fazer login" library="edimilson">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CAMPO_USUARIO}</arg>
+<arg>${USUARIO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220706 21:44:50.550" level="INFO">Typing text 'standard_user' into text field 'css=#user-name'.</msg>
+<status status="PASS" starttime="20220706 21:44:50.549" endtime="20220706 21:44:50.639"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CAMPO_SENHA}</arg>
+<arg>${SENHA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220706 21:44:50.639" level="INFO">Typing text 'secret_sauce' into text field 'css=#password'.</msg>
+<status status="PASS" starttime="20220706 21:44:50.639" endtime="20220706 21:44:50.718"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220706 21:44:50.719" level="INFO">Clicking element 'css=#login-button'.</msg>
+<status status="PASS" starttime="20220706 21:44:50.718" endtime="20220706 21:44:50.815"/>
+</kw>
+<status status="PASS" starttime="20220706 21:44:50.549" endtime="20220706 21:44:50.815"/>
+</kw>
+<kw name="Adicionar um produto ao carrinho" library="edimilson">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ADICIONAR_CARRINHO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220706 21:44:50.816" level="INFO">Clicking element 'css=#add-to-cart-sauce-labs-backpack'.</msg>
+<status status="PASS" starttime="20220706 21:44:50.816" endtime="20220706 21:44:50.863"/>
+</kw>
+<status status="PASS" starttime="20220706 21:44:50.815" endtime="20220706 21:44:50.863"/>
+</kw>
+<kw name="Acessar o carrinho" library="edimilson">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CARRINHO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220706 21:44:50.864" level="INFO">Clicking element 'css=#shopping_cart_container &gt; a'.</msg>
+<status status="PASS" starttime="20220706 21:44:50.864" endtime="20220706 21:44:50.913"/>
+</kw>
+<status status="PASS" starttime="20220706 21:44:50.864" endtime="20220706 21:44:50.913"/>
+</kw>
+<kw name="Clicar em 'Checkout'" library="edimilson">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BOTAO_CHECKOUT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220706 21:44:50.914" level="INFO">Clicking element 'css=#checkout'.</msg>
+<status status="PASS" starttime="20220706 21:44:50.913" endtime="20220706 21:44:50.956"/>
+</kw>
+<status status="PASS" starttime="20220706 21:44:50.913" endtime="20220706 21:44:50.956"/>
+</kw>
+<kw name="Preencher informações do usuário" library="edimilson">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CAMPO_NOME}</arg>
+<arg>${NOME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220706 21:44:50.957" level="INFO">Typing text 'Edimilson' into text field 'css=#first-name'.</msg>
+<status status="PASS" starttime="20220706 21:44:50.957" endtime="20220706 21:44:51.042"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CAMPO_SOBRENOME}</arg>
+<arg>${SOBRENOME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220706 21:44:51.043" level="INFO">Typing text 'Braz' into text field 'css=#last-name'.</msg>
+<status status="PASS" starttime="20220706 21:44:51.043" endtime="20220706 21:44:51.121"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CAMPO_CEP}</arg>
+<arg>${CEP}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220706 21:44:51.121" level="INFO">Typing text '123456' into text field 'css=#postal-code'.</msg>
+<status status="PASS" starttime="20220706 21:44:51.121" endtime="20220706 21:44:51.206"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BOTAO_CONTINUE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220706 21:44:51.206" level="INFO">Clicking element 'css=#continue'.</msg>
+<status status="PASS" starttime="20220706 21:44:51.206" endtime="20220706 21:44:51.265"/>
+</kw>
+<status status="PASS" starttime="20220706 21:44:50.956" endtime="20220706 21:44:51.265"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220706 21:44:51.265" endtime="20220706 21:44:51.325"/>
+</kw>
+<status status="PASS" starttime="20220706 21:44:49.076" endtime="20220706 21:44:51.325"/>
+</test>
+<status status="PASS" starttime="20220706 21:44:48.540" endtime="20220706 21:44:51.325"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Edimilson">Edimilson</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
