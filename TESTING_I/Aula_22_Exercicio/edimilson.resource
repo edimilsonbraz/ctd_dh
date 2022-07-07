@@ -1,11 +1,11 @@
 *** Variables ***
 ${SITE}           https://bugbank.netlify.app/
 ${NAVEGADOR}      Chrome
-${CAMPO_EMAIL}    __next > div > div.pages__FormBackground-sc-1ee1f2s-2.jNpkvU > div > div.card__login > form > div.style__ContainerFieldInput-sc-s3e9ea-0.kOeYBn.input__child > input
+${CAMPO_EMAIL}    css=.style__ContainerFormLogin-sc-1wbjw6k-0 > .style__ContainerFieldInput-sc-s3e9ea-0 > .input__default
 ${EMAL}     edimilson@gmail
-${CAMPO_SENHA}    __next > div > div.pages__FormBackground-sc-1ee1f2s-2.jNpkvU > div > div.card__login > form > div.login__password > div > input
+${CAMPO_SENHA}    css=.login__password:nth-child(2) .input__default
 ${SENHA}    123456
-${BOTAO_LOGIN}    __next > div > div.pages__FormBackground-sc-1ee1f2s-2.jNpkvU > div > div.card__login > form > div.login__buttons > button.style__ContainerButton-sc-1wsixal-0.otUnI.button__child
+${BOTAO_LOGIN}    css=.otUnI
 
 *** Keywords ***
 Acessar o site
