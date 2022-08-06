@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Aula_05_ProxiPattern.iml" filepath="$PROJECT_DIR$/Aula_05_ProxiPattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exercicio_Spotify_Proxy/Exercicio_Spotify_Proxy.iml" filepath="$PROJECT_DIR$/Exercicio_Spotify_Proxy/Exercicio_Spotify_Proxy.iml" />
     </modules>
   </component>
 </project>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Aula_06_AppStreaming.iml" filepath="$PROJECT_DIR$/Aula_06_AppStreaming.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exercicio_Guiado/Exercicio_Guiado.iml" filepath="$PROJECT_DIR$/Exercicio_Guiado/Exercicio_Guiado.iml" />
+    </modules>
+  </component>
+</project>
