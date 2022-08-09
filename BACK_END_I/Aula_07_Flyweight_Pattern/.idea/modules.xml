@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Aula_07_Flyweight_Pattern.iml" filepath="$PROJECT_DIR$/Aula_07_Flyweight_Pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exercicio_Computadores/Exercicio_Computadores.iml" filepath="$PROJECT_DIR$/Exercicio_Computadores/Exercicio_Computadores.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Mesa_Arvore/Mesa_Arvore.iml" filepath="$PROJECT_DIR$/Mesa_Arvore/Mesa_Arvore.iml" />
+    </modules>
+  </component>
+</project>
