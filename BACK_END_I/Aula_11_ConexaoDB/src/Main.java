@@ -1,23 +1,21 @@
 import java.sql.*;
 
-import static java.sql.DriverManager.getConnection;
 
 public class Main {
-    private static final String sqlCreateTable = "DROP TABLE IF EXISTS Animal; CREATE TABLE Animal" +
-            "("+" id INT PRIMARY KEY,"
+
+    private static final String sqlCreateTable = "DROP TABLE IF EXISTS Animal;CREATE TABLE Animal"+
+            "("+"id INT PRIMARY KEY,"
             +"Nome VARCHAR(100) NOT NULL,"
             +"Tipo VARCHAR(100) NOT NULL"
-            +" " +
-    ")";
+            +")";
 
-    private static final String sqlInsert1  = "INSERT INTO Animal(id, Nome, Tipo) VALUES(1, 'Meg', 'Cachorro')";
-    private static final String sqlInsert2 = "INSERT INTO Animal(id, Nome, Tipo) VALUES(2, 'Tobias', 'Cavalo')";
-    private static final String sqlInsert3  = "INSERT INTO Animal(id, Nome, Tipo) VALUES(3, 'Miau', 'Gato')";
-    private static final String sqlInsert4  = "INSERT INTO Animal(id, Nome, Tipo) VALUES(4, 'Tob', 'Cachorro')";
-    private static final String sqlInsert5  = "INSERT INTO Animal(id, Nome, Tipo) VALUES(5, 'Max', 'Elefante')";
+    private static final String sqlInsert1 = "INSERT INTO Animal(id,Nome,Tipo) VALUES (1,'Meg','Cachorro')";
+    private static final String sqlInsert2 = "INSERT INTO Animal(id,Nome,Tipo) VALUES (2,'Tobias','Cavalo')";
+    private static final String sqlInsert3 = "INSERT INTO Animal(id,Nome,Tipo) VALUES (3,'Miau','Gato')";
+    private static final String sqlInsert4 = "INSERT INTO Animal(id,Nome,Tipo) VALUES (4,'Tob','Cachorro')";
+    private static final String sqlInsert5 = "INSERT INTO Animal(id,Nome,Tipo) VALUES (5,'Max','Elefante')";
 
     private static final String sqlDelete = "DELETE FROM Animal WHERE id=2";
-
 
     public static void main(String[] args) throws Exception{
         Connection connection = null;
@@ -37,31 +35,30 @@ public class Main {
             statement.execute(sqlDelete);
             ShowAnimal(connection);
 
-        }catch (Exception e){
+        }
+        catch(Exception e){
             e.printStackTrace();
-        }finally {
+        }finally{
             if(connection == null){
                 return;
             }
             connection.close();
         }
+    }
+    private static void ShowAnimal(Connection connection) throws SQLException {
+        String sqlQuery = "SELECT * FROM Animal";
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(sqlQuery);
 
-        private static void ShowAnimal(Connection connection) throws SQLException{
-            String sqlQuery = "SELECT * FROM Animal";
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(sqlQuery);
-
-            while (resultSet.next()) {
-                System.out.println(resultSet.getInt(1) + " - " + resultSet.getString(2) + " - " +
-                        resultSet.getString(3));
-            }
-        }
-
-        public static Connection getConnection() throws Exception {
-            Class.forName("org.h2.Driver").newInstance();
-            //usar user e password as suas proprias credenciais
-            return DriverManager.getConnection("jdbc:h2:~/test","sa", ""); 
+        while(resultSet.next()){
+            System.out.println(resultSet.getInt(1)+" - "+resultSet.getString(2)+" - "+
+                    resultSet.getString(3));
         }
     }
-}
 
+    public static Connection getConnection() throws Exception {
+        Class.forName("org.h2.Driver").newInstance();
+        //em user e password colocar as suas próprias credenciais
+        return DriverManager.getConnection("jdbc:h2:~/test","sa","");
+    }
+}
