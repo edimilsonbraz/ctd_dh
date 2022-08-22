@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Aula_19_Serializacao_IO_paginas.iml" filepath="$PROJECT_DIR$/Aula_19_Serializacao_IO_paginas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Serializacao_Caes/Serializacao_Caes.iml" filepath="$PROJECT_DIR$/Serializacao_Caes/Serializacao_Caes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Serializacao_Contatos/Serializacao_Contatos.iml" filepath="$PROJECT_DIR$/Serializacao_Contatos/Serializacao_Contatos.iml" />
+    </modules>
+  </component>
+</project>
