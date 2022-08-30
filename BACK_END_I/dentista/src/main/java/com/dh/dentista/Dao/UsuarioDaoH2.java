@@ -26,13 +26,13 @@ public class UsuarioDaoH2 implements IDao<Usuario> {
         String query = String.format("INSERT INTO USUARIO(NOME,EMAIL,SENHA,NIVEL_ACESSO)" +
                 "VALUES('%s','%s','%s','%s')", usuario.getNome(), usuario.getEmail(), usuario.getSenha(), usuario.getNivelAcesso());
 
-        try{
+        try {
 
             statement = connection.createStatement();
             statement.executeUpdate(query, Statement.RETURN_GENERATED_KEYS);
             ResultSet keys = statement.getGeneratedKeys();
 
-            if(keys.next()){
+            if (keys.next()) {
                 usuario.setId(keys.getInt(1));
                 statement.close();
                 connection.close();
@@ -59,14 +59,14 @@ public class UsuarioDaoH2 implements IDao<Usuario> {
             statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(query);
 
-            while (rs.next()){
-                usuario = new Usuario(rs.getInt("ID"),rs.getString("NOME"),rs.getString("EMAIL"),rs.getString("SENHA"),
+            while (rs.next()) {
+                usuario = new Usuario(rs.getInt("ID"), rs.getString("NOME"), rs.getString("EMAIL"), rs.getString("SENHA"),
                         rs.getString("NIVEL_ACESSO"));
             }
 
             statement.close();
 
-        } catch (SQLException throwables){
+        } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
 
@@ -86,8 +86,9 @@ public class UsuarioDaoH2 implements IDao<Usuario> {
             statement.execute(query);
             statement.close();
 
-        } catch (SQLException throwables){
+        } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
 
     }
+}
