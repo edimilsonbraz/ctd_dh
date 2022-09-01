@@ -55,9 +55,8 @@ public class PacienteDAOH2 implements IDao<Paciente> {
 
     @Override
     public void alterar(Paciente paciente) throws SQLException {
-        String SQLUpdate = String.format("UPDATE paciente set nome = '%s', sobrenome = '%s', endereco = '%s', rg = '%s', dataAlta = '%s' + '%s' + '%s'" +
-                paciente.getNome(), paciente.getSobrenome(), paciente.getEndereco(), paciente.getRg(), paciente.getDataAlta().getYear() + "-" +
-                paciente.getDataAlta().getMonth() + "-" + paciente.getDataAlta().getDay());
+        String SQLUpdate = String.format("UPDATE paciente set nome = '%s', sobrenome = '%s', endereco = '%s', rg = '%s' where id = '%s';",
+                paciente.getNome(), paciente.getSobrenome(), paciente.getEndereco(), paciente.getRg(), paciente.getId());
         Connection connection = null;
 
         try {

@@ -32,7 +32,7 @@ public class DentistaController {
         return service.buscarTodos();
     }
 
-    @RequestMapping(value = "/buscaId")
+    @RequestMapping(value = "/buscarId")
     public Dentista buscarPorId(@RequestParam("id") int id) throws SQLException {
         return service.buscarPorId(id).isEmpty() ? new Dentista() : service.buscarPorId(id).get();
     }

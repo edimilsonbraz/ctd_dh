@@ -19,5 +19,4 @@ public interface IDao<T> {
 
     public void excluir(int id) throws SQLException;
 
-//    Dentista salvar(Dentista dentista) throws  SQLException;
 }
