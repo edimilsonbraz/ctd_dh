@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.SQLException;
+import java.util.List;
 
 @RestController
 @RequestMapping("/paciente")
@@ -19,11 +20,22 @@ public class PacienteController {
         return service.salvar(paciente);
     }
 
-    @PatchMapping
+    @PutMapping
     public void alterar(@RequestBody Paciente paciente) throws SQLException {
         System.out.println();
         service.alterar(paciente);
     }
+
+    @GetMapping
+    public List<Paciente> buscarTodos() throws SQLException {
+        return service.buscarTodos();
+    }
+
+    @RequestMapping(value = "/buscarId")
+    public Paciente buscarPorId(@RequestParam("id") int id) throws SQLException {
+        return service.buscarPorId(id).isEmpty() ? new Paciente() : service.buscarPorId(id).get();
+    }
+
 
     @DeleteMapping
     public void excluir(@RequestParam("id") int id) throws SQLException {

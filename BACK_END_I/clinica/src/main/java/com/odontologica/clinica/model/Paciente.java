@@ -20,6 +20,6 @@ public class Paciente {
     private String sobrenome;
     private String endereco;
     private String rg;
-    private String dataAlta;
+    private Date dataAlta;
 
 }
