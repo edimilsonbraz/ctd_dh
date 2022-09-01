@@ -29,7 +29,7 @@ public class PacienteDAOH2 implements IDao<Paciente> {
         log.info("Abrindo conexão");
         String SQLInsert = String.format("INSERT INTO paciente (nome, sobrenome, endereco, rg, dataAlta)"  +
                         "VALUES ('%s', '%s', '%s', '%s', '%s')", paciente.getNome(), paciente.getSobrenome(), paciente.getEndereco(),
-                paciente.getRg(), paciente.getDataAlta().getDate());
+                paciente.getRg(),  paciente.getDataAlta().getYear() + "-" + paciente.getDataAlta().getMonth() + "-" + paciente.getDataAlta().getDay());
         Connection connection = null;
 
         try {
@@ -55,8 +55,9 @@ public class PacienteDAOH2 implements IDao<Paciente> {
 
     @Override
     public void alterar(Paciente paciente) throws SQLException {
-        String SQLUpdate = String.format("UPDATE paciente set nome, sobrenome, endereco, rg, dataAlta = '%s', '%s', '%s', '%s', '%s'" +
-                paciente.getNome(), paciente.getSobrenome(), paciente.getEndereco(), paciente.getRg(), paciente.getDataAlta());
+        String SQLUpdate = String.format("UPDATE paciente set nome = '%s', sobrenome = '%s', endereco = '%s', rg = '%s', dataAlta = '%s' + '%s' + '%s'" +
+                paciente.getNome(), paciente.getSobrenome(), paciente.getEndereco(), paciente.getRg(), paciente.getDataAlta().getYear() + "-" +
+                paciente.getDataAlta().getMonth() + "-" + paciente.getDataAlta().getDay());
         Connection connection = null;
 
         try {

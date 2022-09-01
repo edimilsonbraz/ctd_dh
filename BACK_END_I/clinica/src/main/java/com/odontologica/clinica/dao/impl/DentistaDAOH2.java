@@ -52,8 +52,9 @@ public class DentistaDAOH2 implements IDao<Dentista> {
 
     @Override
     public void alterar(Dentista dentista) throws SQLException {
-        String SQLUpdate = String.format("UPDATE dentista set nome, sobrenome, matricula = '%s', '%s', '%s' where id = '%s';",
+        String SQLUpdate = String.format("UPDATE dentista set nome = '%s', sobrenome = '%s', matricula = '%s' where id = '%s';",
                 dentista.getNome(), dentista.getSobrenome(), dentista.getMatricula(), dentista.getId());
+
         Connection connection = null;
 
         try {
