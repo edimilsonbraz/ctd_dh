@@ -2,7 +2,7 @@ package com.odontologica.clinica.dao.impl;
 
 import com.odontologica.clinica.dao.ConfiguracaoJDBC;
 import com.odontologica.clinica.dao.IDao;
-import com.odontologica.clinica.model.Dentista;
+
 import com.odontologica.clinica.model.Paciente;
 import org.apache.logging.log4j.Logger;
 import org.springframework.context.annotation.Configuration;

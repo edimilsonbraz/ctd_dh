@@ -1,8 +1,5 @@
 package com.odontologica.clinica.dao;
 
-import com.odontologica.clinica.model.Dentista;
-import com.odontologica.clinica.model.Paciente;
-
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
