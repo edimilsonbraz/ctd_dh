@@ -13,3 +13,11 @@ endereco varchar(255),
 rg varchar(255),
 dataAlta DATE
 );
+
+CREATE TABLE IF NOT EXISTS consulta(
+id int auto_increment primary key,
+id_dentista int,
+id_paciente int,
+hora date,
+data date
+);
