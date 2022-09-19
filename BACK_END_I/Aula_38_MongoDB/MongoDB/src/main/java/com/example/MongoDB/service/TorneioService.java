@@ -2,9 +2,11 @@ package com.example.MongoDB.service;
 
 import com.example.MongoDB.model.TorneioModel;
 import com.example.MongoDB.repository.TorneioRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class TorneioService {
     private TorneioRepository torneioRepository;
 
