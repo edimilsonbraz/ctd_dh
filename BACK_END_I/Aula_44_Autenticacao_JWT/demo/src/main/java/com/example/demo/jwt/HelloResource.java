@@ -42,6 +42,7 @@ public class HelloResource {//essa classe será a nossa controller
         return ResponseEntity.ok(new AuthenticationResponse((jwt)));
     }
 
+    //Mando um hello para poder verificar se realmente o token está funcionando
     @RequestMapping({"/hello"})
     public String hello() {
         return "Hello World";
