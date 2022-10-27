@@ -1,0 +1,11 @@
+ul {
+  color: #fff;
+  border: 1px solid #333;
+
+  border-radius: 8px;
+}
+
+li {
+  list-style: none;
+}
+
