@@ -1,0 +1,16 @@
+.item_list {
+  background: red;
+}
+
+li {
+  list-style: none;
+  color: white;
+  padding: 1rem;
+  width: 50%;
+  margin-bottom: 0.875rem;
+}
+
+li img {
+  border-radius: 4px;
+  width: 150px;
+}
