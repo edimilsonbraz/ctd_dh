@@ -3,27 +3,36 @@ import './styles.css'
 
 
 function App() {
-  // const [selectValue, setSelectValue] = useState(1);  
-
   const [selectValue, setSelectValue] = useState(''); 
-  const [qtdAlunosBd, setQtdAlunosBd] = useState(0);
-  const [qtdAlunosBe, setQtdAlunosBe] = useState(0);
-  const [qtdAlunosFe, setQtdAlunosFe] = useState(0);
+
+  const [notas, setNotas] = useState(0);
+  const [notaDataBase, setNotaDataBase] = useState(0);
+  const [notaFronEnd, setNotaFronEnd] = useState(0);
+  const [notaBackEnd, setNotaBackEnd] = useState(0);
+
+  const [qtdDataBase, setQtdDataBase] = useState(0);
+  const [qtdBackEnd, setQtdBackEnd] = useState(0);
+  const [qtdFrontEnd, setQtdFrontEnd] = useState(0);
 
   function handleSubmit(event) {
     event.preventDefault()
 
     if(selectValue === "database") {
-      setQtdAlunosBd(qtdAlunosBd + 1);
+      setQtdDataBase(qtdDataBase + 1);
+      setNotaDataBase(parseFloat(notas) + parseFloat(notaDataBase))
     }else if(selectValue === "frontend"){
-      setQtdAlunosFe(qtdAlunosFe + 1);
+      setQtdFrontEnd(qtdFrontEnd + 1);
+      setNotaFronEnd(parseFloat(notas) + parseFloat(notaFronEnd))
     }else if(selectValue === "backend") {
-      setQtdAlunosBe(qtdAlunosBe + 1)
+      setQtdBackEnd(qtdBackEnd + 1)
+      setNotaBackEnd(parseFloat(notas) + parseFloat(notaBackEnd))
     }else{
       alert("A disciplina selecionada não é válida")
     }
-   
+  }
 
+  function handleMedia() {
+    console.log("entrei")
   }
 
   return (
@@ -43,9 +52,9 @@ function App() {
             <option value="frontend">Desenvolvimento Frontend</option>
             <option value="devops">Devops</option>
           </select>
-          <input />
+          <input onChange={e => setNotas(e.target.value)}/>
         </div>
-        <input type="submit" value="Salvar" />
+        <input type="submit" value="Salvar" onChange={handleMedia}/>
       </form>
 
       <div className="container">
@@ -60,20 +69,20 @@ function App() {
           <tbody>
             <tr>
               <td>Banco de Dados</td>
-              <td>{qtdAlunosBd}</td>
-              <td>0</td>
+              <td>{qtdDataBase}</td>
+              <td>{notaDataBase}</td>
             </tr>
 
             <tr>
               <td>Desenvolvimento Frontend</td>
-              <td>{qtdAlunosFe}</td>
-              <td>0</td>
+              <td>{qtdFrontEnd}</td>
+              <td>{notaFronEnd}</td>
             </tr>
 
             <tr>
               <td>Desenolvimento Backend</td>
-              <td>{qtdAlunosBe}</td>
-              <td>0</td>
+              <td>{qtdBackEnd}</td>
+              <td>{notaBackEnd}</td>
             </tr>
           </tbody>
         </table>

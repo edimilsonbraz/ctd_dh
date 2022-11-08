@@ -58,3 +58,7 @@ tr,
 td {
   text-align: center;
 }
+
+input[type=submit]{
+  display: disabled;
+}
