@@ -1,8 +1,10 @@
-export function Card() {
-  return ( 
-    <div>
-      <h1>CORES FAVORITAS</h1>
-    </div>
-   );
-}
+import styles from './styles.css'
 
+export function Card({ nome, cor }) {
+  return (
+    <div className="Card">
+      <p>{nome}</p>
+      <h2>{cor}</h2>
+    </div>
+  )
+}

@@ -1,0 +1,21 @@
+.Card {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: end;
+
+  width: 17rem;
+  height: 12rem;
+  padding: 2rem;
+  border: 1px solid gray;
+  border-radius: 6px;
+}
+
+.Card p {
+  margin: 0;
+}
+
+.Card h2 {
+  margin-top: 0;
+}
+

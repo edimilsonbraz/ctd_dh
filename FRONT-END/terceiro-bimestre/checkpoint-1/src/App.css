@@ -12,16 +12,18 @@ body, input {
 }
 
 .container-form {
-  width: 1200px;
   padding: 2rem;
   background: #202020;
   border-radius: 12px;
+
 }
 
 h1 {
   font-weight: 900;
   font-size: 2.5rem;
   text-transform: uppercase;
+
+  margin-top: 2.6rem;
 }
 
 .content-form {
@@ -30,11 +32,12 @@ h1 {
 
 }
 
-group {
+fieldset {
   flex: 1;
+  border: none;
 }
 
-input {
+.content-form input {
   width: 100%;
   border-radius: 8px;
   background: #353535;
@@ -43,7 +46,7 @@ input {
   padding: 0.875rem;
 }
 
-input::placeholder {
+.content-form input::placeholder {
   font-size: 1rem;
 }
 
@@ -52,7 +55,7 @@ input::placeholder {
   justify-content: right;
 }
 
-button {
+.button > input {
   text-transform: uppercase;
   background: #36CE7C;
   font-size: 1rem;
@@ -66,9 +69,26 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.button input:hover {
   filter: brightness(.9);
 }
 
+.cards {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: space-between;
+}
 
 
+.error {
+  background: #221515;
+  border: 1px solid #FF7070;
+}
+
+.container-error {
+  margin-top: 1rem;
+}
+
+.container-error span {
+  color: #FF7070;
+}
