@@ -17,9 +17,19 @@ function App() {
   function handleSubmit(event) {
     event.preventDefault()
 
+    if(selectValue === "") {
+      alert("Selecione uma disciplina!")
+      return;
+    }
+
+    // if(notas < 0 || notas > 10 || notas === "" || typeof notas === "string") {
+    //   alert("Informe uma nota válida!");
+    //   return;
+    // }
+
     if(selectValue === "database") {
       setQtdDataBase(qtdDataBase + 1);
-      setNotaDataBase(parseFloat(notas) + parseFloat(notaDataBase))
+      
     }else if(selectValue === "frontend"){
       setQtdFrontEnd(qtdFrontEnd + 1);
       setNotaFronEnd(parseFloat(notas) + parseFloat(notaFronEnd))
@@ -28,6 +38,7 @@ function App() {
       setNotaBackEnd(parseFloat(notas) + parseFloat(notaBackEnd))
     }else{
       alert("A disciplina selecionada não é válida")
+      return;
     }
   }
 
@@ -54,7 +65,7 @@ function App() {
           </select>
           <input onChange={e => setNotas(e.target.value)}/>
         </div>
-        <input type="submit" value="Salvar" onChange={handleMedia}/>
+        <input type="submit" value="Salvar" onChange={handleMedia} disabled={selectValue === "devops" || notas === 0}/>
       </form>
 
       <div className="container">
