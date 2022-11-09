@@ -2,24 +2,73 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
 }
 
-body {
+body, input {
+  box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
   background: #151515;
   color: white;
 }
 
+.container-form {
+  width: 1200px;
+  padding: 2rem;
+  background: #202020;
+  border-radius: 12px;
+}
+
 h1 {
   font-weight: 900;
   font-size: 2.5rem;
+  text-transform: uppercase;
 }
 
-.card {
-  padding: 2em;
+.content-form {
+  display: flex;
+  gap: 2rem;
+
 }
 
-.read-the-docs {
-  color: #888;
+group {
+  flex: 1;
 }
+
+input {
+  width: 100%;
+  border-radius: 8px;
+  background: #353535;
+  border: none;
+  margin-top: .5rem;
+  padding: 0.875rem;
+}
+
+input::placeholder {
+  font-size: 1rem;
+}
+
+.button {
+  display: flex;
+  justify-content: right;
+}
+
+button {
+  text-transform: uppercase;
+  background: #36CE7C;
+  font-size: 1rem;
+  color: white;
+  padding: 1rem 4rem;
+  border: none;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+  transition: all 0.2s;
+
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(.9);
+}
+
+
+
