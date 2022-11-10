@@ -21,9 +21,11 @@ body, input {
 h1 {
   font-weight: 900;
   font-size: 2.5rem;
-  text-transform: uppercase;
+  text-transform: uppercase;  
+}
 
-  margin-top: 2.6rem;
+.title-cores {
+  margin-top: 3.5rem;
 }
 
 .content-form {
@@ -76,7 +78,7 @@ fieldset {
 .cards {
   display: flex;
   gap: 1.25rem;
-  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 
@@ -86,6 +88,7 @@ fieldset {
 }
 
 .container-error {
+  position: absolute;
   margin-top: 1rem;
 }
 

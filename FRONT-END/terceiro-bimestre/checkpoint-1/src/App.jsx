@@ -4,6 +4,7 @@ import { Card } from './components/Card'
 import './App.css'
 
 export function App() {
+  const [error, setError] = useState("")
   const [nome, setNome] = useState('');
   const [cor, setCor] = useState('');
 
@@ -12,15 +13,41 @@ export function App() {
   function handleSubmit(event) {
     event.preventDefault();
     // alert("Entrei")
-    setNome('')
-    setCor('')
-    if(nome.length < 3 || nome === " ") {
-      alert("Por favor, insira no mínimo 3 caractere")
-      
-    }
-    setCard([...card, [nome, cor] ])
-
     
+    if(nome.trim().length < 3 || nome === "") {
+      setError("Por favor, verifique os dados inseridos no formulário")
+      
+      setTimeout(() => {
+        clearInputs()
+      }, 3000);
+      return;
+    }
+
+    if((/\d/.test(cor)) ) {
+      // cor.trim().length > 2 || cor.length >= 6
+      setCard([...card, [nome, cor] ])
+      
+    }else {
+      setError("Por favor, verifique os dados inseridos no formulário")
+
+      setTimeout(() => {
+        clearInputs()
+      }, 3000);
+      return;
+    }
+    
+  }
+
+  function isHexaValido(cor) {
+    const regexColor = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})|^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
+    
+    return regexColor.test(cor)
+  }  
+
+  function clearInputs() {
+    setNome("")
+    setCor("")
+    setError("")
   }
 
   return (
@@ -42,7 +69,7 @@ export function App() {
               <label htmlFor="">Cor</label>
               <input
                 type="text"
-                placeholder="Insita sua cor no formato Hexadecimal"
+                placeholder="Insita sua cor no formato Hexadecimal (#000000)"
                 onChange={(e) => setCor(e.target.value)}
               />            
             </fieldset>
@@ -53,16 +80,16 @@ export function App() {
         </form>        
       </div>
 
-      {/* <div className='container-error'>
-        <span>Por favor, verifique os dados inseridos no formulário</span>
-      </div> */}
+      <div className='container-error'>
+        <span>{error}</span>
+      </div>
 
-      <h1>CORES FAVORITAS</h1>
+      <h1 className='title-cores'>CORES FAVORITAS</h1>
 
       <div className='cards'>
         {
-          card.map((item) => ( 
-            <Card nome={nome} cor={`# ${cor}`}/>
+          card.map(() => ( 
+            <Card key={nome} nome={nome} cor={cor}/>
           ))
         }
       </div>
