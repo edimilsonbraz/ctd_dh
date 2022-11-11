@@ -7,7 +7,7 @@ export function App() {
   const [nomeCor, setNomeCor] = useState("");
   const [cor, setCor] = useState("");
   const [error, setError] = useState("")
-  const [card, setCard] = useState([]);
+  const [cardColor, setCardColor] = useState([]);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -20,11 +20,8 @@ export function App() {
       }, 3000);
       return;
     }
-
-    if((/\d/.test(cor)) ) {
-      setCard([...card, [nomeCor, cor]])
     
-    }else {
+    if(!(/\d/.test(cor)) ) {
       setError("Por favor, verifique os dados inseridos no formulário")
 
       setTimeout(() => {
@@ -32,11 +29,13 @@ export function App() {
       }, 3000);
       return;
     }
-    
-    // setNomeCor("")
-    // setCor("")
-  }
 
+    setCardColor([...cardColor, {nome: nomeCor, cor: cor}])
+
+    setNomeCor("")
+    setCor("")
+
+  }
 
   return (
     <div className="App">
@@ -75,14 +74,14 @@ export function App() {
       <div className='container-error'>
         <span>{error}</span>
       </div>
-
+     
       <h1 className='title-cores'>CORES FAVORITAS</h1>
 
       <div className='cards'>
         {
-          card.map((item) => {
+          cardColor.map((item) => {
             return ( 
-              <Card key={nomeCor} nomeCor={nomeCor} cor={cor}/>
+              <Card key={item.cor} nomeCor={item.nome} cor={item.cor}/>
             )
           })
         }
