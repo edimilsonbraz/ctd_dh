@@ -37,6 +37,7 @@ h1 {
 fieldset {
   flex: 1;
   border: none;
+  padding: 0;
 }
 
 .content-form input {
@@ -47,6 +48,8 @@ fieldset {
   margin-top: .5rem;
   padding: 0.875rem;
 }
+
+
 
 .content-form input::placeholder {
   font-size: 1rem;

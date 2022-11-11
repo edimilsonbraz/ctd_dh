@@ -1,9 +1,9 @@
 import './styles.css'
 
-export function Card({ nome, cor }) {
+export function Card({ nomeCor, cor }) {
   return (
     <div className="Card" style={{ background: cor }}>
-      <p>{nome}</p>
+      <p>{nomeCor}</p>
       <h2>{cor}</h2>
     </div>
   )

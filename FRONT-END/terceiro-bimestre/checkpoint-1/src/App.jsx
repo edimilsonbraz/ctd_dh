@@ -4,70 +4,62 @@ import { Card } from './components/Card'
 import './App.css'
 
 export function App() {
+  const [nomeCor, setNomeCor] = useState("");
+  const [cor, setCor] = useState("");
   const [error, setError] = useState("")
-  const [nome, setNome] = useState('');
-  const [cor, setCor] = useState('');
-
   const [card, setCard] = useState([]);
 
   function handleSubmit(event) {
     event.preventDefault();
-    // alert("Entrei")
     
-    if(nome.trim().length < 3 || nome === "") {
+    if(nomeCor.trim().length < 3 || nomeCor === "") {
       setError("Por favor, verifique os dados inseridos no formulário")
       
       setTimeout(() => {
-        clearInputs()
+        setError("")
       }, 3000);
       return;
     }
 
     if((/\d/.test(cor)) ) {
-      // cor.trim().length > 2 || cor.length >= 6
-      setCard([...card, [nome, cor] ])
-      
+      setCard([...card, [nomeCor, cor]])
+    
     }else {
       setError("Por favor, verifique os dados inseridos no formulário")
 
       setTimeout(() => {
-        clearInputs()
+        setError("")
       }, 3000);
       return;
     }
     
+    // setNomeCor("")
+    // setCor("")
   }
 
-  function isHexaValido(cor) {
-    const regexColor = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})|^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
-    
-    return regexColor.test(cor)
-  }  
-
-  function clearInputs() {
-    setNome("")
-    setCor("")
-    setError("")
-  }
 
   return (
     <div className="App">
-      <div className='container-form'>
+      <div className={error ? "container-form error" : "container-form"}>
         <h1>Adicionar nova cor</h1>
 
         <form onSubmit={handleSubmit}>
           <div className='content-form'>
             <fieldset>
               <label htmlFor="">Nome</label>
-              <input 
+              <input
+                style={error ? { background: '#473434 '} : null}
+                value={nomeCor} 
                 type="text" 
                 placeholder="nome" 
-                onChange={(e) => setNome(e.target.value)}
+                onChange={(e) => setNomeCor(e.target.value)}
               />
             </fieldset>
             <fieldset>
               <label htmlFor="">Cor</label>
               <input
+                style={error ? { background: '#473434 '} : null}  
+                value={cor}
                 type="text"
                 placeholder="Insita sua cor no formato Hexadecimal (#000000)"
                 onChange={(e) => setCor(e.target.value)}
@@ -88,9 +80,11 @@ export function App() {
 
       <div className='cards'>
         {
-          card.map(() => ( 
-            <Card key={nome} nome={nome} cor={cor}/>
-          ))
+          card.map((item) => {
+            return ( 
+              <Card key={nomeCor} nomeCor={nomeCor} cor={cor}/>
+            )
+          })
         }
       </div>
     </div>
