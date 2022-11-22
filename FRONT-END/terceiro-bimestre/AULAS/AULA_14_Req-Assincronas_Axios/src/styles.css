@@ -1,0 +1,37 @@
+body {
+  color: white;
+  background: #2C2C2C;
+  
+  max-width: 950px;
+  margin: 50px auto;
+}
+
+.content {
+  background: #464646;
+  width: 300px;
+  padding: 1.5rem;
+  border-radius: 6px;
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.content h3 {
+  color: #8284FA;
+}
+
+button {
+  font-size: 1rem;
+  background: #1E6F9F;
+  padding: 1rem;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  margin: 1rem ;
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+button:hover {
+  filter: brightness(0.8);
+}

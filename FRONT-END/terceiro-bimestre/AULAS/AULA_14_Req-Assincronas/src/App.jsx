@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Axios } from './Axios';
 // import { Button } from './Button';
 import { UseMemo } from './UseMemo';
 
@@ -6,7 +7,7 @@ export function App() {
   const [vetor, setVetor] = useState([])
 
   //Função para chamar os dados da API
-  const getData = async () => {
+  async function getData() {
     const data = await fetch('https://jsonplaceholder.typicode.com/comments')
     const convert = await data.json();
 
@@ -18,7 +19,7 @@ export function App() {
   //useEffect
   useEffect(() => {
     // getData();
-  });
+  },[]);
 
 
   return (
@@ -26,7 +27,10 @@ export function App() {
       <h1>Dados da API</h1>
       <ul>
         {vetor.map(object => {
-          return(<li key={object.email}>{object.email}</li>)
+          return (
+            <li 
+              key={object.email}>{vetor.length > 0 ? object.email : "Carregando..."}
+            </li>)
         })}
       </ul>
 
@@ -35,6 +39,9 @@ export function App() {
 
       <h1>useMemo</h1>
       <UseMemo />
+
+      <h1>Axios</h1>
+      <Axios />
     </div>
 
   )
