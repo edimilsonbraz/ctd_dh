@@ -24,6 +24,7 @@ import "./styles.css";
 
 const App = () => {
   const [users, setUsers] = useState([])
+  const [idUser, setIdUser] = useState("")
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -52,30 +53,72 @@ const App = () => {
         phone: formData.phone,
         birthDate: formData.birthDate,
       })
+      //Limpando os inputs
+      setFormData({name: "",
+        email: "",
+        phone: "",
+        birthDate: ""
+      })
+
       alert("Usuário cadastrado com sucesso!")
       getAllUsers();
+
     } catch (error) {
       alert("Erro ao tentar criar um usuário!" + error)
     }
   }
 
-  async function editUser(id) {
+  function editUser(user) {
+    const date = user.birthDate.split("T")[0];
+
+    setFormData({
+      name: user.name,
+      email: user.email,
+      phone: user.phone,
+      birthDate: date,
+    });
+
+    setIdUser(user._id);
+  }
+
+  async function updateUser() {
     try {
-      const response = await axios.get(`https://backend-dh.vercel.app/users/${id}`)
-      console.log(response)
-      alert("Editar " + id);
+      await axios.put(`https://backend-dh.vercel.app/users/${idUser}`,
+        {  
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          birthDate: formData.birthDate,
+        }
+      );
+
+      alert("Usuário editado com sucesso!");
+      getAllUsers();
+
     } catch (error) {
-      
+      alert("Erro ao tentar atualizar usuário" + error)
     }
   }
 
-  function removeUser(id) {
-    alert("Remover " + id);
+  async function removeUser(idUser) {
+    try {
+      await axios.delete(`https://backend-dh.vercel.app/users/${idUser}`);
+      alert("Usuário deletado com sucesso!")
+      getAllUsers();
+
+    } catch (error) {
+      alert("Erro ao tentar deletar usuário!" + error)
+    }
   }
 
   function submitForm() {
-    console.log(formData);
-    createUser();
+    console.log("func submit" + formData)
+    if(idUser) {
+      updateUser()
+    }else{
+      createUser()
+    }
+    // idUser ? updateUser : createUser();
   }
 
   return (
@@ -134,8 +177,8 @@ const App = () => {
                 <td>{user.phone}</td>
                 <td>{user.birthDate}</td>
                 <td>
-                  <button onClick={() => editUser(user._id)}>Editar</button>
-                  <button onClick={() => removeUser(user.id)}>Apagar</button>
+                  <button onClick={() => editUser(user)}>Editar</button>
+                  <button onClick={() => removeUser(user._id)}>Apagar</button>
                 </td>
               </tr>
             ))}
