@@ -24,7 +24,6 @@ createServer({
       description: "HP Pavilion 15-DK1056WM Gaming...",
       price: 1099,
       stock: 89,
-      brand: "HP Pavilion",
       category: "laptops",
       image: "https://dummyjson.com/image/i/products/10/thumbnail.jpeg",
     });
