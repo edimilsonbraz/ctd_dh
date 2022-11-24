@@ -87,9 +87,7 @@ export function App() {
           <button type="button" onClick={submitForm}>
             Salvar
           </button>
-          <button type="button" >
-            Excluir
-          </button>
+          
         </form>
       </div>
       <h1>Produtos</h1>
@@ -98,9 +96,8 @@ export function App() {
             <li key={product.id}>
               <img src={product.image} width="100" alt="" />
               <h2>{product.title}</h2>
-              <p>{product.description}</p>
-              <p>Categoria: {product.category}</p>
               <p>Valor R${product.price}</p>
+              <button type="button" >Excluir</button>
             </li>
           ))
         }
