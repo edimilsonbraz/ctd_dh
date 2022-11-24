@@ -6,6 +6,7 @@ import './styles.css'
 
 export function App() {
   const [products, setProducts] = useState([{}])
+  const [idProduct, setIdProduct] = useState("")
   const [loading, setLoading] = useState(true)
   const [formData, setFormData] = useState({
     title: '',
@@ -33,6 +34,7 @@ export function App() {
     }
   }
 
+  //Cria produto
   async function createProduct() {
     try {
       const newProduct = await axios.post('http://127.0.0.1:5173/api/products', {
@@ -46,14 +48,7 @@ export function App() {
 
       setProducts([...products, newProduct])
 
-      setFormData({
-        title: '',
-        description: '',
-        price: '',
-        stock: '',
-        category: '',
-        image: ''
-      })
+      clear()
 
       getAllProducts()
 
@@ -62,10 +57,78 @@ export function App() {
     }
   }
 
+  //Editar produto
+  async function editProduct(product) {
+    try {
+      setFormData({
+        title: product.title,
+        description: product.description,
+        price: product.price,
+        stock: product.stock,
+        category: product.category,
+        image: product.image
+      })
+
+      setIdProduct(product.id)
+    }catch(error){
+      alert("Erro ao editar produto! " + error)
+    }
+  }
+
+  //Atualizar produto
+  async function updateProduct() {
+    try {
+      await axios.put(`http://127.0.0.1:5173/api/products/${idProduct}`, {
+        title: formData.title,
+        description: formData.description,
+        price: formData.price,
+        stock: formData.stock,
+        category: formData.category,
+        image: formData.image
+      })
+
+      alert("Usuário atualizado com sucesso!")
+
+      clear()
+
+      getAllProducts()
+    } catch (error) {
+      alert("Erro ao atualizar produto: " + error)
+    }
+  }
+
+  async function deleteProduct(idProduct) {
+    try {
+      alert("Deletando um produto: " + idProduct)
+      await axios.delete(`http://127.0.0.1:5173/api/products/${idProduct}`)
+      
+      getAllProducts()
+
+    }catch (error) {
+      alert("Erro ao deletar produto: " + error)
+    }
+
+  }
+
+  function clear() {
+    setFormData({
+      title: "",
+      description: "",
+      price: "",
+      stock: "",
+      category: "",
+      image: ""
+    })
+  }
+
   function submitForm() {
+    
     if(formData.title || formData.image || formData.price !== "") {
-      console.log(formData)
-      createProduct()
+      if(idProduct) {
+        updateProduct()
+      }else{
+        createProduct()
+      }
     }else{
       alert("Preencha os campos solicitados")
     }
@@ -137,7 +200,8 @@ export function App() {
               <img src={product.image} width="100" alt="" />
               <h2>{product.title}</h2>
               <p>Valor R${product.price}</p>
-              <button type="button">Excluir</button>
+              <button type="button" onClick={() => editProduct(product)}>Editar</button>
+              <button type="button"onClick={() => deleteProduct(product.id)}>Excluir</button>
             </li>
           ))
         )}

@@ -38,6 +38,7 @@ h1 {
 
 ul {
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
   list-style: none;
   padding-left: 0;
@@ -59,6 +60,7 @@ img {
 
 ul li button {
   height: 32px;
-  width: 50%;
+  width: 40%;
+  margin-right: 0.5rem;
   cursor: pointer;
 }
