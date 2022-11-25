@@ -1,0 +1,29 @@
+nav{  
+  background: rgb(139, 139, 139);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1200px;
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+.navbar a {
+  color: rgb(255, 198, 75);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.navbar a:hover {
+  color: #fff;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 1rem;
+  text-decoration: none;
+  color: #fff;
+}

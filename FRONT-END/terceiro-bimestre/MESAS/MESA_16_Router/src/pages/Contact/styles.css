@@ -1,0 +1,19 @@
+.grid{
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 12rem;
+}
+
+.grid h2 {
+  color: rgb(255, 198, 75);
+  margin-bottom: 2rem;
+}
+
+.grid h3 {
+  margin-bottom: 1rem;
+}
+
+.grid h4 {
+  margin-bottom: .5rem;
+}
