@@ -4,3 +4,7 @@
   text-align: center;
   justify-content: center;
 }
+
+.grid-home h1 {
+  margin: 4rem ;
+}

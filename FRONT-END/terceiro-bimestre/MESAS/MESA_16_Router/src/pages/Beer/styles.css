@@ -27,3 +27,8 @@
 .card > img{
   height: 200px;
 }
+
+.title {
+  color: rgb(255, 198, 75);
+  margin-top: 4rem;
+}

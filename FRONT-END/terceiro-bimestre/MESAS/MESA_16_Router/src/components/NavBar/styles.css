@@ -1,5 +1,7 @@
 nav{  
-  background: rgb(139, 139, 139);
+  background: #202024;
+  display: flex;
+  height: 90px;
 }
 
 .navbar {
@@ -7,7 +9,6 @@ nav{
   align-items: center;
   justify-content: space-between;
   width: 1200px;
-  padding: 1rem;
   margin: 0 auto;
 }
 

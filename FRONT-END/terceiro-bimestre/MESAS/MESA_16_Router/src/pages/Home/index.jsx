@@ -14,16 +14,16 @@ function Home() {
 
   useEffect(() => {
     getBeers()
-  })
+  },[])
 
   return (
     <div className="grid-home">
-      <h1>Home page</h1>
-      {/* <h1><h1>Mais do que bebidas, vamos celebrar o encontro!!</h1> </h1> */}
-      {/* {beers.length 
-           ? beers.map(beer => (<Card data={beer} />))
-           : null
-        } */}
+      <h1>Mais do que bebidas, vamos celebrar o encontro!!</h1>
+
+      {beers.length 
+          ? beers.map(beer => (<Card data={beer} key={beer.id}/>))
+          : null
+      }
     </div>
   )
 }
