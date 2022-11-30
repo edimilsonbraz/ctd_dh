@@ -1,0 +1,26 @@
+h1 {
+  margin: 4rem;
+}
+
+.content-details {
+  width: 600px;
+  margin: 0 0 0 4rem;
+}
+
+.content-details h2 {
+  margin-bottom: 2rem;
+}
+
+.content-details img {
+  width: 600px;
+}
+
+.content-details p {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.button {
+  width: 8rem;
+  /* margin-left: 2rem; */
+}
