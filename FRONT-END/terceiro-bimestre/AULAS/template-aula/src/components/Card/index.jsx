@@ -7,7 +7,7 @@ const Card = (props) => {
   const navigate = useNavigate();
 
   function navigateToDetails() {
-    navigate(`/details/${product._id}`);
+    navigate(`/products/${product._id}`);
   }
 
   return (

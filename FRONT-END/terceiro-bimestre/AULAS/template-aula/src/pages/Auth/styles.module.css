@@ -23,6 +23,11 @@
   gap: 15px;
 }
 
+.card form input.second {
+  border: none;
+  /* background-color: red; */
+}
+
 .card h1 {
   text-align: center;
 }
@@ -36,4 +41,21 @@
 
 .button {
   margin-top: 30px;
+}
+
+.container_input {
+  border: 1px solid #cacaca;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container_input input {
+  flex: 1;
+}
+
+.icon {
+  padding: 0 10px;
+  cursor: pointer;
 }

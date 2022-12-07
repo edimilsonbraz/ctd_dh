@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export const AuthContext = createContext({})
 
@@ -7,6 +7,7 @@ export function AuthProvider({ children }) {
   const [userData, setUserData] = useState({})
 
   const navigate = useNavigate();
+  const location = useLocation();
 
   function fillUserDataState({ name, token, user }) {
     //Salvando em localStorage
@@ -35,7 +36,8 @@ export function AuthProvider({ children }) {
         token: user.token, 
         user: user.user,
       });
-      navigate("/home")
+      // navigate("/products")
+      navigate(location?.pathname);
     }
   }, []);
 

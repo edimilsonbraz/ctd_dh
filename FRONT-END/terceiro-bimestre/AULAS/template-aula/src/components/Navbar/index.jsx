@@ -19,14 +19,14 @@ const Navbar = () => {
 
   return (
     <div className={styles.container}>
-      <Link to="/home" className={styles.logo}>
+      <Link to="/products" className={styles.logo}>
         <h1>Products</h1>
         <p>Olá, {userData.name}!</p>
       </Link>
 
       <ul>
         <li className={styles.link}>
-          <Link to="/home">
+          <Link to="/products">
             <a>Products</a>
           </Link>
         </li>

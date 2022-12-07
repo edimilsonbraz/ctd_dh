@@ -2,23 +2,26 @@ import { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../providers/AuthContex'
 import api from '../../services/api'
+import { FiEye, FiEyeOff } from 'react-icons/fi'
 
 import styles from './styles.module.css'
+import { ToastContainer, toast } from 'react-toastify';
 
 const Auth = () => {
   const navigate = useNavigate()
 
   const { userData, fillUserDataState } = useContext(AuthContext)
 
-  const [emailForm, setEmailForm] = useState('')
-  const [password, setPassword] = useState('')
+  const [isVisible, setIsVisible] = useState(false)
+
+  const [emailForm, setEmailForm] = useState('teste@teste.com')
+  const [password, setPassword] = useState('abc123')
 
   function submitForm(event) {
     event.preventDefault()
 
     auth()
 
-    navigate('/home')
   }
 
   //validados os dados que vem do form
@@ -27,17 +30,21 @@ const Auth = () => {
       const response = await api.post('/auth', {
         email: emailForm,
         password
-      })
+      });
+      navigate("/products")
 
       fillUserDataState({
         name: response.data.name,
         token: response.data.token,
         user: response.data.user
       })
-
     } catch (error) {
-      alert('Erro ao autenticar: ' + error)
+      toast('Erro ao autenticar: ', {type: "error"})
     }
+  }
+
+  function handleVisible() {
+    setIsVisible(!isVisible)
   }
 
   return (
@@ -54,15 +61,25 @@ const Auth = () => {
             placeholder="Digite seu e-mail"
             type="email"
           />
-          <input
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
-            placeholder="Digite sua senha"
-          />
 
+          <div className={styles.container_input}>
+            <input
+              type={isVisible ? "text" : "password"}
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+              placeholder="Digite sua senha"
+              className={styles.second}
+            />
+            <div className={styles.icon} onClick={handleVisible}>
+              {isVisible ? <FiEye /> : <FiEyeOff/>
+              }
+              
+            </div>
+          </div>
           <button className={styles.button}>Salvar</button>
         </form>
       </div>
+      <ToastContainer />
     </div>
   )
 }
