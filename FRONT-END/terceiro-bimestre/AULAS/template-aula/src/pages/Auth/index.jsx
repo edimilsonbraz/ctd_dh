@@ -31,7 +31,7 @@ const Auth = () => {
 
       fillUserDataState({
         name: response.data.name,
-        token: response.data,
+        token: response.data.token,
         user: response.data.user
       })
 

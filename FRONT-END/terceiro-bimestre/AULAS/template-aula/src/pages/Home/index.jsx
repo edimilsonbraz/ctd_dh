@@ -111,7 +111,6 @@ const Home = () => {
   }, [])
 
   async function getProducts() {
-    console.log(token)
     try {
       const response = await api.get('/products', {
         headers: {

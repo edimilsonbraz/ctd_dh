@@ -10,14 +10,14 @@ import { AuthContext, AuthProvider } from './providers/AuthContex'
 import { useContext } from 'react'
 
 const PrivateRoute = ({ children }) => {
-  const {userData} = useContext(AuthContext)
+  const { userData } = useContext(AuthContext)
 
   return userData.token ? children : <Navigate to="/" />
 }
 
 const App = () => (
-  <AuthProvider>
-    <BrowserRouter>
+  <BrowserRouter>
+    <AuthProvider>
       <Navbar />
       <Routes>
         <Route path="/" element={<Auth />} />
@@ -34,9 +34,17 @@ const App = () => (
             </PrivateRoute>
           }
         />
+        <Route
+          path="/details/:id"
+          element={
+            <PrivateRoute>
+              <Details />
+            </PrivateRoute>
+          }
+        />
       </Routes>
-    </BrowserRouter>
-  </AuthProvider>
+    </AuthProvider>
+  </BrowserRouter>
 )
 
 export default App

@@ -7,11 +7,13 @@ import { AuthContext } from "../../providers/AuthContex";
 import styles from "./styles.module.css";
 
 const Navbar = () => {
-  const { userData } = useContext(AuthContext);
+  const { userData, emptyUserData } = useContext(AuthContext);
   
   const navigate = useNavigate();
 
   function logout() {
+    localStorage.clear();
+    emptyUserData();
     navigate("/");
   }
 
