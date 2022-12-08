@@ -1,22 +1,26 @@
-import { useEffect } from "react";
-import Card from "../Components/Card";
+import { useContext, useEffect } from 'react'
+import Card from '../Components/Card'
+import { DentistaContext } from '../contexts/DentistaProvider'
 
 const Home = () => {
+  const { dentistas, getDentistas } = useContext(DentistaContext)
 
   useEffect(() => {
-    //Nesse useEffect, deverá ser obtido todos os dentistas da API
-    //Armazena-los em um estado para posteriormente fazer um map
-    //Usando o componente <Card />
-  }, []);
+    getDentistas()
+  }, [])
 
   return (
     <>
       <h1>Home</h1>
       <div className="card-grid container">
-        <Card />
+        {dentistas.map((dentista) => (
+          <div key={dentista.matricula}>
+            <Card />
+          </div>
+        ))}
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

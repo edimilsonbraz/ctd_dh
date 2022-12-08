@@ -1,4 +1,5 @@
-import styles from "./Footer.module.css";
+import { AiOutlineCaretUp } from "react-icons/ai";
+import styles from "./styles.module.css";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -7,7 +8,7 @@ const Footer = () => {
   return (
     <footer>
       <div className={styles.footerWrapper}>
-        <button className={`btn btn-danger ${styles.top}`} onClick={scrollToTop}>Voltar para o topo</button>
+        <button className={`btn btn-danger ${styles.top}`} onClick={scrollToTop}><AiOutlineCaretUp size={25}/></button>
         {/* //Na linha seguinte deverá ser feito um teste se a aplicação
         // está em dark mode e deverá utilizar a class navbar-dark bg-dark ou navbar-light bg-light  */}
         <div className={`navbar-light bg-light} ${styles.footer}`}>

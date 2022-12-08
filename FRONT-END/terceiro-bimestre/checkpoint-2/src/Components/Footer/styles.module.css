@@ -1,7 +1,8 @@
 footer {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
+ border-top: 1px solid rgb(202, 202, 202);
+ position: relative;
+ padding: 1rem;
+ margin-top: 4rem;
 }
 
 .footerWrapper {
@@ -12,14 +13,19 @@ footer {
   text-transform: uppercase;
   padding: 1rem;
   background: #f21d1d;
+  border-radius: 50px;
   border: none;
   color: white;
   margin-top: 2rem;
-  width: 100%;
+  /* width: 100%; */
+  position: absolute;
+  right: 0;
+  bottom: 20px;
 }
 
-.footer {
-  padding: 2rem 0;
+.row {
+  display: flex;
+  align-items: center;
 }
 
 .icons {

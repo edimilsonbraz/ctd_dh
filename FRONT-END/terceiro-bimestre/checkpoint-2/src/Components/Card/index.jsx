@@ -1,6 +1,10 @@
-import styles from "./Card.module.css";
+import { useContext } from "react";
+import { DentistaContext } from '../../contexts/DentistaProvider';
+
+import styles from "./styles.module.css";
 
 const Card = () => {
+  const { dentistas } = useContext(DentistaContext);
 
   return (
     <>
@@ -13,10 +17,9 @@ const Card = () => {
           alt="doctor placeholder"
         />
         <div className={`card-body ${styles.CardBody}`}>
-          {/* Na linha seguinte o link deverá utilizar a matricula, nome e sobrenome do dentista
-          que vem da API */}
+          {/* Na linha seguinte o link deverá utilizar a matricula, nome e sobrenome do dentista que vem da API */}
           <a href={`/dentist/MatriculaDoDentista`}>
-            <h5 className={`card-title ${styles.title}`}>Nome e Sobrenome do dentista</h5>
+            <h5 className={`card-title ${styles.title}`}>{dentistas.nome}</h5>
           </a>
         </div>
       </div>
