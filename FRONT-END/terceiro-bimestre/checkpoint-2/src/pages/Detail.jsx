@@ -1,9 +1,13 @@
-import DetailCard from "../Components/DetailCard";
+import { useContext } from 'react'
+import DetailCard from '../Components/DetailCard'
+import { DentistaContext } from '../contexts/DentistaProvider'
 
 const Detail = () => {
+  const { dentista, getDentista } = useContext(DentistaContext)
+  
   return (
     <>
-      <DetailCard />
+      <DetailCard dentista={dentista} getDentista={getDentista}/>
     </>
   )
 }

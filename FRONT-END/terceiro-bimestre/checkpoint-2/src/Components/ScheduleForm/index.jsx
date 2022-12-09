@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import styles from "./ScheduleForm.module.css";
+import styles from "./styles.module.css";
 
 const ScheduleForm = () => {
   useEffect(() => {

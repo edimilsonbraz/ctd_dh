@@ -1,13 +1,9 @@
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import Card from '../Components/Card'
 import { DentistaContext } from '../contexts/DentistaProvider'
 
 const Home = () => {
-  const { dentistas, getDentistas } = useContext(DentistaContext)
-
-  useEffect(() => {
-    getDentistas()
-  }, [])
+  const { dentistas } = useContext(DentistaContext)
 
   return (
     <>
