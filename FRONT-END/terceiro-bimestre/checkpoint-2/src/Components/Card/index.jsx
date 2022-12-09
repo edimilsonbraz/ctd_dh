@@ -1,11 +1,8 @@
-import { useContext } from "react";
-import { DentistaContext } from '../../contexts/DentistaProvider';
-
 import styles from "./styles.module.css";
 
-const Card = () => {
-  const { dentistas } = useContext(DentistaContext);
-
+const Card = (props) => {
+  const {dentista} = props;
+ 
   return (
     <>
       {/* //Na linha seguinte deverá ser feito um teste se a aplicação
@@ -17,9 +14,9 @@ const Card = () => {
           alt="doctor placeholder"
         />
         <div className={`card-body ${styles.CardBody}`}>
-          {/* Na linha seguinte o link deverá utilizar a matricula, nome e sobrenome do dentista que vem da API */}
-          <a href={`/dentist/MatriculaDoDentista`}>
-            <h5 className={`card-title ${styles.title}`}>{dentistas.nome}</h5>
+          <a href={`/dentist/${dentista.matricula}`}>
+            <h5 className={`card-title ${styles.title}`}>{dentista.nome}</h5>
+            <p className={`card-title ${styles.title}`}>{dentista.sobrenome}</p>
           </a>
         </div>
       </div>

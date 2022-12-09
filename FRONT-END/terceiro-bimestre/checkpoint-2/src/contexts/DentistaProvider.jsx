@@ -10,7 +10,6 @@ export function DentistaProvider({children}) {
     try {
       const response = await api.get('/dentista')
 
-      console.log(response.data)
       setDentistas(response.data)
     } catch (error) {
       alert("Erro ao buscar dentistas " + error)
