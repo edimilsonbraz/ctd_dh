@@ -3,7 +3,7 @@ import Card from '../Components/Card'
 import { DentistaContext } from '../contexts/DentistaProvider'
 
 const Home = () => {
-  const { dentistas } = useContext(DentistaContext)
+  const { dentistas } = useContext(DentistaContext);
 
   return (
     <>

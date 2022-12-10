@@ -7,23 +7,26 @@ import Footer from './Components/Footer'
 import LoginForm from './Components/LoginForm'
 import { DentistaProvider } from './contexts/DentistaProvider'
 import { Destacados } from './pages/Destacados'
+import { PacienteProvider } from './contexts/PacienteProvider'
 
 export function App() {
   return (
     <DentistaProvider>
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/dentista/:id" element={<Detail />} />
-          <Route path="/contato" element={<Contato />} />
-          <Route path="/login" element={<LoginForm />} />
-          <Route path="/destacados" element={<Destacados />} />
-          <Route path="*" element={<h1>PAGE NOT FOUND</h1>}/>
-        </Routes>
-        <Footer />
-      </BrowserRouter>
+      <PacienteProvider>
+        <BrowserRouter>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/dentist/:id" element={<Detail />} />
+            <Route path="/contato" element={<Contato />} />
+            <Route path="/login" element={<LoginForm />} />
+            <Route path="/destacados" element={<Destacados />} />
+            <Route path="*" element={<h1>PAGE NOT FOUND</h1>} />
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+      </PacienteProvider>
     </DentistaProvider>
   )
 }

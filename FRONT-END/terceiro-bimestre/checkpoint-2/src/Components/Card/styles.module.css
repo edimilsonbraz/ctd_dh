@@ -21,3 +21,7 @@
 .title{
   height: 2rem;
 }
+
+.button svg {
+  margin-right: 0.75rem;
+}
