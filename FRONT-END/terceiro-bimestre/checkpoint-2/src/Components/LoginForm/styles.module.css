@@ -2,7 +2,8 @@
   width: 23rem;
   gap: 1rem;
   padding: 1rem;
-  margin-top: 2rem;
+  margin-top: 12rem;
+  margin-bottom: 14rem;
   height: calc(100vh -86px);
 }
 
@@ -13,3 +14,11 @@
 .inputSpacing+.inputSpacing{
   margin: 1rem 0;
 }
+
+h1 {
+  display: flex;
+  gap: 1rem;
+  /* align-items: center; */
+  justify-content: center;
+}
+

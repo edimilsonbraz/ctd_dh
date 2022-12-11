@@ -1,8 +1,19 @@
-import { Link } from "react-router-dom";
+import { useContext } from 'react'
+import { DentistaContext } from '../../contexts/DentistaProvider'
+import { Link, useNavigate } from 'react-router-dom'
 
-import styles from "./styles.module.css";
+import styles from './styles.module.css'
 
 const Navbar = () => {
+  const { userToken, emptyToken } = useContext(DentistaContext)
+
+  const navigate = useNavigate()
+
+  function logout() {
+    localStorage.clear()
+    emptyToken()
+    navigate('/')
+  }
 
   return (
     <header className="sticky-top">
@@ -13,7 +24,6 @@ const Navbar = () => {
         aria-label="Third navbar example"
       >
         <div className="container">
-          {/* Ao clicar, o usuário deve ser redirecionado a home, com react-router */}
           <Link to="/home" className={`navbar-brand ${styles.navbarBrand}`}>
             DH Odonto
           </Link>
@@ -44,27 +54,37 @@ const Navbar = () => {
                   Fav
                 </Link>
               </li>
-              <li className={`nav-item ${styles.navBarLink}`}>
-                {/* Se o usuário estiver logado, deverá aparecer um botão de logout
+
+              {/* Se o usuário estiver logado, deverá aparecer um botão de logout
                 que vai apagar o token do localstorage.
                 Se o usuário estiver deslogado, um link fará um redirecionamento, com react-router,
                 ao formulário de login
                 O botão de logout deverá ser testado darkmode
                 se sim, btn-dark, se não, btn-light */}
-                <Link to="/login" className="nav-link">
-                  Login
-                </Link>
-              </li>
+              {userToken ? (
+                <li
+                  className={`nav-item ${styles.navBarLink}`}
+                  onClick={logout}
+                >
+                  <button className={`btn btn-light ${styles.button}`}>
+                    logout
+                  </button>
+                </li>
+              ) : (
+                <li className={`nav-item ${styles.navBarLink}`}>
+                  <Link to="/login" className="nav-link">
+                    Login
+                  </Link>
+                </li>
+              )}
+
               <li className={`nav-item`}>
                 {/* Ao ser clicado, esse botão mudará a aplicação para dark mode ou light mode.
                  Lembre-se de usar um estado no contexto para fazer essa alteração.
                  Na linha seguinte deverá ser feito um teste se a aplicação
                  está em dark mode e deverá utilizar o icone ☀ ou 🌙 e btn-dark ou btn-light*/}
-                <button
-                  className={`btn btn-light${styles.btnStyle
-                    }`}
-                >
-                  ☀ 🌙{" "}
+                <button className={`btn btn-light${styles.btnStyle}`}>
+                  ☀ 🌙{' '}
                 </button>
               </li>
             </ul>
@@ -72,7 +92,7 @@ const Navbar = () => {
         </div>
       </nav>
     </header>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

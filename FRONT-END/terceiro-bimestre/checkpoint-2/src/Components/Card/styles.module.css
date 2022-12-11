@@ -18,10 +18,13 @@
   width: 100%;
 }
 
-.title{
-  height: 2rem;
-}
+/* .title{
+  height: 2rem; 
+} */
 
+.button {
+  width: 100%;
+}
 .button svg {
   margin-right: 0.75rem;
 }
