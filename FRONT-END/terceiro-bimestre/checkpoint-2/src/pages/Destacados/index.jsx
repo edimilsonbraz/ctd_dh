@@ -1,6 +1,6 @@
 import { useContext } from 'react'
-import Card from '../Components/Card'
-import { PacienteContext } from '../contexts/PacienteProvider'
+import Card from '../../Components/Card'
+import { PacienteContext } from '../../contexts/PacienteProvider'
 
 export function Destacados() {
   const {userData, emptyUserData} = useContext(PacienteContext);
