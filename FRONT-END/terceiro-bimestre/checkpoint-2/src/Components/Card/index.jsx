@@ -1,7 +1,21 @@
 import styles from './styles.module.css'
 import { AiOutlineStar } from 'react-icons/ai'
+import { useContext } from 'react'
+import { PacienteContext } from '../../contexts/PacienteProvider'
+
 const Card = (props) => {
+  const { saveFavoritos } = useContext(PacienteContext)
+
   const { dentista } = props
+
+  function favoritarCard() {
+    //Fazer aqui um toggle para desfavoritar
+    saveFavoritos({
+      nome: dentista.nome,
+      sobrenome: dentista.sobrenome,
+      matricula: dentista.matricula
+    })
+  }
 
   return (
     <>
@@ -18,7 +32,10 @@ const Card = (props) => {
             <h5 className={`card-title ${styles.title}`}>{dentista.nome}</h5>
           </a>
           <p className={`card-title ${styles.title}`}>{dentista.sobrenome}</p>
-          <button className={`btn btn-light ${styles.button}`}>
+          <button
+            onClick={favoritarCard}
+            className={`btn btn-light ${styles.button}`}
+          >
             <AiOutlineStar />
             Favoritar
           </button>

@@ -72,7 +72,7 @@ const LoginForm = () => {
               required
             />
             <button className="btn btn-primary" type="submit">
-              Send
+              Enviar
             </button>
           </form>
         </div>

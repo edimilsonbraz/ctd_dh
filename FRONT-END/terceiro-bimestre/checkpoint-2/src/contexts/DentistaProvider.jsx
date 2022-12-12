@@ -1,5 +1,4 @@
 import React, { createContext, useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import api from '../services/api'
 
 export const DentistaContext = createContext()
@@ -8,7 +7,6 @@ export function DentistaProvider({ children }) {
   const [dentistas, setDentistas] = useState([])
   const [userToken, setUserToken] = useState('')
 
-  const navigete = useNavigate();
 
   useEffect(() => {
     getAllDentistas()
@@ -45,7 +43,6 @@ export function DentistaProvider({ children }) {
       saveToken(token); 
     }
 
-    // navigete('/home');
   }, []);
 
   return (
