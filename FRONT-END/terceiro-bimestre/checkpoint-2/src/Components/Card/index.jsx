@@ -1,7 +1,8 @@
-import styles from './styles.module.css'
 import { AiOutlineStar } from 'react-icons/ai'
 import { useContext } from 'react'
 import { PacienteContext } from '../../contexts/PacienteProvider'
+
+import styles from './styles.module.css'
 
 const Card = (props) => {
   const { saveFavoritos } = useContext(PacienteContext)
@@ -15,6 +16,7 @@ const Card = (props) => {
       sobrenome: dentista.sobrenome,
       matricula: dentista.matricula
     })
+
   }
 
   return (

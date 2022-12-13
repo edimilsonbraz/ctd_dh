@@ -44,7 +44,6 @@ export function PacienteProvider({ children }) {
       data = JSON.parse(response)
 
      setUserData({
-        ...userData,
         nome: data.nome,
         sobrenome: data.sobrenome,
         matricula: data.matricula

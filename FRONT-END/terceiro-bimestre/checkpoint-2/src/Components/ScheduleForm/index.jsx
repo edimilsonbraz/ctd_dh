@@ -1,32 +1,46 @@
 import { useContext, useState } from 'react'
 import { DentistaContext } from '../../contexts/DentistaProvider'
 import { PacienteContext } from '../../contexts/PacienteProvider'
+import api from '../../services/api'
 import styles from './styles.module.css'
 
 const ScheduleForm = () => {
-  const { dentistas } = useContext(DentistaContext);
-  const { pacientes } = useContext(PacienteContext);
+  const { dentistas, userToken } = useContext(DentistaContext)
+  const { pacientes } = useContext(PacienteContext)
 
-  const [dentistaForm, setDentistaForm] = useState("");
-  const [pacienteForm, setPacienteForm] = useState("");
-  const [dataConsulta, setDataConsulta] = useState("")
+  const [dentistaForm, setDentistaForm] = useState('')
+  const [pacienteForm, setPacienteForm] = useState('')
+  const [dataConsulta, setDataConsulta] = useState('')
 
   const handleSubmit = (event) => {
-    //Nesse handlesubmit você deverá usar o preventDefault,
-    event.preventDefault();
-
-    //obter os dados do formulário e enviá-los no corpo da requisição
-    //para a rota da api que marca a consulta
-    const dataForm = {
-      dentistaForm,
-      pacienteForm,
-      dataConsulta
-    }
-    console.log(dataForm)
+    event.preventDefault()
+    schedule()
     
+  }
+               
+  async function schedule() {
+    const data = {
+      paciente: {
+        matricula: pacienteForm
+      },
+      dentista: {
+        matricula: dentistaForm
+      },
+      dataHoraAgendamento: dataConsulta
+    }
 
-    //lembre-se que essa rota precisa de um Bearer Token para funcionar.
-    //Lembre-se de usar um alerta para dizer se foi bem sucedido ou ocorreu um erro
+    try {
+      await api.post('/consulta', data, {
+        headers: {
+          Authorization: `Bearer ${userToken}`
+        }
+      })
+
+      alert('consulta agendada!')
+      
+    } catch (error) {
+      alert('Erro ao agendar a consulta' + error)
+    }
   }
 
   return (
@@ -40,9 +54,9 @@ const ScheduleForm = () => {
               <label htmlFor="dentist" className="form-label">
                 Dentista
               </label>
-              <select 
-                className="form-select" 
-                name="dentist" 
+              <select
+                className="form-select"
+                name="dentist"
                 id="dentist"
                 onChange={(event) => setDentistaForm(event.target.value)}
               >
@@ -57,12 +71,12 @@ const ScheduleForm = () => {
               <label htmlFor="patient" className="form-label">
                 Paciente
               </label>
-              <select 
-                className="form-select" 
-                name="patient" 
+              <select
+                className="form-select"
+                name="patient"
                 id="patient"
                 onChange={(event) => setPacienteForm(event.target.value)}
-              >                
+              >
                 {pacientes.map((paciente) => (
                   <option key={paciente.matricula} value={paciente.matricula}>
                     {`${paciente.nome} ${paciente.sobrenome}`}
@@ -85,10 +99,10 @@ const ScheduleForm = () => {
               />
             </div>
           </div>
-          <div className={`row ${styles.rowSpacing}`}>  
+          <div className={`row ${styles.rowSpacing}`}>
             {/* //Na linha seguinte deverá ser feito um teste se a aplicação
             // está em dark mode e deverá utilizar o css correto */}
-            <button className={`btn btn-light ${styles.button}`} >
+            <button className={`btn btn-light ${styles.button}`}>
               Agendar
             </button>
           </div>

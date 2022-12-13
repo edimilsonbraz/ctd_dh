@@ -4,7 +4,7 @@ import styles from './styles.module.css'
 
 const DetailCard = (props) => {
   const {dentista} = props;
-
+console.log(dentista)
   return (
     <>
       <h1>Detalhe sobre o dentista {dentista.nome}</h1>
@@ -27,6 +27,7 @@ const DetailCard = (props) => {
               </li>
               <li className="list-group-item">
                 {/* <strong>Usuário:</strong> {dentista.usuario.username} */}
+                
               </li>
             </ul>
             <div className="text-center">

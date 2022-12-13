@@ -2,6 +2,8 @@ import { useContext } from 'react'
 import Card from '../../Components/Card'
 import { PacienteContext } from '../../contexts/PacienteProvider'
 
+import styles from './styles.module.css'
+
 export function Destacados() {
   const {userData, emptyUserData} = useContext(PacienteContext);
 
@@ -11,18 +13,18 @@ export function Destacados() {
   }
  
   return (
-    <ul>
+    <ul className={`lista ${styles.lista}`}>
       <h1>Dentista favoritos</h1>
       <button onClick={clearFavorite}>desfavoritar</button>
-      {userData ? (
-        <li>
+      {userData.nome !== "" || userData.sobrenome !== "" ? (
+        <li >
           <div className="card-grid container">
             <Card dentista={userData} />
           </div>
         </li>
       ) : (
         <li>
-          <h1> Nenhum favorito por aqui...</h1>
+          <h1> Nenhum favorito ainda...</h1>
         </li>
       )}
     </ul>
