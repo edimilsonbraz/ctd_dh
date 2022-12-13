@@ -3,9 +3,11 @@ import { useContext } from 'react'
 import { PacienteContext } from '../../contexts/PacienteProvider'
 
 import styles from './styles.module.css'
+import { themeContext } from '../../contexts/ThemeProvider'
 
 const Card = (props) => {
-  const { saveFavoritos } = useContext(PacienteContext)
+  const { theme } = useContext(themeContext);
+  const { saveFavoritos } = useContext(PacienteContext);
 
   const { dentista } = props
 
@@ -23,7 +25,7 @@ const Card = (props) => {
     <>
       {/* //Na linha seguinte deverá ser feito um teste se a aplicação
         // está em dark mode e deverá utilizar o css correto */}
-      <div className={`card`}>
+      <div className={`'card' ${theme} === "dark" ? ${'cardDark'} : 'card'` }>
         <img
           className="card-img-top"
           src="/images/doctor.jpg"

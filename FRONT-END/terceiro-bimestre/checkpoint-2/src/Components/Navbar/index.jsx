@@ -1,16 +1,18 @@
 import { useContext } from 'react'
 import { DentistaContext } from '../../contexts/DentistaProvider'
+import { themeContext } from '../../contexts/ThemeProvider'
 import { Link, useNavigate } from 'react-router-dom'
 
 import styles from './styles.module.css'
 
 const Navbar = () => {
+  const { theme, handleTheme } = useContext(themeContext)
   const { userToken, emptyToken } = useContext(DentistaContext)
 
   const navigate = useNavigate()
 
   function logout() {
-    localStorage.clear()
+    localStorage.removeItem('@DH_Odonto')
     emptyToken()
     navigate('/')
   }
@@ -20,7 +22,7 @@ const Navbar = () => {
       {/* //Na linha seguinte deverá ser feito um teste se a aplicação
         // está em dark mode e deverá utilizar navbar-dark bg-dark ou navbar-light bg-light*/}
       <nav
-        className={`navbar navbar-expand-sm navbar-light bg-light`}
+        className={`${theme} === 'light' ? 'bg-light' : 'bg-dark' navbar navbar-expand-sm navbar-light `}
         aria-label="Third navbar example"
       >
         <div className="container">
@@ -55,10 +57,7 @@ const Navbar = () => {
                 </Link>
               </li>
 
-              {/* Se o usuário estiver logado, deverá aparecer um botão de logout
-                que vai apagar o token do localstorage.
-                Se o usuário estiver deslogado, um link fará um redirecionamento, com react-router,
-                ao formulário de login
+              {/* 
                 O botão de logout deverá ser testado darkmode
                 se sim, btn-dark, se não, btn-light */}
               {userToken ? (
@@ -83,8 +82,10 @@ const Navbar = () => {
                  Lembre-se de usar um estado no contexto para fazer essa alteração.
                  Na linha seguinte deverá ser feito um teste se a aplicação
                  está em dark mode e deverá utilizar o icone ☀ ou 🌙 e btn-dark ou btn-light*/}
-                <button className={`btn btn-light${styles.btnStyle}`}>
-                  ☀ 🌙{' '}
+                <button 
+                  onClick={handleTheme}
+                  className={`${theme} === ${'light'} ? ${'btn-light'} : ${'btn-dark'} btn  ${styles.btnStyle}`}>
+                    {theme === "light" ? '🌙' : '☀' } 
                 </button>
               </li>
             </ul>

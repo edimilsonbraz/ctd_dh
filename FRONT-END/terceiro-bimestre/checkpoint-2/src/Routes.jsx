@@ -9,6 +9,7 @@ import { DentistaContext, DentistaProvider } from './contexts/DentistaProvider'
 import { Destacados } from './pages/Destacados'
 import { PacienteProvider } from './contexts/PacienteProvider'
 import { useContext } from 'react'
+import { ThemeProvider } from './contexts/ThemeProvider'
 
 const PrivateRoute = ({ children }) => {
   const { userToken } = useContext(DentistaContext)
@@ -16,42 +17,42 @@ const PrivateRoute = ({ children }) => {
   return userToken ? children : <Navigate to="/" />
 }
 
-
 export function AppRoutes() {
   return (
-    <BrowserRouter>
-      <DentistaProvider>
-        <PacienteProvider>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<LoginForm />} />
-            <Route
-              path="/home"
-              element={
-                <PrivateRoute>
-                  <Home />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="/destacados"
-              element={
-                <PrivateRoute>
-                  <Destacados />
-                </PrivateRoute>
-              }
-            />
-            
-            <Route path="/dentist/:id" element={<Detail />} />
-            {/* <Route path="/destacados" element={<Destacados />} /> */}
-            <Route path="/contato" element={<Contato />} />
-            <Route path="/login" element={<LoginForm />} />
-            <Route path="*" element={<h1>PAGE NOT FOUND</h1>} />
-          </Routes>
-          <Footer />
-        </PacienteProvider>
-      </DentistaProvider>
-    </BrowserRouter>
+    <ThemeProvider>
+      <BrowserRouter>
+        <DentistaProvider>
+          <PacienteProvider>
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<LoginForm />} />
+              <Route
+                path="/home"
+                element={
+                  <PrivateRoute>
+                    <Home />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/destacados"
+                element={
+                  <PrivateRoute>
+                    <Destacados />
+                  </PrivateRoute>
+                }
+              />
+
+              <Route path="/dentist/:id" element={<Detail />} />
+              {/* <Route path="/destacados" element={<Destacados />} /> */}
+              <Route path="/contato" element={<Contato />} />
+              <Route path="/login" element={<LoginForm />} />
+              <Route path="*" element={<h1>PAGE NOT FOUND</h1>} />
+            </Routes>
+            <Footer />
+          </PacienteProvider>
+        </DentistaProvider>
+      </BrowserRouter>
+    </ThemeProvider>
   )
 }
-

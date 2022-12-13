@@ -1,10 +1,12 @@
 import { useContext, useState } from 'react'
 import { DentistaContext } from '../../contexts/DentistaProvider'
 import { PacienteContext } from '../../contexts/PacienteProvider'
+import { themeContext } from '../../contexts/ThemeProvider'
 import api from '../../services/api'
 import styles from './styles.module.css'
 
 const ScheduleForm = () => {
+  const { theme } = useContext(themeContext);
   const { dentistas, userToken } = useContext(DentistaContext)
   const { pacientes } = useContext(PacienteContext)
 
@@ -47,7 +49,7 @@ const ScheduleForm = () => {
     <>
       {/* //Na linha seguinte deverá ser feito um teste se a aplicação
         // está em dark mode e deverá utilizar o css correto */}
-      <div className={`text-center container}`}>
+      <div className={`text-center container ${theme} === "dark" ? ${'cardDark'} : 'card'}`}>
         <form onSubmit={handleSubmit}>
           <div className={`row ${styles.rowSpacing}`}>
             <div className="col-sm-12 col-lg-6">
@@ -102,7 +104,7 @@ const ScheduleForm = () => {
           <div className={`row ${styles.rowSpacing}`}>
             {/* //Na linha seguinte deverá ser feito um teste se a aplicação
             // está em dark mode e deverá utilizar o css correto */}
-            <button className={`btn btn-light ${styles.button}`}>
+            <button className={`btn btn-light ${theme} === "dark" ? ${'cardDark'} : 'card' ${styles.button}`}>
               Agendar
             </button>
           </div>
