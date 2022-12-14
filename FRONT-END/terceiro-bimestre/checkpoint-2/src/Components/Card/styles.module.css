@@ -1,5 +1,6 @@
-.cardDark{
-  background-color: #31313196;
+.cardDark {
+  background-color: #22272E;
+  border: 1px solid #5f5f5f;
 }
 
 .card:hover{

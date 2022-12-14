@@ -25,7 +25,7 @@ const Card = (props) => {
     <>
       {/* //Na linha seguinte deverá ser feito um teste se a aplicação
         // está em dark mode e deverá utilizar o css correto */}
-      <div className={`'card' ${theme} === "dark" ? ${'cardDark'} : 'card'` }>
+      <div className={theme === "light" ? `card` : `card dark ${styles.cardDark}`}>
         <img
           className="card-img-top"
           src="/images/doctor.jpg"

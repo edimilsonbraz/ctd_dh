@@ -6,6 +6,14 @@
   color: #f21d1d;
 }
 
+.bgLight{
+  background-color: #f7f7f7;
+}
+
+.bgDark {
+  background-color: #2D333B;  
+}
+
 .navBarLink {
   text-decoration: none;
   padding: 10px;

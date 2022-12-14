@@ -57,6 +57,7 @@ form{
   grid-template-columns: repeat(4, 1fr);
   gap: 1.125rem;
   text-align: center;
+  padding-bottom: 2rem;
   margin: 0 auto;
 }
 
@@ -80,8 +81,9 @@ tr:nth-child(even) {
 }
 
 .dark{
-  background-color: #12121296;
+  background-color: #22272E;
   color: white;
+  
 }
 .dark > a {
   color: white;

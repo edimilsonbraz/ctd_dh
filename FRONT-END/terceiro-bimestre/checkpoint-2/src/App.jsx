@@ -8,7 +8,7 @@ export function App() {
   const { theme } = useContext(themeContext);
 
   return (
-    <div className={theme === "light" ? `app flight` : `app dark`}>
+    <div className={theme === "light" ? `app light` : `app dark`}>
       <Navbar />
       <main>
         <Outlet />

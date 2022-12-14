@@ -45,7 +45,9 @@ const LoginForm = () => {
     <>
       {/* //Na linha seguinte deverá ser feito um teste se a aplicação
         // está em dark mode e deverá utilizar o css correto */}
-      <div className={`text-center card container ${theme} === "dark" ? ${'cardDark'} : 'card' ${styles.card}`}>
+      <div className={theme === "light"
+            ? `text-center card container ${styles.card}`
+            : `text-center card container dark ${styles.card} ${styles.cardDark}`}>
         <div className={`card-body ${styles.CardBody}`}>
           <h1>
             <FaUserAlt />
@@ -69,7 +71,7 @@ const LoginForm = () => {
               type="password"
               required
             />
-            <button className="btn btn-primary" type="submit">
+            <button className=" btn btn-primary" type="submit">
               Enviar
             </button>
           </form>

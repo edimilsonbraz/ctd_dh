@@ -22,7 +22,11 @@ const Navbar = () => {
       {/* //Na linha seguinte deverá ser feito um teste se a aplicação
         // está em dark mode e deverá utilizar navbar-dark bg-dark ou navbar-light bg-light*/}
       <nav
-        className={`${theme} === 'light' ? 'bg-light' : 'bg-dark' navbar navbar-expand-sm navbar-light `}
+        className={
+          theme === 'light' 
+          ? `navbar navbar-expand-sm navbar-light ${styles.bgLight}` 
+          : `navbar navbar-expand-sm navbar-dark ${styles.bgDark}` 
+        }
         aria-label="Third navbar example"
       >
         <div className="container">
@@ -65,7 +69,9 @@ const Navbar = () => {
                   className={`nav-item ${styles.navBarLink}`}
                   onClick={logout}
                 >
-                  <button className={`btn btn-light ${styles.button}`}>
+                  <button className={
+                      theme === "light" ? "btn btn-light" : "btn btn-dark"
+                    }>
                     logout
                   </button>
                 </li>
@@ -84,7 +90,9 @@ const Navbar = () => {
                  está em dark mode e deverá utilizar o icone ☀ ou 🌙 e btn-dark ou btn-light*/}
                 <button 
                   onClick={handleTheme}
-                  className={`${theme} === ${'light'} ? ${'btn-light'} : ${'btn-dark'} btn  ${styles.btnStyle}`}>
+                  className={theme === "light"
+                  ? `btn btn-light ${styles.btnStyle}`
+                  : `btn btn-dark ${styles.btnStyle}`}>
                     {theme === "light" ? '🌙' : '☀' } 
                 </button>
               </li>

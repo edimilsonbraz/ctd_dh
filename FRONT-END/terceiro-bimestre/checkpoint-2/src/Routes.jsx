@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import LoginForm from './Components/LoginForm'
 import { DentistaContext } from './contexts/DentistaProvider'
 import { useContext } from 'react'
+import { themeContext } from './contexts/ThemeProvider'
 
 const PrivateRoute = ({ children }) => {
   const { userToken } = useContext(DentistaContext)
@@ -14,7 +15,9 @@ const PrivateRoute = ({ children }) => {
 }
 
 export function AppRoutes() {
+  const { theme } = useContext(themeContext);
   return (
+    <div className={theme === "light" ? `app light` : `app dark`}>
     <Routes>
       <Route path="/" element={<LoginForm />} />
       <Route
@@ -38,5 +41,6 @@ export function AppRoutes() {
       <Route path="/login" element={<LoginForm />} />
       <Route path="*" element={<h1>PAGE NOT FOUND</h1>} />
     </Routes>
+</div>
   )
 }
