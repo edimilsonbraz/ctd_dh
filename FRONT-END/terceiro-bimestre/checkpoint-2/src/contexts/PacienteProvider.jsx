@@ -31,7 +31,7 @@ export function PacienteProvider({ children }) {
   }
 
   function emptyUserData() {
-    alert("Foi desfavoritado OK")
+    alert("Foi desfavoritado")
     setUserData({nome:"", sobrenome:"", matricula: ""})
   }
 
