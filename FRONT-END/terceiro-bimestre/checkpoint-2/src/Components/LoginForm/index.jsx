@@ -13,8 +13,8 @@ const LoginForm = () => {
   const {saveToken} = useContext(DentistaContext);
   const navigate = useNavigate();
 
-  const [user, setUser] = useState('')
-  const [password, setPassword] = useState('')
+  const [user, setUser] = useState('dentistaAdmin')
+  const [password, setPassword] = useState('admin123')
 
   const handleSubmit = (e) => {
     e.preventDefault()

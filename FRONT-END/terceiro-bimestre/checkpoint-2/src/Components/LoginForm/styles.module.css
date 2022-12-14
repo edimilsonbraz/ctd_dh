@@ -2,10 +2,10 @@
   width: 23rem;
   gap: 1rem;
   padding: 1rem;
-  padding-top: 10rem;
-  padding-bottom: 10rem;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
   /* margin-bottom: 5rem; */
-  height: calc(100vh -154px);
+  height: calc(100vh -160px);
 }
 
 .cardDark{
