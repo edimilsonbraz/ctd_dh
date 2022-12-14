@@ -2,6 +2,7 @@ import { useContext, useState } from 'react'
 import { DentistaContext } from '../../contexts/DentistaProvider'
 import { PacienteContext } from '../../contexts/PacienteProvider'
 import { themeContext } from '../../contexts/ThemeProvider'
+import { ToastContainer, toast } from 'react-toastify';
 import api from '../../services/api'
 import styles from './styles.module.css'
 
@@ -38,10 +39,9 @@ const ScheduleForm = () => {
         }
       })
 
-      alert('consulta agendada!')
-      
+      toast('consulta agendada!!! ', {type: "success", autoClose: 2000})
     } catch (error) {
-      alert('Erro ao agendar a consulta' + error)
+      toast('Erro ao agendar a consulta', {type: "error", autoClose: 2000})
     }
   }
 
@@ -110,6 +110,7 @@ const ScheduleForm = () => {
           </div>
         </form>
       </div>
+      <ToastContainer />
     </>
   )
 }

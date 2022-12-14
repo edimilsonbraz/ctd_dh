@@ -3,6 +3,7 @@ import api from '../../services/api'
 import { DentistaContext } from '../../contexts/DentistaProvider'
 import { themeContext } from '../../contexts/ThemeProvider'
 import { useNavigate } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
 import { FaUserAlt } from 'react-icons/fa'
 
 import styles from './styles.module.css'
@@ -30,14 +31,16 @@ const LoginForm = () => {
       
       saveToken(response.data.token)
 
-      
-      navigate("/home")
+      toast('Bem-vindo a DH Odonto! ', {type: "success", autoClose: 2000})
 
-      alert("Bem-vindo a DH Odonto!")
+      setTimeout(() => {
+        navigate("/home")
+
+      }, 3000)
 
     } catch (error) {
       
-      alert('Erro ao logar ' + error)
+      toast('Erro ao autenticar: ', {type: "error", autoClose: 2000})
     }
   }
 
@@ -77,6 +80,7 @@ const LoginForm = () => {
           </form>
         </div>
       </div>
+      <ToastContainer />
     </>
   )
 }
