@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+	--white:#fff;
+	--primary: #F0572D;
+	--title: #31363F;
+	--text: #191B1D;
+	--secondary: #DFE4EA;
+}
+
+body {
+	
+}
+
+a {
+	color: inherit; /*Herda a cor dos textos */
+	text-decoration: none;
+}
+
+button {
+	cursor: pointer;
+}
